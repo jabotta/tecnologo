@@ -14,11 +14,11 @@ DateTime::DateTime(){
 	t = time(NULL);	
 	now = localtime (&t);
 
-    this->y = now->tm_year + 1900;
-    this->m = now->tm_mon + 1;
-    this->d = now->tm_mday;
-    this->h = now->tm_hour;
-    this->i = now->tm_min;
+    y = now->tm_year + 1900;
+    m = now->tm_mon + 1;
+    d = now->tm_mday;
+    h = now->tm_hour;
+    i = now->tm_min;
 };
 
 // ESTATICA: DateTime d(2014,3,28,15,10);
