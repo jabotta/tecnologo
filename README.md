@@ -1,4 +1,4 @@
-tecnologo
+tecnólogo
 =========
 
-Repo para todo lo del tecnologo
+Repo para todo lo del tecnólogo
