@@ -10,7 +10,7 @@ main(){
 
 	DateTime a(2014, 3, 28);
 	DateTime b(2014, 2, 7, 15, 10);
-	DateTime c();
+	DateTime c;
  
 	do{
 		cout << "***************************" << endl;

@@ -4,19 +4,18 @@
 using namespace std;
 
 class DateTime{
-private:
+	private:
 		int y;
 		int m;
 		int d;
 		int h;
 		int i;
 
-
-public:
+	public:
 		// Constructores	   
 	   	DateTime(); //por defecto
 		DateTime(int, int, int, int = 00, int = 00); // por parametro
-		DateTime( DateTime &); // por copia
+		DateTime(DateTime &); // por copia
 		
 		// Destructor
 		~DateTime();
@@ -34,8 +33,7 @@ public:
 		void setDia(int);
 		void setHora(int);
 		void setMinuto(int);
-		
-		
+				
 		// Operaciones
 		bool operator == (DateTime);
 		bool operator != (DateTime);
@@ -43,12 +41,11 @@ public:
 		bool operator > (DateTime);
 		bool operator <= (DateTime);
 		bool operator >= (DateTime);
-		
-		
+				
 	    int obtenerMaximoDiaDelMes();
 		bool esBiciesto();
 		DateTime operator + (double);
-		DateTime& operator= (const DateTime& d);
+		DateTime& operator = (const DateTime& d);
 		DateTime operator - (double);
 		//double operator - (DateTime);
 	
