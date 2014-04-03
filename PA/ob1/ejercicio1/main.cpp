@@ -29,7 +29,8 @@ void createDateTimes(DateTime& d,const char* c){
 }
 main(){
 
-	int opcion,sumando;
+	int opcion;
+	double sumando;
 
 	DateTime a;
 	DateTime b;
@@ -147,7 +148,7 @@ main(){
 			/************************************************************************************/
 			default: cout << "Opción Invalida, vuelva a intentarlo!" << endl;
 		}
-		
+
 	}while(opcion != 11);
 
 	cout << "Saliendo..." << endl;
