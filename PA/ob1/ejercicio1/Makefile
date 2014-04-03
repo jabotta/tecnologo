@@ -3,7 +3,10 @@ main:	main.o	DateTime.o
 	
 main.o:	main.cpp
 	g++ -c main.cpp -I.
-	
+
+Comparable.o:	Comparable.cpp	Comparable.h
+	g++ -c Comparable.cpp -I.
+
 DateTime.o:	DateTime.cpp	DateTime.h
 	g++ -c DateTime.cpp -I.
 	

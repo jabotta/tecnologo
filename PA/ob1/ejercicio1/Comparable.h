@@ -6,8 +6,11 @@
 class Comparable{
 	 
 	public:
-		
-		virtual int comparar(Comparable) = 0;
-		void ordernar(Comparable[]);
+		Comparable();
+		~Comparable();
+		void ordenar(Comparable[]);
+		void print();
+
+		//virtual int comparar(Comparable) = 0;
 };
 #endif

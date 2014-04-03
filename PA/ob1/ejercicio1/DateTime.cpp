@@ -84,9 +84,10 @@ void DateTime::setHora(int hh){
 void DateTime::setMinuto(int ii){
 	i = ii;
 }
-
+//int DateTime::comparar(DateTime a){return 0;}
 // Operaciones
 bool DateTime::operator == (DateTime dt){
+	//this->print();
 	return (this->getAnio()==dt.getAnio() && this->getMes()==dt.getMes() && this->getDia()==dt.getDia() &&
 		this->getHora()==dt.getHora() && this->getMinuto()==dt.getMinuto());
 }
@@ -138,10 +139,9 @@ int* obtenerDiaHoraMinutoDesdeNumero(double d){
 	//calculo de la cantidad de horas
 	int hora = mFact/60;
 	//calulo de la cantidad de minutos restantes que no completan la hora
-	double minutos = mFact-(hora*60);
 	res[0] = dias;
 	res[1] = hora;
-	res[2] = (((double)(minutos/100))*60);
+	res[2] = round( mFact-(hora*60));
 	return res;
 } 
 

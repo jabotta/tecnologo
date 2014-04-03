@@ -1,6 +1,8 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
+#include "Comparable.h"
+#include <math.h>
 using namespace std;
 
 class DateTime{
@@ -19,7 +21,7 @@ class DateTime{
 		
 		// Destructor
 		~DateTime();
-		
+		 
 		// Selectores
 		int getAnio() const;
 		int getMes() const;
