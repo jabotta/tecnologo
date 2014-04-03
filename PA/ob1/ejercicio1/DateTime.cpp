@@ -138,11 +138,10 @@ int* obtenerDiaHoraMinutoDesdeNumero(double d){
 	//calculo de la cantidad de horas
 	int hora = mFact/60;
 	//calulo de la cantidad de minutos restantes que no completan la hora
-	int minutos = mFact-(hora*60);
+	double minutos = mFact-(hora*60);
 	res[0] = dias;
 	res[1] = hora;
-	res[2] = minutos;
-	
+	res[2] = (((double)(minutos/100))*60);
 	return res;
 } 
 
