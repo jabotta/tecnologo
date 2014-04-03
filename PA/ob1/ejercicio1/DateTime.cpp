@@ -246,7 +246,7 @@ DateTime DateTime::operator - (double d){
 		minuto = (int)(60+minuto);
 		hora -= horasParaQuitar;
 	}
-	if(hora < 1){
+	if(hora < 0){
 		
 		int diasParaQuitar= (int)(hora / 24);
 		hora = (int)(24+hora);
