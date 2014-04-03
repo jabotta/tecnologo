@@ -5,10 +5,10 @@
 using namespace std;
 
 
-void createDateTimes(DateTime& d){
+void createDateTimes(DateTime& d,const char* c){
 	
 	int dato;
-	cout << "************Crear DateTime***************" << endl;
+	cout <<"Crear DateTime : "<< c << endl;
 	
 	cout << "Insertar Anio: ";
 	cin >> dato;
@@ -25,7 +25,7 @@ void createDateTimes(DateTime& d){
 	cout << "Insertar Minuto: ";
 	cin >> dato;
 	d.setMinuto(dato);
-	cout<<"la fecha es : "<< d<<endl;
+	cout<<"la fecha es : "<< d;
 }
 main(){
 
@@ -33,8 +33,6 @@ main(){
 
 	DateTime a;
 	DateTime b;
-	DateTime c;
- 
 	do{
 		cout << "***************************" << endl;
 		cout << " 1) Suma" << endl;
@@ -51,67 +49,95 @@ main(){
 		cout << "***************************" << endl << endl;
 		cout << "INGRESE LA OPCION DESEADA: ";
 		
-		cin >> opcion;
-		cout<<endl;
+		cin >> opcion; 
 		
 		switch(opcion){
 			/************************************************************************************/
 			case 1:{
-				createDateTimes(a);
-				cout<<"inserte double:";
+				//Suma 
+				createDateTimes(a,"A");
+				cout<<"inserte Numero: ";
 				cin >> sumando;
-				cout<< (a + sumando)<<endl;
+				cout<<"La nueva fecha es: " <<(a + sumando);
 				break;
 			}
 			/************************************************************************************/
 			case 2:{
-				createDateTimes(a);
-				cout<<"inserte double:";
+				//Resta
+				createDateTimes(a,"A");
+				cout<<"inserte Numero: ";
 				cin >> sumando;
-				cout<< (a - sumando)<<endl;
+				cout<<"La nueva fecha es: " << (a - sumando);
 		 
 				break;
 			}
-			/************************************************************************************/
+			/***********************createDateTimes(a,"a");*************************************************************/
 			case 3:{
-
+				//asignacion
+				createDateTimes(a,"A");
+				cout<<"Asignamos 'A' a 'B'"<<endl;
+				b = a;
+				cout<<"Imprimimos B: "<<b<<endl;
 				break;
 			}
 			/**********************************************************************************/
 			case 4:{
-				
+				//Comparacion (==)
+
+				createDateTimes(a,"A");
+				createDateTimes(b,"B");
+				cout<<" A == B "<<((a==b)==0?"false":"true")<<endl;
 				break;
 			}
 			/************************************************************************************/
 			case 5:{
-				
+				//Comparacion (!=)
+				createDateTimes(a,"a");
+				createDateTimes(b,"b");
+				cout<<" a!=b "<<((a!=b)==0?"false":"true")<<endl;
 				break;
 			}
 			/************************************************************************************/
 
 			case 6:{
-				
+				//Comparacion (<)
+				createDateTimes(a,"A");
+				createDateTimes(b,"B");
+				cout<<" A < B "<<((a<b)==0?"false":"true")<<endl;
 				break;
 			}
 			/************************************************************************************/
 
 			case 7:{
-				
+				//Comparacion (>)
+				createDateTimes(a,"A");
+				createDateTimes(b,"B");
+				cout<<" A > B "<<((a>b)==0?"false":"true")<<endl;
 				break;
 			}
 			/************************************************************************************/
 			case 8:{
-				
+				//Comparacion (>=) 
+				createDateTimes(a,"A");
+				createDateTimes(b,"B");
+				cout<<" A >= B "<<((a>=b)==0?"false":"true")<<endl;
 				break;
 			}
 			/************************************************************************************/
 			case 9:{
-				
+				//Comparacion (<=)
+				createDateTimes(a,"A");
+				createDateTimes(b,"B");
+				cout<<" A <= B "<<((a<=b)==0?"false":"true")<<endl;
 				break;
 			}
 			/************************************************************************************/
 			case 10:{
-				
+				//Crear por copia
+				createDateTimes(a,"A");
+				cout<<"Creamos B por copia de A"<<endl;
+				DateTime b(a);
+				cout<< "Imprimimos B: "<<b<<endl;
 				break;
 			}
 			/************************************************************************************/
@@ -121,9 +147,7 @@ main(){
 			/************************************************************************************/
 			default: cout << "Opción Invalida, vuelva a intentarlo!" << endl;
 		}
-
-	cout << endl << endl;
-
+		
 	}while(opcion != 11);
 
 	cout << "Saliendo..." << endl;
