@@ -240,13 +240,13 @@ DateTime DateTime::operator - (double d){
 	
 	double diffDeDias = 0;
 	// me fijo en el rango de minutos para saber si no agrego horas
-	if( minuto <= 0){
+	if( minuto < 0){
 	
 		int horasParaQuitar = (int)(minuto / 60);
 		minuto = (int)(60+minuto);
 		hora -= horasParaQuitar;
 	}
-	if(hora <= 0){
+	if(hora < 1){
 		
 		int diasParaQuitar= (int)(hora / 24);
 		hora = (int)(24+hora);
