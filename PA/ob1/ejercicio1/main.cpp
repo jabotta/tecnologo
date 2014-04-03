@@ -27,7 +27,7 @@ void createDateTimes(DateTime& d,const char* c){
 	d.setMinuto(dato);
 	cout<<"la fecha es : "<< d;
 }
-main(){
+int main(){
 
 	int opcion;
 	double sumando;
