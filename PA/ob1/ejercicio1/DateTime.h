@@ -42,12 +42,12 @@ class DateTime{
 		bool operator <= (DateTime);
 		bool operator >= (DateTime);
 				
-	    int obtenerMaximoDiaDelMes();
-		bool esBiciesto();
+	    int obtenerMaximoDiaDelMes(int,int);
+		bool esBiciesto(int);
 		DateTime operator + (double);
 		DateTime& operator = (const DateTime& d);
 		DateTime operator - (double);
-		//double operator - (DateTime);
+		double operator - (DateTime);
 	
 };
 	

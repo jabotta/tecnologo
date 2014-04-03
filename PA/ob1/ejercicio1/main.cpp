@@ -4,19 +4,38 @@
 
 using namespace std;
 
+
+void createDateTimes(DateTime& d){
+	
+	int dato;
+	cout << "************Crear DateTime***************" << endl;
+	
+	cout << "Insertar Anio: ";
+	cin >> dato;
+	d.setAnio(dato);
+	cout << "Insertar Mes: ";
+	cin >> dato;
+	d.setMes(dato);
+	cout << "Insertar Dia: ";
+	cin >> dato;
+	d.setDia(dato);
+	cout << "Insertar Hora: ";
+	cin >> dato;
+	d.setHora(dato);
+	cout << "Insertar Minuto: ";
+	cin >> dato;
+	d.setMinuto(dato);
+	cout<<"la fecha es : "<< d<<endl;
+}
 main(){
 
-	int opcion;
+	int opcion,sumando;
 
-	DateTime a(2014, 3, 28);
-	DateTime b(2014, 2, 7, 15, 10);
+	DateTime a;
+	DateTime b;
 	DateTime c;
  
 	do{
-		cout << "***************************" << endl;
-		cout << "DateTime A: " << a << endl; 
-		cout << "DateTime B: " << b << endl;
-		cout << "DateTime C: " << c << endl;
 		cout << "***************************" << endl;
 		cout << " 1) Suma" << endl;
 		cout << " 2) Resta" << endl;
@@ -38,12 +57,19 @@ main(){
 		switch(opcion){
 			/************************************************************************************/
 			case 1:{
-
+				createDateTimes(a);
+				cout<<"inserte double:";
+				cin >> sumando;
+				cout<< (a + sumando)<<endl;
 				break;
 			}
 			/************************************************************************************/
 			case 2:{
-
+				createDateTimes(a);
+				cout<<"inserte double:";
+				cin >> sumando;
+				cout<< (a - sumando)<<endl;
+		 
 				break;
 			}
 			/************************************************************************************/

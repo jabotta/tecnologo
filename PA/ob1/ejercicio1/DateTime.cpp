@@ -130,35 +130,43 @@ bool DateTime::operator >= (DateTime dt){
 
 int* obtenerDiaHoraMinutoDesdeNumero(double d){
 	int* res = new int [3];
-	int days = (int)d;
-	int hours = (int) ((d-days > 0)? (d-days)*10 : 0);
-    int diff = (d-days)*10;
-	int minutes = (int)((diff-hours > 0)? (diff-hours)*10 : 0);
-	res[0] = days;
-	res[1] = hours;
-	res[2] = minutes;
+	int dias = (int)d;
+
+	double decimalValFact = (double)((int)((d-dias)*1000))/1000; 
+	//calculos minutos totales
+	double mFact = decimalValFact*24*60;
+	//calculo de la cantidad de horas
+	int hora = mFact/60;
+	//calulo de la cantidad de minutos restantes que no completan la hora
+	int minutos = mFact-(hora*60);
+	res[0] = dias;
+	res[1] = hora;
+	res[2] = minutos;
 	
 	return res;
 } 
 
-bool DateTime::esBiciesto(){
-	return (this->getAnio() % 4 == 0 || this->getAnio() % 100 != 0  || this->getAnio() % 400 == 0 );
+bool DateTime::esBiciesto(int anio){
+	//calculo del anio biciesto segun algoritmo
+	return (anio % 4 == 0 && ( anio % 100 != 0  || anio % 400 == 0 ));
 }
 
-int DateTime::obtenerMaximoDiaDelMes(){
-	int month = this->getMes();
-	if(month == 2)
-		return (this->esBiciesto()) ? 29 : 28;
+int DateTime::obtenerMaximoDiaDelMes(int mes, int anio){
+	
+	if(mes == 2)
+		return (esBiciesto(anio)) ? 29 : 28;
 	else{
-		if(month<8)
-			return (month % 2 == 0) ? 30 : 31;
+		if(mes<8)
+			return (mes % 2 == 0) ? 30 : 31;
 		else
-			return (month % 2 == 0) ? 31 : 30;
+			return (mes % 2 == 0) ? 31 : 30;
 	}
 }
 
 DateTime DateTime::operator + (double d){
-	int maxDays = this->obtenerMaximoDiaDelMes();
+
+	int maxDias = obtenerMaximoDiaDelMes(this->getMes(),this->getAnio());
+
 	int* listaDeValoresSegunDecimal= obtenerDiaHoraMinutoDesdeNumero(d);
 	int anio = this->getAnio();
 	int mes = this->getMes();
@@ -169,22 +177,28 @@ DateTime DateTime::operator + (double d){
 	//guardo en minuto ya la suma de los minutos que tengo con los que voy a agregar
 	int minuto = this->getMinuto() + listaDeValoresSegunDecimal[2];
 	
+	//cout<< " "<<listaDeValoresSegunDecimal[0]<<  " "<<listaDeValoresSegunDecimal[1] << " "<<listaDeValoresSegunDecimal[2]<<endl;
 	double diffDeDias = 0;
+	
 	// me fijo en el rango de minutos para saber si no agrego horas
+	// repito el algoritmo de manera analoga para horas y dias 
 	if(minuto > 60){
+
 		int horasParaAgregar = (int)(minuto / 60);
 		minuto = minuto-(60*horasParaAgregar);
 		hora += horasParaAgregar;
 	}
 
 	if(hora > 24){
+		
 		int diasParaAgregar = (int)(hora / 24);
 		hora = hora-(24*diasParaAgregar);
 		dia += diasParaAgregar;
 	}
 
-	if(dia > maxDays){
-		diffDeDias = dia-maxDays;
+	if(dia > maxDias){
+		
+		diffDeDias = dia-maxDias-1;
 		dia = 1;
 		mes++;
 	}
@@ -212,6 +226,8 @@ DateTime& DateTime::operator = (const DateTime& d){
 }
 
 DateTime DateTime::operator - (double d){
+
+	 
 	int* listaDeValoresSegunDecimal= obtenerDiaHoraMinutoDesdeNumero(d);
 	int anio = this->getAnio();
 	int mes = this->getMes();
@@ -225,21 +241,26 @@ DateTime DateTime::operator - (double d){
 	double diffDeDias = 0;
 	// me fijo en el rango de minutos para saber si no agrego horas
 	if( minuto < 0){
-		int horasParaAgregar = (int)(minuto / 60);
-		minuto = (unsigned int)(minuto-(60*horasParaAgregar));
-		hora -= horasParaAgregar;
+	
+		int horasParaQuitar = (int)(minuto / 60);
+		minuto = (int)(minuto-(60*horasParaQuitar));
+		hora -= horasParaQuitar;
 	}
 
 	if(hora < 0){
-		int diasParaAgregar = (int)(hora / 24);
-		hora = (int)(hora-(24*diasParaAgregar));
-		dia -= diasParaAgregar;
-	}
+		
+		int diasParaQuitar= (int)(hora / 24);
+		hora = (int)(hora-(24*diasParaQuitar));
+		dia -= diasParaQuitar;
+	} 
 
-	if(dia < 0){
-		diffDeDias = dia;
-		dia = 1;
-		mes++;
+	if(dia < 1){
+	
+		int prevMes = (this->getMes()==1)?12:this->getMes()-1;
+		int lastDayOfPrevMonth = obtenerMaximoDiaDelMes(prevMes,this->getAnio());	
+		diffDeDias = dia; 
+		dia = lastDayOfPrevMonth;
+		mes--;
 	}
 
 	if(mes < 1){
@@ -250,15 +271,95 @@ DateTime DateTime::operator - (double d){
 	DateTime resultado (anio,mes,dia,hora,minuto);
 
 	if(diffDeDias<0){
-		resultado = ((resultado) + (int)diffDeDias);
+		resultado = ((resultado) - -diffDeDias);
 	}
 	return (resultado);
 }
-/*
-double DateTime::operator - (DateTime d){
-	(this->getAnio() - d->getAnio());
-}*/
 
+double DateTime::operator - (DateTime d){
+	
+	//if the DateTime are equals the difference between them
+	if( this->getAnio()==d.getAnio() && this->getMes()==d.getMes() && this->getDia()==d.getDia())return 0;
+	
+	DateTime start;
+    DateTime end;
+    
+    if((*this) > d){
+
+        start = d;
+        end = (*this);
+ 
+    }else{
+
+        end = d;
+        start = (*this);
+
+    } 
+	
+	if(end.getAnio() == start.getAnio()){
+
+		int daysDiff = 0 ;
+		if(start.getMes()!=end.getMes()){
+			
+			int currentMonth = start.getMes()+1;
+
+			while(currentMonth != end.getMes()){
+
+				daysDiff += DateTime::obtenerMaximoDiaDelMes(currentMonth,start.getAnio());
+				currentMonth++;
+
+			}
+
+			int dayDiffToEndMonth = DateTime::obtenerMaximoDiaDelMes(start.getMes(),start.getAnio())-start.getDia();
+			daysDiff += dayDiffToEndMonth + end.getDia();
+
+	 		return daysDiff;
+		
+		}else{
+
+			daysDiff += end.getDia()-start.getDia();
+
+			return daysDiff;
+		}
+ 
+	}else{
+
+		
+		int daysDiff = 0 ;
+		int currentMonth = start.getMes()+1;
+
+		while(currentMonth <= 12){
+
+			daysDiff += DateTime::obtenerMaximoDiaDelMes(currentMonth,start.getAnio());
+			currentMonth++;
+
+		}
+
+ 		currentMonth = 1;
+		while(currentMonth != end.getMes()){
+
+			daysDiff += DateTime::obtenerMaximoDiaDelMes(currentMonth,end.getAnio());
+			currentMonth++;
+
+		}
+
+		int dayDiffToEndMonth = DateTime::obtenerMaximoDiaDelMes(start.getMes(),start.getAnio())-start.getDia();
+
+		daysDiff += dayDiffToEndMonth+end.getDia();
+		
+		int currentYear = start.getAnio()+1;
+
+		while(currentYear != end.getAnio()){
+
+			daysDiff += (DateTime::esBiciesto(currentYear))? 366 : 365 ;
+			currentYear++;
+		}
+		
+
+		return daysDiff;
+	} 
+}
+ 
 std::ostream& operator << (std::ostream& stream, const DateTime& d) {
 	const char* pref1 = "0";
 	const char* pref2 = "00";
