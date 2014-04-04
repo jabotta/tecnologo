@@ -84,10 +84,11 @@ void DateTime::setHora(int hh){
 void DateTime::setMinuto(int ii){
 	i = ii;
 }
-//int DateTime::comparar(DateTime a){return 0;}
+
+int DateTime::comparar(Comparable& c){}
+
 // Operaciones
 bool DateTime::operator == (DateTime dt){
-	//this->print();
 	return (this->getAnio()==dt.getAnio() && this->getMes()==dt.getMes() && this->getDia()==dt.getDia() &&
 		this->getHora()==dt.getHora() && this->getMinuto()==dt.getMinuto());
 }

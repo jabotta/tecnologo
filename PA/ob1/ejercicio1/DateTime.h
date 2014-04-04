@@ -2,10 +2,9 @@
 #define DATETIME_H
 
 #include "Comparable.h"
-#include <math.h>
 using namespace std;
 
-class DateTime{
+class DateTime : public Comparable {
 	private:
 		int y;
 		int m;
@@ -50,6 +49,9 @@ class DateTime{
 		DateTime& operator = (const DateTime& d);
 		DateTime operator - (double);
 		double operator - (DateTime);
+
+		
+		int comparar(Comparable&);
 	
 };
 	
