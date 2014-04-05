@@ -2,6 +2,7 @@
 #include "DateTime.h"
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
 
 using namespace std;
 
@@ -86,7 +87,7 @@ void DateTime::setMinuto(int ii){
 }
 
 //Operacion abstracta de Comparable
-int DateTime::comparar(Comparable c){}
+int DateTime::comparar(Comparable& c){}
 
 // Operaciones
 bool DateTime::operator == (DateTime dt){
@@ -135,7 +136,7 @@ int* obtenerDiaHoraMinutoDesdeNumero(double d){
 	int* res = new int [3];
 	int dias = (int)d;
 
-	double decimalValFact = (double)((int)((d-dias)*1000))/1000; 
+	double decimalValFact = d-(double)dias;
 	//calculos minutos totales
 	double mFact = decimalValFact*24*60;
 	//calculo de la cantidad de horas
@@ -143,7 +144,7 @@ int* obtenerDiaHoraMinutoDesdeNumero(double d){
 	//calulo de la cantidad de minutos restantes que no completan la hora
 	res[0] = dias;
 	res[1] = hora;
-	res[2] = round( mFact-(hora*60));
+	res[2] = round((mFact/60-(double)hora)*60);
 	return res;
 } 
 
