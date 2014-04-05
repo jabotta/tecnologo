@@ -1,3 +1,5 @@
 #include "Comparable.h"
 
-void Comparable::ordenar(Comparable[]&){};
+void Comparable::ordenar(Comparable** a[]){
+
+};
