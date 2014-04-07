@@ -34,6 +34,12 @@ int main(){
 
 	DateTime a;
 	DateTime b;
+	DateTime *tests[4];// = new DateTime(2000,1,1,1,1);
+	for(int i = 0; i < 4; i++) {
+        tests[i] = new DateTime(2000,1,1,1,1);
+    }
+	cout<<"ANIO: " <<tests[1]->getAnio();
+	a.ordenar(tests);
 	do{
 		cout << "***************************" << endl;
 		cout << " 1) Suma" << endl;
