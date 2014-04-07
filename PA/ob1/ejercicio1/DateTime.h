@@ -46,12 +46,12 @@ class DateTime : public Comparable {
 	    int obtenerMaximoDiaDelMes(int,int);
 		bool esBiciesto(int);
 		DateTime operator + (double);
-		DateTime& operator = (const DateTime& d);
+		DateTime& operator = (const DateTime &d);
 		DateTime operator - (double);
 		double operator - (DateTime);
 
 		//operacion abstracta de Comparable
-		int comparar(Comparable&);
+		int comparar(Comparable &);
 	
 };
 	

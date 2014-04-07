@@ -5,7 +5,7 @@
 
 class Comparable {	 
 	public:
-		virtual int comparar(Comparable&) = 0;
+		virtual int comparar(Comparable &) = 0;
 		void ordenar(Comparable** a[]);		
 };
 
