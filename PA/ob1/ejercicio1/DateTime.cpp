@@ -87,7 +87,7 @@ void DateTime::setMinuto(int ii){
 }
 
 //Operacion abstracta de Comparable
-int DateTime::comparar(Comparable& c){}
+int DateTime::comparar(Comparable &c){}
 
 // Operaciones
 bool DateTime::operator == (DateTime dt){

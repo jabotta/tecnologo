@@ -3,10 +3,10 @@
 #include <iostream>
 #include <stdio.h>
 
-class Comparable {
-	 
+class Comparable {	 
 	public:
 		virtual int comparar(Comparable& c) = 0;
 		void ordenar(Comparable** a[]);		
 };
+
 #endif
