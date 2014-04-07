@@ -1,15 +1,11 @@
 #include <iostream>
 #include "DateTime.h"
 
-
 using namespace std;
 
-
-void createDateTimes(DateTime& d,const char* c){
-	
+void createDateTimes(DateTime& d, const char* c){	
 	int dato;
-	cout <<"Crear DateTime : "<< c << endl;
-	
+	cout << "Crear DateTime : " << c << endl;	
 	cout << "Insertar Anio: ";
 	cin >> dato;
 	d.setAnio(dato);
@@ -25,10 +21,9 @@ void createDateTimes(DateTime& d,const char* c){
 	cout << "Insertar Minuto: ";
 	cin >> dato;
 	d.setMinuto(dato);
-	cout<<"la fecha es : "<< d;
+	cout << "la fecha es : " << d;
 }
 int main(){
-
 	int opcion;
 	double sumando;
 
@@ -57,18 +52,18 @@ int main(){
 			case 1:{
 				//Suma 
 				createDateTimes(a,"A");
-				cout<<"inserte Numero: ";
+				cout << "inserte Numero: ";
 				cin >> sumando;
-				cout<<"La nueva fecha es: " <<(a + sumando);
+				cout << "La nueva fecha es: " << (a + sumando);
 				break;
 			}
 			/************************************************************************************/
 			case 2:{
 				//Resta
 				createDateTimes(a,"A");
-				cout<<"inserte Numero: ";
+				cout << "inserte Numero: ";
 				cin >> sumando;
-				cout<<"La nueva fecha es: " << (a - sumando);
+				cout << "La nueva fecha es: " << (a - sumando);
 		 
 				break;
 			}
@@ -76,9 +71,9 @@ int main(){
 			case 3:{
 				//asignacion
 				createDateTimes(a,"A");
-				cout<<"Asignamos 'A' a 'B'"<<endl;
+				cout << "Asignamos 'A' a 'B'" << endl;
 				b = a;
-				cout<<"Imprimimos B: "<<b<<endl;
+				cout << "Imprimimos B: " << b << endl;
 				break;
 			}
 			/**********************************************************************************/
@@ -87,7 +82,7 @@ int main(){
 
 				createDateTimes(a,"A");
 				createDateTimes(b,"B");
-				cout<<" A == B "<<((a==b)==0?"false":"true")<<endl;
+				cout<<" A == B " << ((a == b) == 0 ? "false" : "true") << endl;
 				break;
 			}
 			/************************************************************************************/
@@ -95,7 +90,7 @@ int main(){
 				//Comparacion (!=)
 				createDateTimes(a,"a");
 				createDateTimes(b,"b");
-				cout<<" a!=b "<<((a!=b)==0?"false":"true")<<endl;
+				cout<<" a!=b " << ((a != b) == 0 ? "false" : "true") << endl;
 				break;
 			}
 			/************************************************************************************/
@@ -104,7 +99,7 @@ int main(){
 				//Comparacion (<)
 				createDateTimes(a,"A");
 				createDateTimes(b,"B");
-				cout<<" A < B "<<((a<b)==0?"false":"true")<<endl;
+				cout << " A < B " << ((a < b) == 0 ? "false" : "true") << endl;
 				break;
 			}
 			/************************************************************************************/
@@ -113,7 +108,7 @@ int main(){
 				//Comparacion (>)
 				createDateTimes(a,"A");
 				createDateTimes(b,"B");
-				cout<<" A > B "<<((a>b)==0?"false":"true")<<endl;
+				cout << " A > B " << ((a > b) == 0 ? "false" : "true") << endl;
 				break;
 			}
 			/************************************************************************************/
@@ -121,7 +116,7 @@ int main(){
 				//Comparacion (>=) 
 				createDateTimes(a,"A");
 				createDateTimes(b,"B");
-				cout<<" A >= B "<<((a>=b)==0?"false":"true")<<endl;
+				cout << " A >= B " <<((a >= b) == 0 ? "false" : "true") << endl;
 				break;
 			}
 			/************************************************************************************/
@@ -129,16 +124,16 @@ int main(){
 				//Comparacion (<=)
 				createDateTimes(a,"A");
 				createDateTimes(b,"B");
-				cout<<" A <= B "<<((a<=b)==0?"false":"true")<<endl;
+				cout << " A <= B " << ((a <= b) == 0 ? "false" : "true") << endl;
 				break;
 			}
 			/************************************************************************************/
 			case 10:{
 				//Crear por copia
 				createDateTimes(a,"A");
-				cout<<"Creamos B por copia de A"<<endl;
+				cout << "Creamos B por copia de A" << endl;
 				DateTime b(a);
-				cout<< "Imprimimos B: "<<b<<endl;
+				cout<< "Imprimimos B: " << b << endl;
 				break;
 			}
 			/************************************************************************************/
