@@ -37,6 +37,7 @@ int main(){
 	a.ordenar(tests);
 	do{
 		cout << "***************************" << endl;
+		cout << " 0) Resta DateTime - DateTime (-)" << endl;
 		cout << " 1) Suma" << endl;
 		cout << " 2) Resta" << endl;
 		cout << " 3) Asignacion (=)" << endl;
@@ -55,6 +56,16 @@ int main(){
 		
 		switch(opcion){
 			/************************************************************************************/
+			case 0:{
+				//Suma 
+				createDateTimes(a,"A");
+				createDateTimes(b,"B");
+				cout<<"A es:"<<a;
+				cout<<"B es:"<<b;
+				cout << "La diferencia A - B  " << (a - b)<<endl;
+				cout<<endl;
+				break;
+			}
 			case 1:{
 				//Suma 
 				createDateTimes(a,"A");
