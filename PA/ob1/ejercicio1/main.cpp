@@ -35,18 +35,28 @@ int main(){
 	// } 
 
 	DateTime *tests = new DateTime[4];
+	tests[0] = *(new DateTime(2000,1,1,1,1));
+	tests[1] = *(new DateTime(2002,1,1,1,1));
+	tests[2] = *(new DateTime(2001,1,1,1,1));
+	tests[3] = *(new DateTime(2005,1,1,1,1));
 	for(int i = 0; i < 4; i++) {
-		DateTime aux;     
-		tests[i] = *(new DateTime(2000,i + 1,1,1,1));
+		cout << tests[i] << endl;
     }
-    //int rlst = tests[0].comparar(&tests[0]);
+    int rlst = tests[3].comparar(&tests[3]);
     //cout << rlst << " RSLT " << tests[0].getAnio() << endl;
-    Comparable *a[4];
+    /*Comparable *a[4];
     for(int i = 0; i < 4; i++) {
         a[i] = dynamic_cast<Comparable *>(&tests[i]);
     }
     //cout << a[0]->comparar(a[1]) << endl;
 	tests[0].ordenar(a, 4);
+	for(int i = 0; i < 4; i++){
+        //cout << a[i] << endl; 
+    } 
+	for(int i = 0; i < 4; i++) {
+        tests[i] = *(dynamic_cast<DateTime *>(a[i]));
+        cout << tests[i] << endl;
+    }*/
 
 
 	// int opcion;

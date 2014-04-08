@@ -4,19 +4,23 @@
 using namespace std;
 
 void Comparable::ordenar(Comparable** c, int largo){	
-	Comparable *temp; 
-	for(int i = 0; i < largo; i++){
-		for(int j = 0; j < largo-1; j++){
-		cout << c[j] << endl;
-			if(c[j]->comparar(c[j+1]) < 0){
-				temp = c[j]; 
-				c[j] = c[j+1]; 
-				c[j+1] = temp;
+	Comparable *temp;
+	int imin; 
+	for(int i = 0; i <= (largo-2); i++){
+	    imin=i;
+		for(int j = i+1; j <= (largo-1); j++){
+			if(c[j]->comparar(c[imin]) < 0){
+				imin=j;
 			} 
 		}
+		temp = c[i]; 
+		cout << i << " "<<c[i] << endl;
+        c[i] = c[imin];
+        cout << imin << " " << c[i] << endl; 
+        c[imin] = temp;
 	}
 
 	for(int i = 0; i < largo; i++){
- 		cout << c[i] << endl; 
+ 		//cout << c[i] << endl; 
 	} 
 }; 
