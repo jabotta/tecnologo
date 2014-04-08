@@ -39,10 +39,14 @@ int main(){
 		DateTime aux;     
 		tests[i] = *(new DateTime(2000,i + 1,1,1,1));
     }
-    int rlst = tests[0].comparar(&tests[0]);
+    //int rlst = tests[0].comparar(&tests[0]);
     //cout << rlst << " RSLT " << tests[0].getAnio() << endl;
-    Comparable *a = dynamic_cast<Comparable *>(tests);
-	tests[0].ordenar(&a, 4);
+    Comparable *a[4];
+    for(int i = 0; i < 4; i++) {
+        a[i] = dynamic_cast<Comparable *>(&tests[i]);
+    }
+    //cout << a[0]->comparar(a[1]) << endl;
+	tests[0].ordenar(a, 4);
 
 
 	// int opcion;

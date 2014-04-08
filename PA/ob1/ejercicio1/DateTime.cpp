@@ -90,6 +90,7 @@ void DateTime::setMinuto(int ii){
 //Operacion abstracta de Comparable
 int DateTime::comparar(Comparable *c){
     DateTime *a = dynamic_cast<DateTime *>(c);
+    cout << a->getAnio() << endl;
 	if(this == a)
 		return 0;	
 	else if(this < a)
