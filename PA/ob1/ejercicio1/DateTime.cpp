@@ -1,8 +1,9 @@
 #include <iostream>
-#include "DateTime.h"
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
+
+#include "DateTime.h"
 
 using namespace std;
 
@@ -88,17 +89,11 @@ void DateTime::setMinuto(int ii){
 
 //Operacion abstracta de Comparable
 int DateTime::comparar(Comparable *c){
-	//cout<<c.getAnio()<<endl;
 	if(this == c)
-
-		return 0;
-	
+		return 0;	
 	else if(this < c)
-
-		return -1;
-	
+		return -1;	
 	else if (this > c)
-
 		return 1;
 }
 	

@@ -1,10 +1,21 @@
+#include <iostream>
 #include "Comparable.h"
 
-void Comparable::ordenar(Comparable** a){ 
-	
-	std::cout << "hola!!"<<std::endl;
+using namespace std;
 
-	std::cout<< (a[0])->comparar(a[1]) <<std::endl;
-	
+void Comparable::ordenar(Comparable** c, int largo){	
+	Comparable *temp; 
+	for(int i = 0; i < largo; i++){
+		for(int j = 0; j < largo-1; j++){
+			if(c[j]->comparar(c[j+1]) < 0){
+				temp = c[j]; 
+				c[j] = c[j+1]; 
+				c[j+1] = temp;
+			} 
+		}
+	}
 
+	for(int i = 0; i < largo; i++){
+ 		cout << c[i] << endl; 
+	} 
 }; 

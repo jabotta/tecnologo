@@ -2,7 +2,6 @@
 #define DATETIME_H
 
 #include "Comparable.h"
-using namespace std;
 
 class DateTime : public Comparable {
 	private:
@@ -52,7 +51,7 @@ class DateTime : public Comparable {
 
 		//operacion abstracta de Comparable
 
-		int comparar(Comparable* c);
+		int comparar(Comparable*);
 		
 };
 	
