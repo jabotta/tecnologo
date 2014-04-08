@@ -34,12 +34,15 @@ int main(){
  //    	cout << tests[i] << endl; 
 	// } 
 
-	Comparable *tests = new DateTime[4];
+	DateTime *tests = new DateTime[4];
 	for(int i = 0; i < 4; i++) {
 		DateTime aux;     
 		tests[i] = *(new DateTime(2000,i + 1,1,1,1));
     }
-	tests[0].ordenar(&tests, 4);
+    int rlst = tests[0].comparar(&tests[0]);
+    //cout << rlst << " RSLT " << tests[0].getAnio() << endl;
+    Comparable *a = dynamic_cast<Comparable *>(tests);
+	tests[0].ordenar(&a, 4);
 
 
 	// int opcion;

@@ -89,11 +89,12 @@ void DateTime::setMinuto(int ii){
 
 //Operacion abstracta de Comparable
 int DateTime::comparar(Comparable *c){
-	if(this == c)
+    DateTime *a = dynamic_cast<DateTime *>(c);
+	if(this == a)
 		return 0;	
-	else if(this < c)
+	else if(this < a)
 		return -1;	
-	else if (this > c)
+	else if (this > a)
 		return 1;
 }
 	
