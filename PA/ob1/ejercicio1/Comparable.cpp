@@ -1,5 +1,3 @@
 #include "Comparable.h"
 
-void Comparable::ordenar(Comparable** a[]){
-cout << "hola!!";
-};
+void Comparable::ordenar(Comparable** a){std::cout << "hola!!"<<std::endl;}; 

@@ -87,8 +87,10 @@ void DateTime::setMinuto(int ii){
 }
 
 //Operacion abstracta de Comparable
-int DateTime::comparar(Comparable &c){}
+int DateTime::comparar(Comparable *c){
 
+}
+	
 // Operaciones
 bool DateTime::operator == (DateTime dt){
 	return (this->getAnio()==dt.getAnio() && this->getMes()==dt.getMes() && this->getDia()==dt.getDia() &&
@@ -131,7 +133,7 @@ bool DateTime::operator <= (DateTime dt){
 bool DateTime::operator >= (DateTime dt){
 	return (*this == dt || *this > dt); 
 }
-
+ 
 int* obtenerDiaHoraMinutoDesdeNumero(double d){
 	int* res = new int [3];
 	int dias = (int)d;

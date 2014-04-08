@@ -1,12 +1,12 @@
-#ifndef COMPARABLE__
-#define COMPARABLE__
+#ifndef COMPARABLE_H
+#define COMPARABLE_H
 #include <iostream>
 #include <stdio.h>
 
 class Comparable {	 
 	public:
-		virtual int comparar(Comparable& c) = 0;
-		void ordenar(Comparable** a[]);		
+		virtual int comparar(Comparable*) = 0;
+		void ordenar(Comparable **);		
 };
 
 #endif
