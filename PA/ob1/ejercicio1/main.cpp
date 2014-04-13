@@ -54,11 +54,14 @@ int main(){
     cout << "PRint ORDER:" << endl;
 	tests[0].ordenar(a, 4);
 	for(int i = 0; i < 4; i++){
-        //cout << a[i] << endl; 
-    } 
+  //     DateTime::printComp(a[i]);
+    }  
 	for(int i = 0; i < 4; i++) {
-        tests[i] = *(dynamic_cast<DateTime *>(a[i]));
-        cout << tests[i] << endl;
+		 DateTime *customDt = dynamic_cast<DateTime *>(a[i]);
+		 cout <<"fecha es: " <<(*customDt) << endl;
+ 
+		//tests[i] = *customDt;
+       // cout << *customDt << endl;
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
