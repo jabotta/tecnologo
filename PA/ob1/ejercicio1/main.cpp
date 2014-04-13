@@ -40,7 +40,7 @@ int main(){
 	tests[2] = *(new DateTime(2001,1,1,1,1));
 	tests[3] = *(new DateTime(2005,1,1,1,1));
 	for(int i = 0; i < 4; i++) {
-		cout << tests[i] << endl;
+	//	cout << tests[i] << endl;
     }
     /////////////////////////////////////////ESTO ES PARA PROBAR LA FUNCION DE COMPARAR SIN PASAR POR COMPARABLE////////////////////////////////////////////////
     //int rlst = tests[0].comparar(&tests[3]);
@@ -51,7 +51,7 @@ int main(){
     for(int i = 0; i < 4; i++) {
         a[i] = dynamic_cast<Comparable *>(&tests[i]);
     }
-    //cout << a[0]->comparar(a[1]) << endl;
+    cout << "PRint ORDER:" << endl;
 	tests[0].ordenar(a, 4);
 	for(int i = 0; i < 4; i++){
         //cout << a[i] << endl; 

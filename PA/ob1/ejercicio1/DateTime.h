@@ -52,7 +52,7 @@ class DateTime : public Comparable {
 		//operacion abstracta de Comparable
 
 		int comparar(Comparable*);
-		
+		static void printComp(Comparable *);
 };
 	
 	std::ostream& operator<< (std::ostream& stream, const DateTime& );
