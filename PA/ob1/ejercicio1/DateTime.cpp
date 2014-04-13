@@ -88,20 +88,11 @@ void DateTime::setMinuto(int ii){
 }
 void DateTime::printComp(Comparable * c){
     DateTime *a = dynamic_cast<DateTime *>(c);
-	 cout <<"fecha es: " <<(*a) << endl;
+	 cout <<(*a) << endl;
 }
 //Operacion abstracta de Comparable
 int DateTime::comparar(Comparable *c){
     DateTime *a = dynamic_cast<DateTime *>(c);
-    cout << (*this);
-    cout << (*a) << endl;
-  /*  cout << "FECHAS: ";
-    cout << " ";
-    cout << (this->getAnio() < a->getAnio())<<endl;
-    cout << "Igual: " << ((*this) == (*a)) << endl;
-    cout << "Menor: " << ((*this) < (*a)) << endl;
-    cout << "Mayor: " << ((*this) > (*a)) << endl;
-    */
 	if((*this) == (*a))
 		return 0;	
 	else if((*this) < (*a))
