@@ -1,28 +1,101 @@
 #include <iostream>
 #include "DateTime.h"
+#include <limits>
 
 using namespace std;
+int ingresarNumerico(){
+	int res;
+	cin >> res;
+	while(cin.fail()) {
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(),'\n');
+		cout << "Valor incorrecto.  Ingrese un numero: ";
+		cin >> res;
+	}
+	return res;
+}
+
+bool esBiciesto(int anio){
+	//calculo del anio biciesto segun algoritmo
+	return (anio % 4 == 0 && ( anio % 100 != 0  || anio % 400 == 0 ));
+}
+
+int obtenerMaximoDiaDelMes(int mes, int anio){
+	
+	if(mes == 2)
+		return (esBiciesto(anio)) ? 29 : 28;
+	else{
+		if(mes<8)
+			return (mes % 2 == 0) ? 30 : 31;
+		else
+			return (mes % 2 == 0) ? 31 : 30;
+	}
+}
+
+int ingresarValor(int tipo, int mes, int anio){
+	bool res = false;
+	int val;
+	while(!res){
+		val = ingresarNumerico();
+		if(tipo == 1){//Tipo Anio
+			if(val >= 0 && val < 10000){
+				res = true;
+			}else{
+				cout << "Anio invalido. Ingrese Anio: ";
+			}
+		}else if(tipo == 2){//Tipo Mes
+			if(val >= 1 && val <= 12){
+				res = true;
+			}else{
+				cout << "Mes invalido. Ingrese Mes: ";
+			}
+		}else if(tipo == 3){//Tipo Dia
+			if(val >= 1 && val <= obtenerMaximoDiaDelMes(mes, anio)){
+				res = true;
+			}else{
+				cout << "Dia invalido. Ingrese Dia: ";
+			}
+		}else if(tipo == 4){//Tipo Hora
+			if(val >= 0 && val < 24){
+				res = true;
+			}else{
+				cout << "Hora invalido. Ingrese Hora: ";
+			}
+		}else if(tipo == 5){//Tipo Minuto
+			if(val >= 0 && val < 60){
+				res = true;
+			}else{
+				cout << "Minuto invalido. Ingrese Minuto: ";
+			}
+		}
+	}
+	return val;
+}
+int ingresarValor(int tipo){
+	return ingresarValor(tipo, 0, 0);
+}
 
 void createDateTimes(DateTime& d, const char* c){	
 	int dato;
 	cout << "Crear DateTime : " << c << endl;	
 	cout << "Insertar Anio: ";
-	cin >> dato;
+	dato = ingresarValor(1);
 	d.setAnio(dato);
 	cout << "Insertar Mes: ";
-	cin >> dato;
+	dato = ingresarValor(2);
 	d.setMes(dato);
 	cout << "Insertar Dia: ";
-	cin >> dato;
+	dato = ingresarValor(3,d.getMes(),d.getAnio());
 	d.setDia(dato);
 	cout << "Insertar Hora: ";
-	cin >> dato;
+	dato = ingresarValor(4);
 	d.setHora(dato);
 	cout << "Insertar Minuto: ";
-	cin >> dato;
+	dato = ingresarValor(5);
 	d.setMinuto(dato);
 	cout << "la fecha es : " << d;
 }
+
 void ordenarLista(){
 	cout<<"Ingresar lista de DateTimes"<<endl;
 	DateTime temp;
@@ -72,9 +145,8 @@ int main(){
 		cout << "12) SALIR" << endl;
 		cout << "***************************" << endl << endl;
 		cout << "INGRESE LA OPCION DESEADA: ";
-		
-		cin >> opcion; 
-		
+
+		opcion = ingresarNumerico();
 		switch(opcion){
 			/************************************************************************************/
 			case 0:{
@@ -91,7 +163,7 @@ int main(){
 				//Suma 
 				createDateTimes(a,"A");
 				cout << "inserte Numero: ";
-				cin >> sumando;
+				sumando = ingresarNumerico();
 				cout << "La nueva fecha es: " << (a + sumando);
 				break;
 			}
@@ -100,7 +172,7 @@ int main(){
 				//Resta
 				createDateTimes(a,"A");
 				cout << "inserte Numero: ";
-				cin >> sumando;
+				sumando = ingresarNumerico();
 				cout << "La nueva fecha es: " << (a - sumando);
 		 
 				break;
@@ -175,17 +247,18 @@ int main(){
 				break;
 			}
 			/************************************************************************************/
-			case 11: 
-				ordenarLista();
-			
-			break;
+			case 11:{
+				ordenarLista();			
+				break;
+			}
 			/************************************************************************************/
+			case 12:{
+				cout << "Saliendo..." << endl;
+				break;
+			}
 			default: cout << "Opción Invalida, vuelva a intentarlo!" << endl;
 		}
-
 	}while(opcion != 12);
-
-	cout << "Saliendo..." << endl;
 
 	return 0;
 }
