@@ -61,27 +61,31 @@ void createDateTimes(DateTime& d, const char* c){
 }
 
 void ordenarLista(){
+	int largo;
+	cout << "Ingrese el largo: ";
+	largo = ingresarNumerico();
+
 	cout << "Ingresar lista de DateTimes" << endl;
 	DateTime temp;
-	DateTime *tests = new DateTime[4];
-	 for(int i = 0; i < 4; i++) {
+	DateTime *tests = new DateTime[largo];
+	 for(int i = 0; i < largo; i++) {
 		createDateTimes(temp," ");
 		tests[i] = (temp);
 		cout<<endl;
 	}
 
 	//Casteo dinamico a lista de comparables
-    Comparable *a[4];
-    for(int i = 0; i < 4; i++) {
+    Comparable *a[largo];
+    for(int i = 0; i < largo; i++) {
         a[i] = dynamic_cast<Comparable *>(&tests[i]);
     }
 
     //Llama a ordenar 
-	tests[0].ordenar(a, 4);
+	tests[0].ordenar(a, largo);
 
 	//imprime lista ordenada
 	cout << "Lista Ordenada : " << endl;
-	for(int i = 0; i < 4; i++){
+	for(int i = 0; i < largo; i++){
        DateTime::printComp(a[i]);
     }  
 }
