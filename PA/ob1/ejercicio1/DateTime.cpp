@@ -86,8 +86,8 @@ void DateTime::setAnio(int yy){
 void DateTime::setMes(int mm){
 	if (mm < 0)
 		throw invalid_argument("ERROR - La fecha no acepta valores negativos.");
-	else if (mm > 12)
-		throw invalid_argument("ERROR - El mes no puede ser mayor a 12.");
+	else if (mm < 1 || mm > 12)
+		throw invalid_argument("ERROR - El mes tiene que ser un numero entre 1 y 12.");
 	else
 		m = mm;
 }
@@ -104,8 +104,8 @@ void DateTime::setDia(int dd){
 void DateTime::setHora(int hh){
 	if (hh < 0)
 		throw invalid_argument("ERROR - La fecha no acepta valores negativos.");
-	else if(hh > 24)
-		throw invalid_argument("ERROR - La hora no puede ser mayor a 24");
+	else if(hh > 23)
+		throw invalid_argument("ERROR - La hora no puede ser mayor a 23");
 	else
 		h = hh;
 }
@@ -113,8 +113,8 @@ void DateTime::setHora(int hh){
 void DateTime::setMinuto(int ii){
 	if (ii < 0)
 		throw invalid_argument("ERROR - La fecha no acepta valores negativos.");
-	else if(ii > 60)
-		throw invalid_argument("ERROR - Los minutos no pueden ser mayor de 60");
+	else if(ii > 59)
+		throw invalid_argument("ERROR - Los minutos no pueden ser mayor de 59");
 	else
 		i = ii;
 }
@@ -133,6 +133,7 @@ int DateTime::comparar(Comparable *c){
 		return -1;	
 	else if ((*this) > (*a))
 		return 1;
+	return -2;
 }
 	
 // Operaciones
