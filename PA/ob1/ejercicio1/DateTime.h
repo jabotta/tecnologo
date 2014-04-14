@@ -50,8 +50,8 @@ class DateTime : public Comparable {
 		double operator - (DateTime);
 
 		//operacion abstracta de Comparable
-
 		int comparar(Comparable*);
+		
 		static void printComp(Comparable *);
 };
 	
