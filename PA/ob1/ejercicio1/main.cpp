@@ -116,7 +116,7 @@ int main(){
 		cout << "14) SALIR" << endl;
 		cout << "***************************" << endl << endl;
 		cout << "INGRESE LA OPCION DESEADA: ";
-
+		
 		opcion = ingresarNumerico();
 		switch(opcion){
 			/************************************************************************************/			
@@ -156,7 +156,7 @@ int main(){
 					createDateTimes(b,"B");
 					cout << "A es:"<< a;
 					cout << "B es:"<< b;
-					cout << "La diferencia A - B  " << (a - b) << endl;
+					cout << "La diferencia A - B es " << (a - b) << endl;
 					cout << endl;
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
