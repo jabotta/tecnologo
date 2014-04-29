@@ -13,3 +13,9 @@ DateTime.o:	DateTime.cpp	DateTime.h
 limpiar:
 	rm *.o
 	
+	
+-ansi
+-pedantic
+-wall
+-wextra
+	
