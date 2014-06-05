@@ -233,40 +233,44 @@ bool autenticar(){
         return false;
     }
 
+    //bzero((char *)&socket_miAddr, sizeof(socket_miAddr));  
+    //socket_miAddr.sin_family = AF_INET;
+    //socket_miAddr.sin_addr.s_addr = INADDR_ANY;
+    //socket_miAddr.sin_port = htons(puertoAuth);
+
+    //if (bind(miSocketAuth, (struct sockaddr *) &socket_miAddr, sizeof(socket_miAddr)) == -1){
+    //    cout << "Error en bind()" << endl;
+    //    exit(-1);
+    //}
+
     cout << "Usuario: ";
     cin >> usuario;
     cout << "Clave: ";
     cin >> clave;
 
-	// strcpy (mensaje,usuario);
-	// strcat (mensaje,"-");
-	// strcat (mensaje,clave);
-    // bzero((char *) &socket_auth, sizeof(socket_auth));
-    // socket_auth.sin_family = AF_INET;
-    // socket_auth.sin_addr.s_addr = inet_addr(ipAuth);    
-    // if (sendto(miSocketAuth, mensaje, strlen(mensaje), 0, (struct sockaddr *)&socket_auth, sizeof(socket_auth)) == -1){
-    //     cout << "Error en sendto" << endl;
-    //     return false;
-    // }
+	strcpy (mensaje,usuario);
+	strcat (mensaje,"-");
+	strcat (mensaje,clave);
 
-    // bzero((char *)&socket_miAddr, sizeof(socket_miAddr));  
-    // socket_miAddr.sin_family = AF_INET;
-    // socket_miAddr.sin_addr.s_addr = INADDR_ANY;
-    // socket_miAddr.sin_port = htons(puertoAuth);
-    // if (bind(miSocketAuth, (struct sockaddr *) &socket_miAddr, sizeof(socket_miAddr)) == -1){
-    //     cout << "Error en bind()" << endl;
-    //     exit(-1);
-    // }
+    bzero((char *) &socket_auth, sizeof(socket_auth));
+    socket_auth.sin_family = AF_INET;
+    socket_auth.sin_port = htons(puertoAuth);
+    socket_auth.sin_addr.s_addr = inet_addr(ipAuth);
 
-    // char buffer[MAX_LARGO_MENSAJE];
-    // struct sockaddr_in addrEmisor;
-    // socklen_t addrEmisor_tamanio = sizeof(addrEmisor);
-    // bzero(buffer, MAX_LARGO_MENSAJE);
-    // if (recvfrom(miSocketAuth, buffer, MAX_LARGO_MENSAJE, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_tamanio) != -1){
-    //     cout << inet_ntoa(addrEmisor.sin_addr) << " " << buffer << endl;
-    // }else{
-    //     cout << "Error en recvfrom()" << endl;
-    // }
+    if (sendto(miSocketAuth, mensaje, strlen(mensaje), 0, (struct sockaddr *)&socket_auth, sizeof(socket_auth)) == -1){
+        cout << "Error en sendto" << endl;
+        return false;
+    }    
+
+    //char buffer[MAX_LARGO_MENSAJE];
+    //struct sockaddr_in addrEmisor;
+    //socklen_t addrEmisor_tamanio = sizeof(addrEmisor);
+    //bzero(buffer, MAX_LARGO_MENSAJE);
+    //if (recvfrom(miSocketAuth, buffer, MAX_LARGO_MENSAJE, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_tamanio) != -1){
+    //    cout << inet_ntoa(addrEmisor.sin_addr) << " " << buffer << endl;
+    //}else{
+    //    cout << "Error en recvfrom()" << endl;
+    //}
 
     stringstream ss;
     ss << "Autenticacion - usuario: " << usuario << " clave: " << clave;
