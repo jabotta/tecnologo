@@ -242,7 +242,6 @@ bool autenticar(char *usuario, char  *clave){
         return false;
     }
 
-    // //envio socket con los datos para q se autentique el usuario
 	// strcpy (mensaje,usuario);
 	// strcat (mensaje,"-");
 	// strcat (mensaje,clave);
@@ -254,7 +253,6 @@ bool autenticar(char *usuario, char  *clave){
     //     return false;
     // }
 
-    // //escucho la llamada de mi socket
     // bzero((char *)&socket_miAddr, sizeof(socket_miAddr));  
     // socket_miAddr.sin_family = AF_INET;
     // socket_miAddr.sin_addr.s_addr = INADDR_ANY;
@@ -264,7 +262,6 @@ bool autenticar(char *usuario, char  *clave){
     //     exit(-1);
     // }
 
-    // // imprime mensaje que me llega a mi socket
     // char buffer[MAX_LARGO_MENSAJE];
     // struct sockaddr_in addrEmisor;
     // socklen_t addrEmisor_tamanio = sizeof(addrEmisor);

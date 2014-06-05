@@ -1,0 +1,12 @@
+
+2014.6.5 20:1 Redes de Computadoras: Sistema de Mensajeria - puertos 2222 2223 con pids = 30713#3 30715#2 30714#1 
+2014.6.5 20:1 Redes de Computadoras: Sistema de Mensajeria - puertos 2222 2223 con pids = 30783#2 
+2014.6.5 20:2 Redes de Computadoras: Sistema de Mensajeria - puertos 3333 3334 con pids = 30795#3 30797#2 30796#1 * hola
+[2014.6.5 20:2] 192.168.2.102 hola
+
+2014.6.5 20:44 Redes de Computadoras: Sistema de Mensajeria - puertos 2020 2021 con pids = 31363#3 31365#2 31364#1 
+2014.6.5 20:44 Redes de Computadoras: Sistema de Mensajeria - puertos 2000 2001 con pids = 31380#3 31382#2 31381#1 192.168.2.102 hola
+[2014.6.5 20:44] 192.168.2.102 hola
+
+2014.6.5 20:45 Redes de Computadoras: Sistema de Mensajeria - puertos 2020 2021 con pids = 31401#2 
+2014.6.5 20:45 Redes de Computadoras: Sistema de Mensajeria - puertos 2020 2021 con pids = 31413#2 
