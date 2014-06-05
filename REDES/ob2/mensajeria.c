@@ -52,7 +52,7 @@ time_t theTime = time(NULL);
 struct tm *aTime = localtime(&theTime);
 
 // declaracion de funciones
-bool autenticar(char*, char*);
+bool autenticar();
 string nombreArchivo(string);
 void limpiarVariablesEntrada();
 void imprimirMensaje();
@@ -83,21 +83,12 @@ int main(int argc, char * argv[])
 	puertoMensajes = atoi(argv[1]);
 	puertoArchivos = puertoMensajes + 1;
 	ipAuth = argv[2];
-	puertoAuth = atoi(argv[3]);
+	puertoAuth = atoi(argv[3]);	
 
-	cout << "Usuario: ";
-	cin >> usuario;
-	cout << "Clave: ";
-	cin >> clave;
-
-	if(!autenticar(usuario, clave)){
+	if(!autenticar()){
 		cout << "[ERROR]" << endl;
 		exit(-1);
-	}
-
-	stringstream ss;
-    ss << "Autenticacion - usuario: " << usuario << " clave: " << clave;
-    generarLog(ss.str());
+	}	
 	
 	// struct sigaction sa;
  //    memset (&sa, 0, sizeof (sa));
@@ -235,12 +226,17 @@ int main(int argc, char * argv[])
 	
 }
 
-bool autenticar(char *usuario, char  *clave){
+bool autenticar(){
 	miSocketAuth = socket(AF_INET, SOCK_DGRAM, 0);
 	if (miSocketAuth == -1 ){
         cout << "Error en socket() de autenticacion" << endl;
         return false;
     }
+
+    cout << "Usuario: ";
+    cin >> usuario;
+    cout << "Clave: ";
+    cin >> clave;
 
 	// strcpy (mensaje,usuario);
 	// strcat (mensaje,"-");
@@ -271,6 +267,10 @@ bool autenticar(char *usuario, char  *clave){
     // }else{
     //     cout << "Error en recvfrom()" << endl;
     // }
+
+    stringstream ss;
+    ss << "Autenticacion - usuario: " << usuario << " clave: " << clave;
+    generarLog(ss.str());
 
     return true;
 }
