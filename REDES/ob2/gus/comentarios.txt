@@ -1,0 +1,18 @@
+Facultad de Ingenieria - Consejo de Educación Técnico Profesional
+Tecnólogo en Informática - Redes de Computadoras - Curso Primer Semestre 2013
+
+Grupo 6
+Integrantes:
+	Milton Branda       3.373.582-8
+	Gustavo Di Cesare   4.562.742-3
+	María Fernández     4.414.515-7
+	Carlos Nicolini     4.210.625-4
+
+Comentarios:
+	Se realizaron dos sockets con la intención de usar uno para el envío de archivos y otro para el de mensajes.
+	Para ello también se uso un puerto, que lo obtenemos sumandole uno al puerto pasado por parametro.
+	La parte de envío de archivos no esta en funcionamiento, si bien esta implementado el código, el mismo nos da error de "violación de segmento", por lo que nos hace pensar que es un problema de manejo de memoria que debemos revisar.
+	Se bifurco un proceso y este se volvio a bifurcar para tener la posibilidad de escuchar los mensajes entrantes en uno, enviar por otro y descargar archivos por el tercero.
+	Como se dijo arriba, esta implementado para que se realice la transferencia de archivos, pero la misma no esta en funcionamiento.
+	Se modularizó el código y se dividio en diferentes funciones para su mejor comprendimiento.
+	Para los logs se crea un archivo llamado "mensajeria.txt" donde se registra toda la actividad del chat y otro con los archivos que llegan llamado "llegan.txt".
