@@ -227,11 +227,12 @@ int main(int argc, char * argv[])
 }
 
 bool autenticar(){
-	miSocketAuth = socket(AF_INET, SOCK_DGRAM, 0);
+	miSocketAuth = socket(AF_INET, SOCK_STREAM, 0);
 	if (miSocketAuth == -1 ){
         cout << "Error en socket() de autenticacion" << endl;
         return false;
     }
+
 
     //bzero((char *)&socket_miAddr, sizeof(socket_miAddr));  
     //socket_miAddr.sin_family = AF_INET;
@@ -252,10 +253,15 @@ bool autenticar(){
 	strcat (mensaje,"-");
 	strcat (mensaje,clave);
 
+
     bzero((char *) &socket_auth, sizeof(socket_auth));
     socket_auth.sin_family = AF_INET;
     socket_auth.sin_port = htons(puertoAuth);
     socket_auth.sin_addr.s_addr = inet_addr(ipAuth);
+
+int status;
+status = connect(miSocketAuth, (struct sockaddr *)&socket_auth, sizeof(socket_auth));
+if (status == -1)  std::cout << "connect error" ;
 
     if (sendto(miSocketAuth, mensaje, strlen(mensaje), 0, (struct sockaddr *)&socket_auth, sizeof(socket_auth)) == -1){
         cout << "Error en sendto" << endl;
@@ -275,7 +281,7 @@ bool autenticar(){
     stringstream ss;
     ss << "Autenticacion - usuario: " << usuario << " clave: " << clave;
     generarLog(ss.str());
-
+close(miSocketAuth);
     return true;
 }
 
