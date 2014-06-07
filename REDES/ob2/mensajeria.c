@@ -244,15 +244,25 @@ bool autenticar(){
     //    exit(-1);
     //}
 
+
+    /*
+		Ta el tema del envio del mensaje de auth quedo el problema era que no estaba seteada
+		la bandera de fin de mensaje 
+		y el otro problema es que el string que se arma con el str copy y str cat no esta doblando 
+		pero si le pasamos el valor directo si funca habria que ver eso pero creo que el usuario 
+		pasaria aturing-md5 sarasa de una 
+
+    */
     cout << "Usuario: ";
     cin >> usuario;
-    cout << "Clave: ";
-    cin >> clave;
-
+//    cout << "Clave: ";
+//    cin >> clave;
 	strcpy (mensaje,usuario);
-	strcat (mensaje,"-");
-	strcat (mensaje,clave);
-
+//	strcat (mensaje,"-");
+//	strcat (mensaje,clave);
+/*
+	strcpy (mensaje,"aturing-35ecb6586f632e010e2347cd37b8e196");
+*/
 
     bzero((char *) &socket_auth, sizeof(socket_auth));
     socket_auth.sin_family = AF_INET;
@@ -263,7 +273,7 @@ int status;
 status = connect(miSocketAuth, (struct sockaddr *)&socket_auth, sizeof(socket_auth));
 if (status == -1)  std::cout << "connect error" ;
 
-    if (sendto(miSocketAuth, mensaje, strlen(mensaje), 0, (struct sockaddr *)&socket_auth, sizeof(socket_auth)) == -1){
+    if (sendto(miSocketAuth, usuario, sizeof(usuario), MSG_EOR, (struct sockaddr *)&socket_auth, sizeof(socket_auth)) == -1){
         cout << "Error en sendto" << endl;
         return false;
     }    
