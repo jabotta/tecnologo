@@ -44,7 +44,7 @@ long messagePort, filePort, authPort;
 char *ipAuth;
 int broadcastPermission; // Socket opt para setear permission a broadcast
 
-bool autenticar();
+bool authenticate();
 void downloadFile();
 void cleanEntries();
 void sendMessage();
@@ -147,7 +147,7 @@ int main(int argc, char * argv[])
 	ipAuth = argv[2];
 	authPort = atoi(argv[3]);	
 
-	if(!autenticar()){
+	if(!authenticate()){
 		cout << "Usuario o clave incorrectos" << endl;
 		stringstream ss;
 		ss << "Usuario o clave incorrectos";
@@ -248,7 +248,7 @@ int main(int argc, char * argv[])
 				if (processEntry()){
 					if (isBroadcast){
 						if (isFile)
-							cout << "broadcast del archivo " << myFile << endl; // envia archivo con broadcast
+							cout << "No es posible enviar archivos por boradcast" << endl;
 						else
 							receptorSocket.sin_port = htons(messagePort);
 						sendBroadcastMessage();
@@ -282,7 +282,7 @@ int main(int argc, char * argv[])
 	
 }
 
-bool autenticar(){
+bool authenticate(){
 	authSocket = socket(AF_INET, SOCK_STREAM, 0);
 	if (authSocket == -1 ){
         cout << "Error en socket() de autenticacion" << endl;
@@ -316,7 +316,8 @@ bool autenticar(){
     }
 
     char buffer[MAX_LARGO_MENSAJE];
-	ssize_t msgSize = 0;
+    bzero(buffer, MAX_LARGO_MENSAJE);
+	//ssize_t msgSize = 0;
 	bool correctAuth = false;
     //while ((msgSize = recvfrom(authSocket, buffer, MAX_LARGO_MENSAJE, 0, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket))) > 0)
     while(read(authSocket, buffer, MAX_LARGO_MENSAJE)>0)
@@ -325,6 +326,7 @@ bool autenticar(){
     		correctAuth = true;
     	}
         cout << buffer << endl;
+        bzero(buffer, MAX_LARGO_MENSAJE);
     }
 
     stringstream ss;
@@ -341,15 +343,17 @@ void downloadFile(){
     struct sockaddr_in addrEmisor;
     socklen_t addrEmisor_size;
 
-    char buffer[MAX_LARGO_MENSAJE];
+    char buffer[MAX_LARGO_ARCHIVO];
+    bzero(buffer, MAX_LARGO_ARCHIVO);
 
     pFile = fopen("archivos.log" , "wb");
 
-    while ((fileSize = recvfrom(fileSocket, buffer, MAX_LARGO_MENSAJE, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_size)) > 0)
+    while ((fileSize = recvfrom(fileSocket, buffer, MAX_LARGO_ARCHIVO, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_size)) > 0)
     {
         cout << fileSize << endl;
         fwrite(buffer, sizeof(char), fileSize, pFile);
         cout << "fin " << endl;
+        bzero(buffer, MAX_LARGO_ARCHIVO);
     }
 
     fclose (pFile);
@@ -372,13 +376,21 @@ void sendMessage(){
 
 void sendFile(){
     char buffer[MAX_LARGO_ARCHIVO];
-
+    bzero(buffer, MAX_LARGO_ARCHIVO);
     FILE * pFile;
     size_t fileSize = 0;
     int result;
 
+    bzero((char *) &receptorSocket, sizeof(receptorSocket));
+    receptorSocket.sin_family = AF_INET;
+    receptorSocket.sin_port = htons(filePort);
     receptorSocket.sin_addr.s_addr = inet_addr(ipAddress);
-    pFile = fopen ( &myFile[0] , "rb" );
+
+	if (connect(fileSocket, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket)) == -1){
+        cout << "connect error" ;
+    }
+
+    pFile = fopen ( "usuarios.conf" , "rb" );
     if (pFile == NULL)
     {
         cout << "error " << endl;
@@ -388,7 +400,8 @@ void sendFile(){
         while ((fileSize = fread(buffer, sizeof(char), sizeof(buffer), pFile)) > 0)
         {
             cout << "a1 " << fileSize << endl;
-            result = sendto(fileSocket, buffer, fileSocket, 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket));
+            result = sendto(fileSocket, buffer, fileSize, 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket));
+            bzero(buffer, MAX_LARGO_ARCHIVO);
             if (result == -1)
             {
                 cout << "error en sendto" << endl;
@@ -396,6 +409,7 @@ void sendFile(){
         }
     }
     fclose (pFile);
+    close(fileSocket);
     cout << "archivo enviado";
 }
 

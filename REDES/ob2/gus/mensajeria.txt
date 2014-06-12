@@ -10,3 +10,6 @@
 
 2014.6.5 20:45 Redes de Computadoras: Sistema de Mensajeria - puertos 2020 2021 con pids = 31401#2 
 2014.6.5 20:45 Redes de Computadoras: Sistema de Mensajeria - puertos 2020 2021 con pids = 31413#2 
+2014.6.12 19:8 Redes de Computadoras: Sistema de Mensajeria - puertos 2000 2001 con pids = 3476#3 3478#2 3477#1 127.0.0.1 &file erfg
+
+
