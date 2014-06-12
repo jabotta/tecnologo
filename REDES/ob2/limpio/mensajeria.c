@@ -39,7 +39,8 @@ char myMessage[MAX_LARGO_MENSAJE];
 char myFile[MAX_LARGO_ARCHIVO];
 char user[100];
 char password[100];
-long messagePort, filePort, puertoAuth,authPort;
+char loginMsg[100];
+long messagePort, filePort, authPort;
 char *ipAuth;
 int broadcastPermission; // Socket opt para setear permission a broadcast
 
@@ -146,13 +147,13 @@ int main(int argc, char * argv[])
 	ipAuth = argv[2];
 	authPort = atoi(argv[3]);	
 
-	/*if(!autenticar()){
+	if(!autenticar()){
 		cout << "Usuario o clave incorrectos" << endl;
 		stringstream ss;
 		ss << "Usuario o clave incorrectos";
 		WriteLogFile(ss.str());
 		exit(-1);
-	}	*/
+	}
 	
 	// Estructuras para el manejo de Senhales
 	// Deberia haber un manejador de señales para cada hijo si hacen cosas distintas
@@ -288,32 +289,49 @@ bool autenticar(){
         return false;
     }
 
+    bzero((char *) &authorizationSocket, sizeof(authorizationSocket));
+    authorizationSocket.sin_family = AF_INET;
+    authorizationSocket.sin_port = htons(authPort);
+    authorizationSocket.sin_addr.s_addr = inet_addr(ipAuth);
+
+    if (connect(authSocket, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket)) == -1){
+        cout << "connect error" ;
+    }
 
     cout << "Usuario: ";
     cin >> user;
     cout << "Clave: ";
     cin >> password;
-	strcpy (myMessage,user);
 
-    bzero((char *) &authorizationSocket, sizeof(authorizationSocket));
-    authorizationSocket.sin_family = AF_INET;
-    authorizationSocket.sin_port = htons(puertoAuth);
-    authorizationSocket.sin_addr.s_addr = inet_addr(ipAuth);
 
-	int status;
-	status = connect(authSocket, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket));
-	if (status == -1)  std::cout << "connect error" ;
+	
+    strcpy (loginMsg,user);
+    strcat (loginMsg,"-");
+    strcat (loginMsg,password);
 
-    if (sendto(authSocket, user, sizeof(user), MSG_EOR, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket)) == -1){
+
+    if (sendto(authSocket, loginMsg, sizeof(loginMsg), MSG_EOR, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket)) == -1){
         cout << "Error en sendto" << endl;
         return false;
-    }    
+    }
+
+    char buffer[MAX_LARGO_MENSAJE];
+	ssize_t msgSize = 0;
+	bool correctAuth = false;
+    //while ((msgSize = recvfrom(authSocket, buffer, MAX_LARGO_MENSAJE, 0, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket))) > 0)
+    while(read(authSocket, buffer, MAX_LARGO_MENSAJE)>0)
+    {
+    	if(buffer[0] == 'S' && buffer[1] == 'I'){
+    		correctAuth = true;
+    	}
+        cout << buffer << endl;
+    }
 
     stringstream ss;
     ss << "Autenticacion - usuario: " << user << " clave: " << password;
     WriteLogFile(ss.str());
 	close(authSocket);
-    return true;
+    return correctAuth;
 }
 
 void downloadFile(){
