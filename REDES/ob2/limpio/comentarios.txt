@@ -1,0 +1,8 @@
+Facultad de Ingenieria - Consejo de Educación Técnico Profesional
+Tecnólogo en Informática - Redes de Computadoras - Curso Primer Semestre 2014
+
+Integrantes:
+	Aqui Debe ir Nombre, Apellido y Docuemtno de cada integrante del grupo
+
+Comentarios:
+	Aqui deben figurar comentarios sobre la implementación, errores que surjan, lo que sea que consideren relevante sobre la solución. 

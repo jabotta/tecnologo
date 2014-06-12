@@ -1,0 +1,250 @@
+[12/6/2014 16:46] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8920
+[12/6/2014 16:46] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8921
+[12/6/2014 16:46] - [46m[31m[8921] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:46] - [46m[31m[8920] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:46] - [46m[31m[8922] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:47] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8983
+[12/6/2014 16:47] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8984
+[12/6/2014 16:47] - [46m[31m[8984] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:47] - [46m[31m[8983] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:47] - [46m[31m[8985] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:48] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9018
+[12/6/2014 16:48] - 
+[12/6/2014 16:48] - [46m[31m[9018] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:48] - [46m[31m[9019] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:48] - [46m[31m[9020] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:49] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9061
+[12/6/2014 16:49] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9062
+[12/6/2014 16:50] - [46m[31m[9062] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:50] - [46m[31m[9063] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:50] - [46m[31m[9061] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:50] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9108
+[12/6/2014 16:50] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9109
+[12/6/2014 16:50] - [46m[31m[9108] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:50] - [46m[31m[9109] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:50] - [46m[31m[9110] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:51] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9144
+[12/6/2014 16:51] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9145
+[12/6/2014 16:51] - [46m[31m[9144] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:51] - [46m[31m[9145] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:51] - [46m[31m[9146] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:51] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9179
+[12/6/2014 16:51] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9180
+[12/6/2014 16:53] - [46m[31m[9180] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:53] - [46m[31m[9179] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:53] - [46m[31m[9181] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:53] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9217
+[12/6/2014 16:53] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9218
+[12/6/2014 16:53] - [46m[31m[9218] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:53] - [46m[31m[9217] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:53] - [46m[31m[9219] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 16:59] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9396
+[12/6/2014 16:59] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9397
+[12/6/2014 17:0] - [46m[31m[9397] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:0] - [46m[31m[9396] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:0] - [46m[31m[9398] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:0] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9443
+[12/6/2014 17:0] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9444
+[12/6/2014 17:2] - [46m[31m[9444] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:2] - [46m[31m[9443] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:2] - [46m[31m[9445] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:2] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9491
+[12/6/2014 17:2] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9492
+[12/6/2014 17:3] - [46m[31m[9491] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:3] - [46m[31m[9492] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:3] - [46m[31m[9493] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:3] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9534
+[12/6/2014 17:3] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9535
+[12/6/2014 17:4] - [46m[31m[9534] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:4] - [46m[31m[9536] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:4] - [46m[31m[9535] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:4] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9572
+[12/6/2014 17:4] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9573
+[12/6/2014 17:5] - [46m[31m[9573] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:5] - [46m[31m[9572] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:5] - [46m[31m[9574] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:5] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9621
+[12/6/2014 17:5] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9622
+[12/6/2014 17:15] - [46m[31m[9622] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:15] - [46m[31m[9621] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:15] - [46m[31m[9623] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:17] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9707
+[12/6/2014 17:17] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9708
+[12/6/2014 17:18] - [46m[31m[9708] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:18] - [46m[31m[9707] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:18] - [46m[31m[9709] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:18] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9745
+[12/6/2014 17:18] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9746
+[12/6/2014 17:18] - [46m[31m[9745] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:18] - [46m[31m[9746] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:18] - [46m[31m[9747] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:19] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9764
+[12/6/2014 17:19] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9765
+[12/6/2014 17:19] - [46m[31m[9764] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:19] - [46m[31m[9765] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:19] - [46m[31m[9766] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:27] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9916
+[12/6/2014 17:27] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9917
+[12/6/2014 17:28] - [46m[31m[9917] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:28] - [46m[31m[9918] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:28] - [46m[31m[9916] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:28] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9963
+[12/6/2014 17:28] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9964
+[12/6/2014 17:31] - [46m[31m[9965] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:31] - [46m[31m[9965] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:31] - [46m[31m[9963] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:31] - [46m[31m[9964] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:31] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10000
+[12/6/2014 17:31] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10001
+[12/6/2014 17:31] - [46m[31m[10000] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:31] - [46m[31m[10001] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:31] - [46m[31m[10002] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:31] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10020
+[12/6/2014 17:31] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10021
+[12/6/2014 17:32] - [46m[31m[10022] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:32] - [46m[31m[10022] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:32] - [46m[31m[10020] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:32] - [46m[31m[10021] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:32] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10045
+[12/6/2014 17:32] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10046
+[12/6/2014 17:32] - [46m[31m[10047] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:32] - [46m[31m[10047] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:32] - [46m[31m[10045] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:32] - [46m[31m[10046] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:32] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10069
+[12/6/2014 17:32] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10070
+[12/6/2014 17:33] - [46m[31m[10070] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:33] - [46m[31m[10069] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:33] - [46m[31m[10071] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:41] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10202
+[12/6/2014 17:41] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10203
+[12/6/2014 17:41] - [46m[31m[10204] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:41] - [46m[31m[10204] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:41] - [46m[31m[10202] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:41] - [46m[31m[10203] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:42] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10250
+[12/6/2014 17:42] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10251
+[12/6/2014 17:43] - [46m[31m[10252] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:43] - [46m[31m[10252] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:43] - [46m[31m[10250] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:43] - [46m[31m[10251] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:44] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10307
+[12/6/2014 17:44] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10308
+[12/6/2014 17:44] - [46m[31m[10309] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:44] - [46m[31m[10309] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:44] - [46m[31m[10307] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:44] - [46m[31m[10308] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:44] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10343
+[12/6/2014 17:44] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10344
+[12/6/2014 17:44] - [46m[31m[10343] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:44] - [46m[31m[10344] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:44] - [46m[31m[10345] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:45] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10377
+[12/6/2014 17:45] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10378
+[12/6/2014 17:45] - [46m[31m[10377] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:45] - [46m[31m[10378] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:45] - [46m[31m[10379] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:46] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10402
+[12/6/2014 17:46] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10403
+[12/6/2014 17:50] - [46m[31m[10403] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:50] - [46m[31m[10404] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:50] - [46m[31m[10402] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 17:51] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 10477
+[12/6/2014 17:51] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 10478
+[12/6/2014 17:51] - [46m[31m[10483] SIGSEGV violacion de segmento[00m
+
+[12/6/2014 17:51] - [46m[31m[10483] SIGSEGV violacion de segmento[00m
+
