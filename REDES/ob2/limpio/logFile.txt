@@ -429,3 +429,250 @@
 
 [12/6/2014 20:23] - [46m[31m[4262] SIGINT CTRL+C recibido[00m
 
+[12/6/2014 21:10] - Autenticacion - usuario: aturing-35ecb6586f632e010e2347cd37b8e196 clave: asd
+[12/6/2014 21:10] - Usuario o clave incorrectos
+[12/6/2014 21:11] - Autenticacion - usuario: auturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 21:11] - Usuario o clave incorrectos
+[12/6/2014 21:11] - Autenticacion - usuario: auturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 21:11] - Usuario o clave incorrectos
+[12/6/2014 21:11] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 21:11] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2724
+[12/6/2014 21:11] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2734
+[12/6/2014 21:15] - [46m[31m[2724] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:15] - [46m[31m[2734] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:15] - [46m[31m[2735] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:17] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 21:17] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2885
+[12/6/2014 21:17] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2901
+[12/6/2014 21:20] - Autenticacion - usuario: alovelace clave: bd5f3cbebf74ce4f5126e4536fdacb80
+[12/6/2014 21:20] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3047
+[12/6/2014 21:20] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3072
+[12/6/2014 21:22] - [46m[31m[2901] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:22] - [46m[31m[2885] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:22] - [46m[31m[2902] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:22] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 21:22] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3141
+[12/6/2014 21:22] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3149
+[12/6/2014 21:22] - [46m[31m[3072] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:22] - [46m[31m[3073] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:22] - [46m[31m[3047] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 21:23] - Autenticacion - usuario: alovelace clave: bd5f3cbebf74ce4f5126e4536fdacb80
+[12/6/2014 21:23] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3169
+[12/6/2014 21:23] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3172
+[12/6/2014 21:23] - Autenticacion - usuario: alovelace clave: bd5f3cbebf74ce4f5126e4536fdacb80
+[12/6/2014 21:23] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3197
+[12/6/2014 21:23] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3205
+[12/6/2014 21:25] - Autenticacion - usuario: alovelace clave: bd5f3cbebf74ce4f5126e4536fdacb80
+[12/6/2014 21:25] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3236
+[12/6/2014 21:25] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3238
+[12/6/2014 23:15] - [46m[31m[3149] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:15] - [46m[31m[3141] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:15] - [46m[31m[3150] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:15] - [46m[31m[3236] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:15] - [46m[31m[3239] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:15] - [46m[31m[3238] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:17] - Autenticacion - usuario: alovelace clave: bd5f3cbebf74ce4f5126e4536fdacb8
+[12/6/2014 23:17] - Usuario o clave incorrectos
+[12/6/2014 23:17] - Autenticacion - usuario: alovelace clave: bd5f3cbebf74ce4f5126e4536fdacb8
+[12/6/2014 23:17] - Usuario o clave incorrectos
+[12/6/2014 23:17] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 23:17] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 6565
+[12/6/2014 23:17] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 6579
+[12/6/2014 23:20] - [46m[31m[6579] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:20] - [46m[31m[6565] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:20] - [46m[31m[6580] SIGINT CTRL+C recibido[00m
+
+[12/6/2014 23:21] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[12/6/2014 23:21] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 6709
+[12/6/2014 23:21] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 6711
+[13/6/2014 8:15] - [46m[31m[6712] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:15] - [46m[31m[6711] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:15] - [46m[31m[6709] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:16] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:16] - Usuario o clave incorrectos
+[13/6/2014 8:16] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:16] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8476
+[13/6/2014 8:16] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8478
+[13/6/2014 8:21] - [46m[31m[8476] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:21] - [46m[31m[8479] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:21] - [46m[31m[8478] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:23] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:23] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8559
+[13/6/2014 8:23] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8569
+[13/6/2014 8:24] - [46m[31m[8570] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:24] - [46m[31m[8570] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:25] - [46m[31m[8569] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:25] - [46m[31m[8559] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:26] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:26] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8628
+[13/6/2014 8:26] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8632
+[13/6/2014 8:26] - [46m[31m[8633] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:26] - [46m[31m[8633] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:26] - [46m[31m[8628] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:26] - [46m[31m[8632] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:26] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:26] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8664
+[13/6/2014 8:26] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8668
+[13/6/2014 8:27] - [46m[31m[8669] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:27] - [46m[31m[8669] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:30] - [46m[31m[8668] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:30] - [46m[31m[8664] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:30] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:30] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8790
+[13/6/2014 8:30] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8794
+[13/6/2014 8:31] - [46m[31m[8795] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:31] - [46m[31m[8795] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:34] - [46m[31m[8794] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:34] - [46m[31m[8790] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:35] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:35] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8919
+[13/6/2014 8:35] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8922
+[13/6/2014 8:35] - [46m[31m[8923] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:35] - [46m[31m[8923] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:36] - [46m[31m[8919] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:36] - [46m[31m[8922] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:36] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:36] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 8976
+[13/6/2014 8:36] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 8978
+[13/6/2014 8:40] - [46m[31m[8978] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:40] - [46m[31m[8976] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:40] - [46m[31m[8979] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:40] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:40] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9054
+[13/6/2014 8:40] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9064
+[13/6/2014 8:40] - [46m[31m[9065] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:40] - [46m[31m[9065] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:41] - [46m[31m[9054] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:41] - [46m[31m[9064] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:41] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:41] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9095
+[13/6/2014 8:41] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9097
+[13/6/2014 8:41] - [46m[31m[9098] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:41] - [46m[31m[9098] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:41] - [46m[31m[9097] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:41] - [46m[31m[9095] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:42] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:42] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9167
+[13/6/2014 8:42] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9177
+[13/6/2014 8:44] - [46m[31m[9167] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:44] - [46m[31m[9177] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:44] - [46m[31m[9178] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:44] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:44] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9246
+[13/6/2014 8:44] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9255
+[13/6/2014 8:45] - [46m[31m[9255] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:45] - [46m[31m[9246] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:45] - [46m[31m[9256] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:45] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:45] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9315
+[13/6/2014 8:45] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9325
+[13/6/2014 8:48] - [46m[31m[9315] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:48] - [46m[31m[9325] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:48] - [46m[31m[9326] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:51] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:51] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9516
+[13/6/2014 8:51] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9527
+[13/6/2014 8:51] - [46m[31m[9528] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:51] - [46m[31m[9528] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:51] - [46m[31m[9527] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:51] - [46m[31m[9516] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:51] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:51] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9588
+[13/6/2014 8:51] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9599
+[13/6/2014 8:51] - [46m[31m[9600] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:51] - [46m[31m[9600] SIGSEGV violacion de segmento[00m
+
+[13/6/2014 8:52] - [46m[31m[9588] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:52] - [46m[31m[9599] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:54] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:54] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9760
+[13/6/2014 8:54] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9772
+[13/6/2014 8:57] - [46m[31m[9760] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:57] - [46m[31m[9772] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:57] - [46m[31m[9773] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 8:57] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[13/6/2014 8:57] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 9851
+[13/6/2014 8:57] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 9857
+[13/6/2014 9:0] - [46m[31m[9857] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 9:0] - [46m[31m[9851] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 9:0] - [46m[31m[9858] SIGINT CTRL+C recibido[00m
+
+[13/6/2014 9:12] - [46m[31m[3173] SIGTERM Terminacion de programa[00m
+
+[13/6/2014 9:12] - [46m[31m[3206] SIGTERM Terminacion de programa[00m
+

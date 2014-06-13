@@ -186,10 +186,7 @@ int main(int argc, char * argv[])
 		cout << "Error en socket() de mensajes" << endl;
 		exit(-1);
 	}
-   	if ((fileSocket = socket(AF_INET, SOCK_DGRAM, 0)) == -1 ){
-		cout << "Error en socket() de archivos" << endl;
-		exit(-1);
-	}
+
 
 	bzero((char *)&tramsmissorSocket, sizeof(tramsmissorSocket));
 	tramsmissorSocket.sin_family = AF_INET;
@@ -254,7 +251,7 @@ int main(int argc, char * argv[])
 						sendBroadcastMessage();
 					}else{
 						if (isFile){
-							receptorSocket.sin_port = htons(fileSocket);
+							receptorSocket.sin_port = htons(filePort);
 							sendFile();
 						}else{
 							receptorSocket.sin_port = htons(messagePort);
@@ -269,6 +266,11 @@ int main(int argc, char * argv[])
 
 		if (escritura > 0){ // descarga archivo
 			tramsmissorSocket.sin_port = htons(filePort);
+			if ((fileSocket = socket(AF_INET, SOCK_DGRAM, 0)) == -1 ){
+				cout << "Error en socket() de archivos" << endl;
+				exit(-1);
+			}
+
 			if (bind(fileSocket, (struct sockaddr *) &tramsmissorSocket, sizeof(tramsmissorSocket)) == -1){
 				cout << "Error en bind()" << endl;
 				exit(-1);
@@ -295,7 +297,7 @@ bool authenticate(){
     authorizationSocket.sin_addr.s_addr = inet_addr(ipAuth);
 
     if (connect(authSocket, (struct sockaddr *)&authorizationSocket, sizeof(authorizationSocket)) == -1){
-        cout << "connect error" ;
+        cout << "connect error on autenticacion" ;
     }
 
     cout << "Usuario: ";
@@ -385,15 +387,22 @@ void sendFile(){
     receptorSocket.sin_family = AF_INET;
     receptorSocket.sin_port = htons(filePort);
     receptorSocket.sin_addr.s_addr = inet_addr(ipAddress);
-
+	
+	if ((fileSocket = socket(AF_INET, SOCK_DGRAM, 0)) == -1 ){
+			cout << "Error en socket() de archivos" << endl;
+			exit(-1);
+	}
 	if (connect(fileSocket, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket)) == -1){
-        cout << "connect error" ;
-    }
+		
+        cout << "connect error send 2" ;
 
-    pFile = fopen ( "usuarios.conf" , "rb" );
+    }
+    //scanf("%s", myFile);
+
+    pFile = fopen ( "./logFile.txt" , "r+" );
     if (pFile == NULL)
     {
-        cout << "error " << endl;
+        cout << "error open file" << endl;
     }
     else
     {
@@ -410,7 +419,7 @@ void sendFile(){
     }
     fclose (pFile);
     close(fileSocket);
-    cout << "archivo enviado";
+    cout << "archivo enviado"<<endl;
 }
 
 void sendBroadcastMessage(){
