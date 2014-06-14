@@ -26,17 +26,18 @@
 
 #define MAX_LARGO_MENSAJE 255
 #define MAX_LARGO_ARCHIVO 65535
-#define MAX_LARGO_IP 16
-
+#define MAX_LARGO_IP 16 
+#define MAX_LARGO_USERNAME 100
 using namespace std;
 
 //variables
 int messageSocket, fileSocket, authSocket;
 struct sockaddr_in tramsmissorSocket, receptorSocket, authorizationSocket;
 bool isFile, isBroadcast;
-char ipAddress[MAX_LARGO_IP];
+char ipAddress[MAX_LARGO_IP]; 
 char myMessage[MAX_LARGO_MENSAJE];
-char myFile[MAX_LARGO_ARCHIVO];
+char userName[MAX_LARGO_USERNAME];
+char * myFile ;
 char user[100];
 char password[100];
 char loginMsg[100];
@@ -153,6 +154,9 @@ int main(int argc, char * argv[])
 		ss << "Usuario o clave incorrectos";
 		WriteLogFile(ss.str());
 		exit(-1);
+	}else{
+
+		cout<<"Bienvenido "<<userName<<endl;
 	}
 	
 	// Estructuras para el manejo de Senhales
@@ -170,7 +174,7 @@ int main(int argc, char * argv[])
 	signal(SIGALRM, SIG_IGN);
 	// **********************************
 	
-	cout << "\33[34mRedes de Computadoras 2014\33[39m: Sistema de Mensajeria.\nEscuchando en el puerto " << argv[1] << ".\nProceso de pid: " << getpid() << ".\n";
+//	cout << "\33[34mRedes de Computadoras 2014\33[39m: Sistema de Mensajeria.\nEscuchando en el puerto " << argv[1] << ".\nProceso de pid: " << getpid() << ".\n";
 	
 	// Se debe Bifurcar el Programa
 	// Al iniciar la parte que recibe imprimir lo siguiente descomentandolo
@@ -248,7 +252,7 @@ int main(int argc, char * argv[])
 							cout << "No es posible enviar archivos por boradcast" << endl;
 						else
 							receptorSocket.sin_port = htons(messagePort);
-						sendBroadcastMessage();
+							sendBroadcastMessage();
 					}else{
 						if (isFile){
 							receptorSocket.sin_port = htons(filePort);
@@ -306,7 +310,6 @@ bool authenticate(){
     cin >> password;
 
 
-	
     strcpy (loginMsg,user);
     strcat (loginMsg,"-");
     strcat (loginMsg,password);
@@ -326,13 +329,19 @@ bool authenticate(){
     {
     	if(buffer[0] == 'S' && buffer[1] == 'I'){
     		correctAuth = true;
+    		int i =4;
+    		while(buffer[i]!='\0'){
+    			userName [i-4] = buffer[i];
+    			i++;
+    		}
     	}
-        cout << buffer << endl;
+	
         bzero(buffer, MAX_LARGO_MENSAJE);
     }
 
     stringstream ss;
     ss << "Autenticacion - usuario: " << user << " clave: " << password;
+   
     WriteLogFile(ss.str());
 	close(authSocket);
     return correctAuth;
@@ -365,7 +374,8 @@ void downloadFile(){
 void cleanEntries(){
     bzero(ipAddress, MAX_LARGO_IP);
     bzero(myMessage, MAX_LARGO_MENSAJE);
-    bzero(myFile, MAX_LARGO_ARCHIVO);
+    //bzero(myFile, MAX_LARGO_ARCHIVO);
+    myFile = NULL;
 }
 
 void sendMessage(){
@@ -398,8 +408,8 @@ void sendFile(){
 
     }
     //scanf("%s", myFile);
-
-    pFile = fopen ( "./logFile.txt" , "r+" );
+    cout<<"'"<<myFile<<"'"<<endl;
+    pFile = fopen ( myFile , "r+" );
     if (pFile == NULL)
     {
         cout << "error open file" << endl;
@@ -429,6 +439,7 @@ void sendBroadcastMessage(){
         cout << "Error en setsockopt" << endl;
     }
     receptorSocket.sin_addr.s_addr = inet_addr("255.255.255.255");
+
     if (sendto(messageSocket, myMessage, strlen(myMessage), 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket)) == -1)
     {
         cout << "Error en sendto de broadcast" << endl;
@@ -484,16 +495,36 @@ bool processEntry(){
                         position+=6;
                     }
                 }
+                if(isFile)
+                	myFile = new char [((signed)strlen(inputString))-(position)];        
+                else{
 
-                // extrae el nombre del archivo o el mensaje de la entrada
-                for (int i = position; i <= (signed)strlen(inputString); i++)
+                	int index =0;
+					while(user[index]!='\0'){
+
+						//myMessage[index] = user[index]; 
+						index = index+1;
+
+					}
+
+					strcat(myMessage,user);
+					strcat(myMessage," dice : ");
+					n = strlen(myMessage); 
+                }
+                for (int i = position; i < (signed)strlen(inputString)-1; i++)
                 {
-                    if (isFile)
+                    if (isFile){
                         myFile[n] = inputString[i];
-                    else
+                    }else
+                        
                         myMessage[n] = inputString[i];
                     n++;
                 }
+                
+                if(isFile)
+                	myFile[n]='\0';
+                else
+                	myMessage[n]='\0';
                 return true;
             }
         }
