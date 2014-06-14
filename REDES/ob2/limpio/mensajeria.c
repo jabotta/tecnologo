@@ -408,7 +408,7 @@ void sendFile(){
 
     }
     //scanf("%s", myFile);
-    cout<<"'"<<myFile<<"'"<<endl;
+//    cout<<"'"<<myFile<<"'"<<endl;
     pFile = fopen ( myFile , "r+" );
     if (pFile == NULL)
     {
