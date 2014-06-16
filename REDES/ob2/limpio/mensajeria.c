@@ -512,7 +512,7 @@ bool processEntry(){
                 
                 if(isFile)
                 	myFile[n]='\0';
-                else if(!isBroadcast)
+                else 
                 	myMessage[n]='\n';
                 return true;
             }
