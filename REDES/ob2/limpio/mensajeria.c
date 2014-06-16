@@ -208,8 +208,6 @@ int main(int argc, char * argv[])
 
 	//lector
 	if (accion == 0){
-
-		printf("\33[34mRx\33[39m: Iniciada parte que recepciona mensajes. Pid %d\n", getpid());
 		stringstream ss;
 		ss << "\33[34mRx\33[39m: Iniciada parte que recepciona mensajes. Pid " << getpid();
 		WriteLogFile(ss.str());
@@ -230,8 +228,7 @@ int main(int argc, char * argv[])
 
 	if (accion > 0)
 	{
-    	printf("\33[34mTx\33[39m: Iniciada parte que transmite mensajes. Pid %d\n", getpid());
-		stringstream ss;
+ 		stringstream ss;
 		ss << "\33[34mRx\33[39m: Iniciada parte que transmite mensajes. Pid " << getpid();
 		WriteLogFile(ss.str());
 		
@@ -338,7 +335,7 @@ bool authenticate(){
 	
         bzero(buffer, MAX_LARGO_MENSAJE);
     }
-
+    
     stringstream ss;
     ss << "Autenticacion - usuario: " << user << " clave: " << password;
    
@@ -374,16 +371,17 @@ void downloadFile(){
 void cleanEntries(){
     bzero(ipAddress, MAX_LARGO_IP);
     bzero(myMessage, MAX_LARGO_MENSAJE);
-    //bzero(myFile, MAX_LARGO_ARCHIVO);
-    myFile = NULL;
+   
 }
 
 void sendMessage(){
+     
     receptorSocket.sin_addr.s_addr = inet_addr(ipAddress);
+ 
     if (sendto(messageSocket, myMessage, strlen(myMessage), 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket)) == -1)
     {
         cout << "Error en sendto" << endl;
-    }
+    } 
 }
 
 void sendFile(){
@@ -407,8 +405,7 @@ void sendFile(){
         cout << "connect error send 2" ;
 
     }
-    //scanf("%s", myFile);
-//    cout<<"'"<<myFile<<"'"<<endl;
+
     pFile = fopen ( myFile , "r+" );
     if (pFile == NULL)
     {
@@ -439,7 +436,7 @@ void sendBroadcastMessage(){
         cout << "Error en setsockopt" << endl;
     }
     receptorSocket.sin_addr.s_addr = inet_addr("255.255.255.255");
-
+   
     if (sendto(messageSocket, myMessage, strlen(myMessage), 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket)) == -1)
     {
         cout << "Error en sendto de broadcast" << endl;
@@ -499,14 +496,6 @@ bool processEntry(){
                 	myFile = new char [((signed)strlen(inputString))-(position)];        
                 else{
 
-                	int index =0;
-					while(user[index]!='\0'){
-
-						//myMessage[index] = user[index]; 
-						index = index+1;
-
-					}
-
 					strcat(myMessage,user);
 					strcat(myMessage," dice : ");
 					n = strlen(myMessage); 
@@ -523,8 +512,8 @@ bool processEntry(){
                 
                 if(isFile)
                 	myFile[n]='\0';
-                else
-                	myMessage[n]='\0';
+                else if(!isBroadcast)
+                	myMessage[n]='\n';
                 return true;
             }
         }
