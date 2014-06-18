@@ -354,14 +354,20 @@ void downloadFile(){
     char buffer[MAX_LARGO_ARCHIVO];
     bzero(buffer, MAX_LARGO_ARCHIVO);
 
-    pFile = fopen("archivos.log" , "wb");
-
+   
+    bool isCreated = false;
     while ((fileSize = recvfrom(fileSocket, buffer, MAX_LARGO_ARCHIVO, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_size)) > 0)
-    {
-        cout << fileSize << endl;
-        fwrite(buffer, sizeof(char), fileSize, pFile);
-        cout << "fin " << endl;
-        bzero(buffer, MAX_LARGO_ARCHIVO);
+    {	
+    	if(!isCreated){
+    		
+    		pFile = fopen(buffer , "wb"); 
+    		bzero(buffer, MAX_LARGO_ARCHIVO);
+    		isCreated = true;
+    	}else{
+        	fwrite(buffer, sizeof(char), fileSize, pFile);
+        	cout << "fin " << endl;
+        	bzero(buffer, MAX_LARGO_ARCHIVO);
+    	} 	
     }
 
     fclose (pFile);
@@ -412,10 +418,22 @@ void sendFile(){
         cout << "error open file" << endl;
     }
     else
-    {
+    {	
+    	//rodro
+    	char * name = new char[strlen(myFile)];
+     	
+    	strcpy(name,myFile); 
+
+    	result = sendto(fileSocket, name, strlen(name), 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket));
+        bzero(buffer, MAX_LARGO_ARCHIVO);
+        if (result == -1)
+        {
+        cout << "error en sendto" << endl;
+        }
+
         while ((fileSize = fread(buffer, sizeof(char), sizeof(buffer), pFile)) > 0)
         {
-            cout << "a1 " << fileSize << endl;
+           
             result = sendto(fileSocket, buffer, fileSize, 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket));
             bzero(buffer, MAX_LARGO_ARCHIVO);
             if (result == -1)
@@ -423,6 +441,7 @@ void sendFile(){
                 cout << "error en sendto" << endl;
             }
         }
+        
     }
     fclose (pFile);
     close(fileSocket);
