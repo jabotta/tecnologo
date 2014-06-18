@@ -1,6 +1,7 @@
 #ifndef USERCONTROLLER_H
 #define USERCONTROLLER_H
-class UserController{
+#include "IUserController.h"
+class UserController : IUserController{
 	
 
 };
