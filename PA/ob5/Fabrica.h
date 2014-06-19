@@ -1,7 +1,7 @@
 #ifndef FABRICA_H
 #define FABRICA_H
-#include "RecursoControler.h"
-#include "UsuarioControler.h"
+#include "RecursoControlador.h"
+#include "UsuarioControlador.h"
 
 class Fabrica {
 	
