@@ -12,7 +12,7 @@ class Archivo :public Recurso{
 	public:
 		Archivo();
 		Archivo(Archivo &);
-		Archivo(DataArchivo);
+		Archivo(DataArchivo &);
 		~Archivo();
 
 

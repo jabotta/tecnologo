@@ -10,7 +10,7 @@ class  Carpeta: public Recurso{
 		//Constructores
 		Carpeta();
 		Carpeta(Carpeta &);
-		Carpeta(DataCarpeta);
+		Carpeta(DataCarpeta &);
 
 		//Destructor
 		~Carpeta();
