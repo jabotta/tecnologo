@@ -441,6 +441,11 @@ void sendFile(){
                 cout << "error en sendto" << endl;
             }
         }
+        result = sendto(fileSocket, buffer, 0, 0, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket));
+        if (result == -1)
+        {
+                cout << "error en sendto" << endl;
+        }
         
     }
     fclose (pFile);

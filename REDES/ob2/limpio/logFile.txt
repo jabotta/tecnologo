@@ -1821,3 +1821,30 @@
 
 [20/6/2014 13:37] - [46m[31m[2393] SIGINT CTRL+C recibido[00m
 
+[20/6/2014 13:44] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 13:44] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2458
+[20/6/2014 13:44] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2460
+[20/6/2014 14:25] - [46m[31m[2460] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:25] - [46m[31m[2458] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:25] - [46m[31m[2461] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:26] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 14:26] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2586
+[20/6/2014 14:26] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2590
+[20/6/2014 14:26] - [46m[31m[2586] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:26] - [46m[31m[2591] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:26] - [46m[31m[2590] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:26] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 14:26] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2603
+[20/6/2014 14:26] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2605
+[20/6/2014 14:27] - [46m[31m[2606] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:27] - [46m[31m[2605] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:27] - [46m[31m[2603] SIGINT CTRL+C recibido[00m
+
