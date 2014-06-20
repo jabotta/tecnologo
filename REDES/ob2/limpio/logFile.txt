@@ -1929,3 +1929,86 @@
 
 [20/6/2014 15:1] - [46m[31m[2964] SIGINT CTRL+C recibido[00m
 
+[20/6/2014 15:2] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:2] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2983
+[20/6/2014 15:2] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2985
+[20/6/2014 15:3] - [46m[31m[2985] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:3] - [46m[31m[2986] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:3] - [46m[31m[2983] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:4] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:4] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 2994
+[20/6/2014 15:4] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 2996
+[20/6/2014 15:5] - [46m[31m[2996] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:5] - [46m[31m[2994] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:5] - [46m[31m[2997] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:5] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:5] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3012
+[20/6/2014 15:5] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3014
+[20/6/2014 15:15] - [46m[31m[3014] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:15] - [46m[31m[3012] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:15] - [46m[31m[3015] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:18] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:18] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3075
+[20/6/2014 15:18] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3077
+[20/6/2014 15:19] - [46m[31m[3077] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:19] - [46m[31m[3078] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:19] - [46m[31m[3075] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:21] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:21] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3168
+[20/6/2014 15:21] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3170
+[20/6/2014 15:22] - [46m[31m[3170] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:22] - [46m[31m[3168] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:22] - [46m[31m[3171] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:23] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:23] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3179
+[20/6/2014 15:23] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3181
+[20/6/2014 15:23] - [46m[31m[3182] SIGSEGV violacion de segmento[00m
+
+[20/6/2014 15:23] - [46m[31m[3182] SIGSEGV violacion de segmento[00m
+
+[20/6/2014 15:23] - [46m[31m[3179] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:23] - [46m[31m[3181] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:24] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:24] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3195
+[20/6/2014 15:24] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3197
+[20/6/2014 15:25] - [46m[31m[3195] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:25] - [46m[31m[3198] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:25] - [46m[31m[3197] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:25] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:25] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3199
+[20/6/2014 15:25] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3201
+[20/6/2014 15:25] - [46m[31m[3199] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:25] - [46m[31m[3201] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:25] - [46m[31m[3202] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:25] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 15:25] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3204
+[20/6/2014 15:25] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3206
+[20/6/2014 15:26] - [46m[31m[3204] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:26] - [46m[31m[3207] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 15:26] - [46m[31m[3206] SIGINT CTRL+C recibido[00m
+
