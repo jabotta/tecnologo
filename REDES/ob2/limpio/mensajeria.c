@@ -80,6 +80,9 @@ void manejadorSenhales (int signal)
 		cout << "\33[46m\33[31m[" << getpid() << "]" << " SIGINT CTRL+C recibido\33[00m\n"; 
 		stringstream ss;
 		ss << "\33[46m\33[31m[" << getpid() << "]" << " SIGINT CTRL+C recibido\33[00m\n";
+        close(fileSocket);    
+        close(messageSocket);    
+            
 		WriteLogFile(ss.str());
 	}
 	if (signal == SIGTERM)
@@ -359,16 +362,17 @@ void downloadFile(){
     while ((fileSize = recvfrom(fileSocket, buffer, MAX_LARGO_ARCHIVO, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_size)) > 0)
     {	
     	if(!isCreated){
-    		
-    		pFile = fopen(buffer , "wb"); 
-    		bzero(buffer, MAX_LARGO_ARCHIVO);
-    		isCreated = true;
-    	}else{
-        	fwrite(buffer, sizeof(char), fileSize, pFile);
-        	bzero(buffer, MAX_LARGO_ARCHIVO);
-    	} 	
+            cout<<"Recibiendo archivo.."<<endl; 
+            pFile = fopen(buffer , "wb"); 
+            bzero(buffer, MAX_LARGO_ARCHIVO);
+            isCreated = true;
+        }else{
+            fwrite(buffer, sizeof(char), fileSize, pFile);
+            bzero(buffer, MAX_LARGO_ARCHIVO);
+        }   
     }
-
+    
+    cout<<"Archivo Recibido"<<endl;	
     fclose (pFile);
 }
 
