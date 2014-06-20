@@ -267,7 +267,15 @@ int main(int argc, char * argv[])
 
 		if (escritura > 0){ // descarga archivo
 			tramsmissorSocket.sin_port = htons(filePort);
-			
+			if ((fileSocket = socket(AF_INET, SOCK_DGRAM, 0)) == -1 ){
+				cout << "Error en socket() de archivos" << endl;
+				exit(-1);
+			}
+
+			if (bind(fileSocket, (struct sockaddr *) &tramsmissorSocket, sizeof(tramsmissorSocket)) == -1){
+				cout << "Error en bind()" << endl;
+				exit(-1);
+			}
 			while (true){
 				downloadFile();
 				sleep(2);
@@ -348,15 +356,6 @@ void downloadFile(){
 
    
     bool isCreated = false;
-    if ((fileSocket = socket(AF_INET, SOCK_DGRAM, 0)) == -1 ){
-			cout << "Error en socket() de archivos" << endl;
-			exit(-1);
-	}
-	if (connect(fileSocket, (struct sockaddr *)&receptorSocket, sizeof(receptorSocket)) == -1){
-		
-        cout << "connect error send 2" ;
-
-    }
     while ((fileSize = recvfrom(fileSocket, buffer, MAX_LARGO_ARCHIVO, 0, (struct sockaddr *)&addrEmisor, &addrEmisor_size)) > 0)
     {	
     	if(!isCreated){
@@ -371,7 +370,6 @@ void downloadFile(){
     }
 
     fclose (pFile);
-    close(fileSocket);
 }
 
 void cleanEntries(){
