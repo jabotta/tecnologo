@@ -1848,3 +1848,21 @@
 
 [20/6/2014 14:27] - [46m[31m[2603] SIGINT CTRL+C recibido[00m
 
+[20/6/2014 14:30] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 14:30] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3000
+[20/6/2014 14:30] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3001
+[20/6/2014 14:36] - [46m[31m[3000] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:36] - [46m[31m[3002] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:36] - [46m[31m[3001] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:37] - Autenticacion - usuario: aturing clave: 35ecb6586f632e010e2347cd37b8e196
+[20/6/2014 14:37] - [34mRx[39m: Iniciada parte que transmite mensajes. Pid 3088
+[20/6/2014 14:37] - [34mRx[39m: Iniciada parte que recepciona mensajes. Pid 3090
+[20/6/2014 14:38] - [46m[31m[3088] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:38] - [46m[31m[3090] SIGINT CTRL+C recibido[00m
+
+[20/6/2014 14:38] - [46m[31m[3091] SIGINT CTRL+C recibido[00m
+

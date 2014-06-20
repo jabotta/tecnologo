@@ -365,13 +365,11 @@ void downloadFile(){
     		isCreated = true;
     	}else{
         	fwrite(buffer, sizeof(char), fileSize, pFile);
-        	cout << "fin " << endl;
         	bzero(buffer, MAX_LARGO_ARCHIVO);
     	} 	
     }
 
     fclose (pFile);
-    cout << "archivo cerrado" << endl;
 }
 
 void cleanEntries(){
