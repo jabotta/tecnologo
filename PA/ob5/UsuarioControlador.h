@@ -3,12 +3,14 @@
 #include "IUsuarioControlador.h"
 #include "Usuario.h"
 //#include "Recurso.h"
-#include "Accion.h"
+// #include "Accion.h"
 #include "DataUsuario.h"
 //#include "Colaboracion.h"
 //#include "DataInformacionUsuario.h"
-#include <iostream.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class UsuarioControlador : IUsuarioControlador{
 
@@ -17,37 +19,38 @@ private:
 	//Set(Colaboracion) colaboracionList;
 	//Set(Accion) accList;
 	Usuario* usuarioElegido;
-	Boolean existe;
+	bool existe;
 	DataUsuario dataUsuarioIngresar;
-	String nickname;
+	string nickname;
 public:
 	//Constructores
 	UsuarioControlador();
 	//Destructor	
 	~UsuarioControlador();
 	//Setters
-	setRecCreados(Set<Recurso>);
-	setcolaboracionList(Set<Colaboracion>);
-	setAccList(Set<Accion>);
-	setUsuarioElegido(Usuario);
-	setDataUsuarioIngresar(DataUsuario);
-	setNickname(String);
+/*	void setRecCreados(Set<Recurso>);
+	void setcolaboracionList(Set<Colaboracion>);
+	void setAccList(Set<Accion>);
+*/
+	void setUsuarioElegido(Usuario *);
+	void setDataUsuarioIngresar(DataUsuario);
+	void setNickname(string);
 
 	//Getters
 	//Set<Recurso> getRecCreados();
 	//Set<Colaboracion> getcolaboracionList();
 	//Set<Accion>getAccList();
 	Usuario* getUsuarioElegido();
-	DataUsuario getDataUsuarioIngresar();
-	String getNickname();
+	DataUsuario& getDataUsuarioIngresar();
+	string getNickname();
 
 	//otras
-	checkeoNickname(String);
-	ingresarDatosUsuario(DataUsuario);
-	guardarUsuario();
-	DataInformacionUsuario obtenerInformacionUsuario():
-	Set(DataUsuario) ListarUsuarios();
-	elegirUsuario(nickname);
+	void checkeoNickname(string);
+	void ingresarDatosUsuario(DataUsuario);
+	void guardarUsuario();
+	DataInformacionUsuario obtenerInformacionUsuario();
+	// Set(DataUsuario) ListarUsuarios();
+	void elegirUsuario(string);
 
 
 };

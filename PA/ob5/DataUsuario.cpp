@@ -1,7 +1,5 @@
 #include "DataUsuario.h"
 
-using namespace std;
-
 // Constructores
 DataUsuario::DataUsuario(){
     nickname = ""; 
@@ -22,7 +20,7 @@ DataUsuario::DataUsuario(string nck, string nm, string sx, string edad, DateTime
 // Instancia por copia
 DataUsuario::DataUsuario(DataUsuario &du){
 	nickname = du.getNickname();
-    nombre = dt.getNombre();
+    nombre = du.getNombre();
     sexo = du.getSexo();
     edad = du.getEdad();
     fechaNac = du.getFechaNac();

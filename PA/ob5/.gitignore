@@ -1,4 +1,4 @@
 main
-main.o
+*.o
 !main.cpp
 !.gitignore

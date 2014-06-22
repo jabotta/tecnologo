@@ -1,6 +1,11 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
+#include <iostream>
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+#include <stdexcept>
 #include "Comparable.h"
 
 class DateTime : public Comparable {

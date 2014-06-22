@@ -1,5 +1,4 @@
-#include "UsuarioControlador.h"
-using namespace std;
+ #include "UsuarioControlador.h"
 
 //Constructores
 UsuarioControlador::UsuarioControlador(){
@@ -11,29 +10,29 @@ UsuarioControlador::~UsuarioControlador(){
 
 //Setters
 /*
-UsuarioControlador::setRecCreados(Set<Recurso> r){
+void UsuarioControlador::setRecCreados(Set<Recurso> r){
 
-	this.recCreados = r;
+	recCreados = r;
 
 }
-UsuarioControlador::setcolaboracionList(Set<Colaboracion> c){
-	this.colaboracionList = c ;
+void UsuarioControlador::setcolaboracionList(Set<Colaboracion> c){
+	colaboracionList = c ;
 }
-UsuarioControlador::setAccList(Set<Accion> a){
+void UsuarioControlador::setAccList(Set<Accion> a){
 
-	this.accList = a;
+	accList = a;
 
 }
 */
-UsuarioControlador::setUsuarioElegido(Usuario u){
+void UsuarioControlador::setUsuarioElegido(Usuario *u){
 
-	this.usuarioElegido = u;
+	usuarioElegido = u;
 }
-UsuarioControlador::setDataUsuarioIngresar(DataUsuario du){
-	this.dataUsuarioIngresar = du;
+void UsuarioControlador::setDataUsuarioIngresar(DataUsuario du){
+	//dataUsuarioIngresar = du;
 }
-UsuarioControlador::setNickname(String n){
-	this.nickname = n;
+void UsuarioControlador::setNickname(string n){
+	nickname = n;
 }
 
 //Getters
@@ -43,25 +42,25 @@ Set<Colaboracion> UsuarioControlador::getcolaboracionList(){}
 Set<Accion>UsuarioControlador::getAccList(){}
 */
 Usuario* UsuarioControlador::getUsuarioElegido(){}
-DataUsuario UsuarioControlador::getDataUsuarioIngresar(){}
-String suarioControlador::getNickname(){}
+DataUsuario& UsuarioControlador::getDataUsuarioIngresar(){}
+string UsuarioControlador::getNickname(){}
 
 //otras
-UsuarioControlador::checkeoNickname(String){
+void UsuarioControlador::checkeoNickname(string){
 
 }
-UsuarioControlador::ingresarDatosUsuario(DataUsuario){
+void UsuarioControlador::ingresarDatosUsuario(DataUsuario){
 
 }
-UsuarioControlador::guardarUsuario(){
+void UsuarioControlador::guardarUsuario(){
 
 }
 DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 
 }
-Set(DataUsuario) UsuarioControlador::ListarUsuarios(){
+// Set(DataUsuario) UsuarioControlador::ListarUsuarios(){
 
-}
-UsuarioControlador::elegirUsuario(nickname){
+// }
+void UsuarioControlador::elegirUsuario(string nickname){
 
 }

@@ -1,75 +1,87 @@
 #include "Usuario.h"
+
 using namespace std;
+
 //Constructores
 Usuario::Usuario(){
-	this.nickname = "";
-	this.nombre = "";
-	this.sexo = "";
-	this.fechaNac = "";
-
+	nickname = "";
+	nombre = "";
+	sexo = "";
+	fechaNac = DateTime();
 }
-Usuario::Usuario(DataUsuario & d){
-	this.nickname = d.getNickname();
-	this.nombre = d.getNombre();
-	this.sexo = d.getSexo();
-	this.fechaNac = d.getFechaNac();
 
-}
+Usuario::Usuario(const DataUsuario & d){
+
+/*	nickname = d.getNickname();
+	nombre = d.getNombre();
+	sexo = d.getSexo();
+	fechaNac = d.getFechaNac();
+*/}
+
 Usuario::Usuario(Usuario & u){
 
-	this.nickname = u.getNickname();
-	this.nombre = u.getNombre();
-	this.sexo = u.getSexo();
-	this.fechaNac = u.getFechaNac();
+	nickname = u.getNickname();
+	nombre = u.getNombre();
+	sexo = u.getSexo();
+	fechaNac = u.getFechaNac();
 }
-Usuario::Usuario(String nickname,String nombre,String sexo,Datetime fc){
-	this.nickname = nickname;
-	this.nombre = nombre;
-	this.sexo = sexo;
-	this.fechaNac = fc;
+
+Usuario::Usuario(string nickname,string nombre,string sexo,DateTime fc){
+	nickname = nickname;
+	nombre = nombre;
+	sexo = sexo;
+	fechaNac = fc;
 }
+
 //Destructor
 Usuario::~Usuario(){
 	// delete all the asociated object before to destroy the user 
 	// actions associatedto the user must be deleted
 }
-// Setters
-Usuario::setNickname(String n){
-	this.nickname = n;
-}
-Usuario::setNombre(String n){
-	this.nombre = n;
-}
-Usuario::setSexo(String s){
-	this.sexo = s;
 
+// Setters
+void Usuario::setNickname(string n){
+	nickname = n;
 }
-Usuario::setFechaNac(Datetime t){
-	this.fechaNac = t;
+
+void Usuario::setNombre(string n){
+	nombre = n;
+}
+
+void Usuario::setSexo(string s){
+	sexo = s;
+}
+
+void Usuario::setFechaNac(DateTime t){
+	fechaNac = t;
 }
 
 // esta no se si tiene sentido
-Usuario::setAccion(Set<Accion> s){
-	this.acciones = s;
-}
+// Usuario::setAccion(Set<Accion> s){
+// 	acciones = s;
+// }
 
 //Getters
-Set<Accion> Usuario::obtenerAcciones(){
-	return this.acciones;
+// Set<Accion> Usuario::obtenerAcciones(){
+// 	return acciones;
+// }
+
+string Usuario::getNickname(){
+	return nickname;
 }
-String Usuario::getNickname(){
-	return this.nickname;
+
+string Usuario::getNombre(){
+	return nombre;
 }
-String Usuario::getNombre(){
-	return this.nombre;
+
+string Usuario::getSexo(){
+	return sexo;
 }
-String Usuario::getSexo(){
-	return this.sexo;
+
+DateTime Usuario::getFechaNac(){
+	return fechaNac;
 }
-Datetime Usuario::getFechaNac(){
-	return this.fechaNac;
-}
+
 int Usuario::getEdad(){
-	
-	return this.edad;
+	return edad;
 }

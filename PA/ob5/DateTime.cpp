@@ -1,9 +1,3 @@
-#include <iostream>
-#include <stdio.h>
-#include <time.h>
-#include <math.h>
-#include <stdexcept>
-
 #include "DateTime.h"
 
 using namespace std;
@@ -22,7 +16,7 @@ DateTime::DateTime(){
     d = now->tm_mday;
     h = now->tm_hour;
     i = now->tm_min;
-};
+}
 
 // ESTATICA: DateTime d(2014,3,28,15,10);
 // DINAMICA: DateTime d = new DateTime(2014,3,28,15,10);

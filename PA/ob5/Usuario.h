@@ -1,40 +1,43 @@
 #ifndef USUARIO_H
 #define USUARIO_H
-#include "Datetime.h"
+#include "DateTime.h"
 #include "DataUsuario.h"
-#include <iostream.h>
-#include <string.h>
-#include "Accion.h"
+#include <iostream>
+#include <string>
+// #include "Accion.h"
+
+using namespace std;
+
 class Usuario {
 	private:
-		String nickname;
-		String nombre;
-		String sexo;
-		Datetime fechaNac;
+		string nickname;
+		string nombre;
+		string sexo;
+		DateTime fechaNac;
 		int edad;
 		//Set<Accion> acciones;
 
 	public:
 
 		Usuario();
-		Usuario(DataUsuario &);
+		Usuario(const DataUsuario &);
 		Usuario(Usuario &);
-		Usuario(String,String,String,Datetime);
+		Usuario(string,string,string,DateTime);
 
 		~Usuario();
 
 
-		setNickname(String n);
-		setNombre(String n);
-		setSexo(String s);
-		setFechaNac(Datetime t);
+		void setNickname(string n);
+		void setNombre(string n);
+		void setSexo(string s);
+		void setFechaNac(DateTime t);
 		//setAccion(Set<Accion> s);
 
 		//Set<Accion> obtenerAcciones();
-		String getNickname();
-		String getNombre();
-		String getSexo();
-		Datetime getFechaNac();
+		string getNickname();
+		string getNombre();
+		string getSexo();
+		DateTime getFechaNac();
 		int getEdad();
 
 	

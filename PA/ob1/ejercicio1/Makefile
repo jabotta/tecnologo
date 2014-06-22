@@ -1,4 +1,4 @@
-main:	main.o	DateTime.o Comparable.o
+main:	main.o DateTime.o Comparable.o
 	g++ main.o DateTime.o Comparable.o -o main
 	
 main.o:	main.cpp 

@@ -17,4 +17,4 @@ void Comparable::ordenar(Comparable** c, int largo){
         c[i] = c[imin]; 
         c[imin] = temp;
 	} 		
-}; 
+}
