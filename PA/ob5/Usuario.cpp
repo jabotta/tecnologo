@@ -1,11 +1,18 @@
 #include "Usuario.h"
-
+using namespace std;
 //Constructores
 Usuario::Usuario(){
 	this.nickname = "";
 	this.nombre = "";
 	this.sexo = "";
 	this.fechaNac = "";
+
+}
+Usuario::Usuario(DataUsuario & d){
+	this.nickname = d.getNickname();
+	this.nombre = d.getNombre();
+	this.sexo = d.getSexo();
+	this.fechaNac = d.getFechaNac();
 
 }
 Usuario::Usuario(Usuario & u){
@@ -61,4 +68,8 @@ String Usuario::getSexo(){
 }
 Datetime Usuario::getFechaNac(){
 	return this.fechaNac;
+}
+int Usuario::getEdad(){
+	
+	return this.edad;
 }
