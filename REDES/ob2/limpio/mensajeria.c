@@ -5,8 +5,11 @@
 // Sistema básico de Mensajería 
 
 // Integrantes:
-//	Detallar aqui, nombre, apellido y documento de todos los integrantes del grupo.
-
+/*
+    RODRIGO,ROSSI 4378330-6
+    DARIO,LEVY 4265108-3
+    ANDRES, BOTTA 4009209-1
+*/
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
