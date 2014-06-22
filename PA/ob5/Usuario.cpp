@@ -1,5 +1,5 @@
 #include "Usuario.h"
-
+using namespace std;
 //Constructores
 Usuario::Usuario(){
 	this.nickname = "";

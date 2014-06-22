@@ -1,4 +1,5 @@
 #include "UsuarioControlador.h"
+using namespace std;
 
 //Constructores
 UsuarioControlador::UsuarioControlador(){
