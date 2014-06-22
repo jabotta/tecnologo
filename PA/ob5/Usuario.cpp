@@ -10,13 +10,13 @@ Usuario::Usuario(){
 	fechaNac = DateTime();
 }
 
-Usuario::Usuario(const DataUsuario & d){
+Usuario::Usuario(DataUsuario & d){
 
-/*	nickname = d.getNickname();
+	nickname = d.getNickname();
 	nombre = d.getNombre();
 	sexo = d.getSexo();
 	fechaNac = d.getFechaNac();
-*/}
+}
 
 Usuario::Usuario(Usuario & u){
 

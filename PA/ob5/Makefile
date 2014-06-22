@@ -1,5 +1,5 @@
-main:	main.o DateTime.o Comparable.o Usuario.o UsuarioControlador.o
-	g++ main.o DateTime.o Comparable.o Usuario.o UsuarioControlador.o -o main
+main:	main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o 
+	g++ main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o -o main
 	
 main.o:	main.cpp 
 	g++ -c main.cpp -I.

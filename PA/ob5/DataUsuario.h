@@ -27,11 +27,11 @@ class DataUsuario{
 		string getNombre() const;
 		string getSexo() const;
 		int getEdad() const;
-		DateTime getFechaNac() const;
+		DateTime getFechaNac();
 		
 		// Modificadores
 		void setNickname(string);
-		void setNombre(string);
+		void setNombre(string); 		
 		void setSexo(string);
 		void setEdad(int);
 		void setFechaNac(DateTime);

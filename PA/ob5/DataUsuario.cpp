@@ -9,7 +9,7 @@ DataUsuario::DataUsuario(){
 	fechaNac = DateTime();
 };
 
-DataUsuario::DataUsuario(string nck, string nm, string sx, string edad, DateTime fn){
+DataUsuario::DataUsuario(string nck, string nm, string sx, int edad, DateTime fn){
 	nickname = nck;
 	nombre = nm;
 	sexo = sx;
@@ -46,7 +46,7 @@ int DataUsuario::getEdad () const{
 	return edad;
 }
 
-DateTime DataUsuario::getFechaNac () const{
+DateTime DataUsuario::getFechaNac (){
 	return fechaNac;
 }
 
@@ -63,10 +63,10 @@ void DataUsuario::setSexo(string sx){
 	sexo = sx;
 }
 
-void DataUsuario::setSexo(int ed){
+void DataUsuario::setEdad(int ed){
 	edad = ed;
 }
 
-void DataUsuario::setFechaNac(DataTime fn){
+void DataUsuario::setFechaNac(DateTime fn){
 	fechaNac = fn;
 }

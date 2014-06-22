@@ -20,7 +20,7 @@ class Usuario {
 	public:
 
 		Usuario();
-		Usuario(const DataUsuario &);
+		Usuario(DataUsuario &);
 		Usuario(Usuario &);
 		Usuario(string,string,string,DateTime);
 
