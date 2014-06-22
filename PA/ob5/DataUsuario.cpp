@@ -1,5 +1,3 @@
-#include <iostream>
-#include "DateTime.h"
 #include "DataUsuario.h"
 
 using namespace std;
@@ -10,7 +8,7 @@ DataUsuario::DataUsuario(){
     nombre = "";
     sexo = "";
 	edad = 0;
-	fechaNac = new DateTime();
+	fechaNac = DateTime();
 };
 
 DataUsuario::DataUsuario(string nck, string nm, string sx, string edad, DateTime fn){
