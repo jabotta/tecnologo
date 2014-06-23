@@ -1,5 +1,5 @@
-main:	main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o 
-	g++ main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o -o main
+main:	main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o
+	g++ main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o -o main
 	
 main.o:	main.cpp 
 	g++ -c main.cpp -I.
@@ -22,5 +22,7 @@ Usuario.o:	Usuario.cpp	Usuario.h
 UsuarioControlador.o:	UsuarioControlador.cpp	UsuarioControlador.h
 	g++ -c UsuarioControlador.cpp -I.
 
+ManejadorUsuario.o: ManejadorUsuario.cpp ManejadorUsuario.h
+	g++ -c ManejadorUsuario.cpp -I.
 limpiar:
 	rm *.o

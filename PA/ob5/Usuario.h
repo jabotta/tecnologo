@@ -21,7 +21,7 @@ class Usuario {
 
 		Usuario();
 		Usuario(DataUsuario &);
-		Usuario(Usuario &);
+		Usuario(const Usuario &);
 		Usuario(string,string,string,DateTime);
 
 		~Usuario();
@@ -34,12 +34,14 @@ class Usuario {
 		//setAccion(Set<Accion> s);
 
 		//Set<Accion> obtenerAcciones();
-		string getNickname();
-		string getNombre();
-		string getSexo();
-		DateTime getFechaNac();
-		int getEdad();
+		string getNickname() const;
+		string getNombre() const;
+		string getSexo() const;
+		DateTime& getFechaNac() const;
+		int getEdad() const;
 
-	
+		Usuario &operator = (Usuario &);
+		int operator < (Usuario &);
+		int operator == (Usuario &);
 };
 #endif

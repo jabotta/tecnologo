@@ -20,7 +20,7 @@ class DateTime : public Comparable {
 		// Constructores	   
 	   	DateTime(); //por defecto
 		DateTime(int, int, int, int = 00, int = 00); // por parametro
-		DateTime(DateTime &); // por copia
+		DateTime(const DateTime &); // por copia
 		
 		// Destructor
 		~DateTime();

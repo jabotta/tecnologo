@@ -36,5 +36,6 @@ class DataUsuario{
 		void setEdad(int);
 		void setFechaNac(DateTime);
 
+		
 };
 #endif

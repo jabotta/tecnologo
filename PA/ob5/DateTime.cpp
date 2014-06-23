@@ -37,7 +37,7 @@ DateTime::DateTime(int yy, int mm, int dd, int hh, int ii){
 }
 
 // Instancia por copia
-DateTime::DateTime(DateTime &dt){
+DateTime::DateTime(const DateTime &dt){
 	y = dt.getAnio();
     m = dt.getMes();
     d = dt.getDia();

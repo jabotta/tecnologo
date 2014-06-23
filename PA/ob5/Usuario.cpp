@@ -18,7 +18,7 @@ Usuario::Usuario(DataUsuario & d){
 	fechaNac = d.getFechaNac();
 }
 
-Usuario::Usuario(Usuario & u){
+Usuario::Usuario(const Usuario& u){
 
 	nickname = u.getNickname();
 	nombre = u.getNombre();
@@ -66,22 +66,35 @@ void Usuario::setFechaNac(DateTime t){
 // 	return acciones;
 // }
 
-string Usuario::getNickname(){
-	return nickname;
+string Usuario::getNickname() const{
+	return this->nickname;
 }
 
-string Usuario::getNombre(){
+string Usuario::getNombre()const{
 	return nombre;
 }
 
-string Usuario::getSexo(){
+string Usuario::getSexo()const{
 	return sexo;
 }
 
-DateTime Usuario::getFechaNac(){
-	return fechaNac;
+DateTime& Usuario::getFechaNac()const{
+	DateTime d = DateTime(fechaNac);
+	return (d);
 }
 
-int Usuario::getEdad(){
+int Usuario::getEdad() const{
 	return edad;
 }
+
+Usuario& Usuario::operator = (Usuario& u){
+	return *this;
+}
+
+int Usuario::operator < (Usuario& u){
+	return 0;
+}
+
+int Usuario::operator == (Usuario& u){
+	return 0;
+}	
