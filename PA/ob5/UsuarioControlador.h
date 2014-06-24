@@ -7,12 +7,13 @@
 #include "DataUsuario.h"
 //#include "Colaboracion.h"
 //#include "DataInformacionUsuario.h"
+#include "ManejadorUsuario.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-class UsuarioControlador : IUsuarioControlador{
+class UsuarioControlador : public IUsuarioControlador{
 
 private:
 	//Set(Recurso) recCreados;
@@ -45,7 +46,7 @@ public:
 	string getNickname();
 
 	//otras
-	void checkeoNickname(string);
+	bool checkeoNickname(string);
 	void ingresarDatosUsuario(DataUsuario);
 	void guardarUsuario();
 	DataInformacionUsuario obtenerInformacionUsuario();

@@ -8,7 +8,7 @@ using namespace std;
 
 class IUsuarioControlador{
 	public:
-		virtual void checkeoNickname(string) = 0;
+		virtual bool checkeoNickname(string) = 0;
 		virtual void ingresarDatosUsuario(DataUsuario usuario) = 0;
 		virtual void guardarUsuario() = 0;
 		virtual DataInformacionUsuario obtenerInformacionUsuario() = 0;

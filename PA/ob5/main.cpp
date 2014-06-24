@@ -1,7 +1,8 @@
 #include <iostream>
 #include <limits>
 #include <stdexcept>
-
+#include "ManejadorUsuario.h"
+#include "Fabrica.h"
 using namespace std;
 
 int ingresarNumerico(){
@@ -45,6 +46,10 @@ int main(){
 			}
 			/********************** Alta Usuario ************************************************/
 			case 2:{
+				
+				bool s = Fabrica::getInstance().getUControlador()->checkeoNickname("rodrigo");
+				cout<<s<<endl;
+
 				try{
 
 		 		}catch(const invalid_argument& ia){

@@ -41,13 +41,21 @@ Set<Recurso> UsuarioControlador::getRecCreados(){}
 Set<Colaboracion> UsuarioControlador::getcolaboracionList(){}
 Set<Accion>UsuarioControlador::getAccList(){}
 */
-Usuario* UsuarioControlador::getUsuarioElegido(){}
-DataUsuario& UsuarioControlador::getDataUsuarioIngresar(){}
-string UsuarioControlador::getNickname(){}
+Usuario* UsuarioControlador::getUsuarioElegido(){
+
+	return usuarioElegido;
+}
+DataUsuario& UsuarioControlador::getDataUsuarioIngresar(){
+
+	return dataUsuarioIngresar;
+}
+string UsuarioControlador::getNickname(){ 
+	return nickname;
+}
 
 //otras
-void UsuarioControlador::checkeoNickname(string){
-
+bool UsuarioControlador::checkeoNickname(string nickname){
+	return ManejadorUsuario::getInstance().checkeoNickname(nickname);
 }
 void UsuarioControlador::ingresarDatosUsuario(DataUsuario){
 

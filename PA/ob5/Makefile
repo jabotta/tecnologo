@@ -1,8 +1,11 @@
-main:	main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o
-	g++ main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o -o main
+main:	main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o Fabrica.o
+	g++ main.o DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o Fabrica.o -o main
 	
 main.o:	main.cpp 
 	g++ -c main.cpp -I.
+
+Fabrica.o: Fabrica.cpp Fabrica.h
+	g++ -c Fabrica.cpp -I.
 
 Comparable.o:	Comparable.cpp	Comparable.h
 	g++ -c Comparable.cpp -I.
