@@ -57,11 +57,13 @@ string UsuarioControlador::getNickname(){
 bool UsuarioControlador::checkeoNickname(string nickname){
 	return ManejadorUsuario::getInstance().checkeoNickname(nickname);
 }
-void UsuarioControlador::ingresarDatosUsuario(DataUsuario){
-
+void UsuarioControlador::ingresarDatosUsuario(DataUsuario d){
+	dataUsuarioIngresar = d;
 }
 void UsuarioControlador::guardarUsuario(){
-
+	
+	Usuario us = new Usuario(dataUsuarioIngresar);
+	ManejadorUsuario::getInstance().guardarUsuario(us);
 }
 DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 

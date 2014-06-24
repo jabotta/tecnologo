@@ -1,10 +1,11 @@
 #include <iostream>
 #include <limits>
 #include <stdexcept>
+#include <stdlib.h>
 #include "ManejadorUsuario.h"
 #include "Fabrica.h"
+#include "DataUsuario.h"
 using namespace std;
-
 int ingresarNumerico(){
 	int res;
 	cin >> res;
@@ -16,6 +17,42 @@ int ingresarNumerico(){
 	}
 	return res;
 }
+bool checkSiCancelo(string s){
+	int value = atoi(s.c_str());
+	return (value == 1);
+}
+
+
+void altaUsuario(){
+
+	string nickname;
+	bool cancelar = false;
+	bool existe = true;
+	
+	while(!cancelar && existe){
+		cout<<"Ingrese Nickname o 1 para cancelar:"<<endl;
+		cin>>nickname;
+		cancelar = checkSiCancelo(nickname);
+		if(!cancelar){
+			existe = Fabrica::getInstance().getUControlador()->checkeoNickname(nickname);
+		}
+	}
+	if(!cancelar){
+
+		DataUsuario du;
+		DateTime dt;
+		cin>>du;
+		du.setNickname(nickname);
+		//Ingresa el usuario en memoria 
+		Fabrica::getInstance().getUControlador()->ingresarDatosUsuario(du);
+		//Crea y guarda el Usuario 
+		Fabrica::getInstance().getUControlador()->guardarUsuario();
+
+ 
+
+	}
+}
+
 
 int main(){
 
@@ -47,11 +84,8 @@ int main(){
 			/********************** Alta Usuario ************************************************/
 			case 2:{
 				
-				bool s = Fabrica::getInstance().getUControlador()->checkeoNickname("rodrigo");
-				cout<<s<<endl;
-
 				try{
-
+					altaUsuario();
 		 		}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}

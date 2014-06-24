@@ -19,7 +19,7 @@ bool ManejadorUsuario::checkeoNickname(string nickname){
 	return (usuarios.count(nickname)>0);
 	
 }
-void ManejadorUsuario::guardarUsuario(Usuario e){
+void ManejadorUsuario::guardarUsuario(Usuario& e){
 	usuarios.insert(pair<string, Usuario>(e.getNickname(),e));
 
 }

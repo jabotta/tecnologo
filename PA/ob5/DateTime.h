@@ -61,4 +61,5 @@ class DateTime : public Comparable {
 };
 	
 	std::ostream& operator<< (std::ostream& stream, const DateTime& );
+	std::istream& operator>> (std::istream& stream,  DateTime& );
 #endif

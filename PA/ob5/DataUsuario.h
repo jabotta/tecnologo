@@ -1,5 +1,6 @@
 #ifndef DATAUSUARIO_H
 #define DATAUSUARIO_H
+#include <iostream>
 #include <string>
 #include "DateTime.h"
 
@@ -27,7 +28,7 @@ class DataUsuario{
 		string getNombre() const;
 		string getSexo() const;
 		int getEdad() const;
-		DateTime getFechaNac();
+		DateTime getFechaNac() const;
 		
 		// Modificadores
 		void setNickname(string);
@@ -36,6 +37,11 @@ class DataUsuario{
 		void setEdad(int);
 		void setFechaNac(DateTime);
 
+
+
+
 		
 };
+		std::ostream& operator<< (std::ostream& stream, const DataUsuario& );
+		std::istream& operator>> (std::istream& stream,  DataUsuario& );
 #endif
