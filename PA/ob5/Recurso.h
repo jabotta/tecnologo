@@ -1,18 +1,19 @@
 #ifndef	RECURSO_H
 #define RECURSO_H
 
-#include <iostream.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+#include <list>
 #include "DateTime.h"
 #include "Usuario.h"
 #include "DataErrores.h"
 
 class Recurso {
 	private: 
-		String Nombre ; 
-		String Ubicacion;
+		string Nombre ; 
+		string Ubicacion;
 		Usuario UsuarioCrea;
-		String Descripcion; 
+		string Descripcion; 
 		DateTime FechaUltimoAcceso;
 		DateTime FechaCreacion;
 		DateTime FechaModificacion;	
@@ -20,7 +21,7 @@ class Recurso {
 		//Destructor
 		virtual ~Recurso();
 		//Funciones virtuales 
-		virtual Set(DataErrores) controlarNombreRecurso() = 0;
+		virtual list<DataErrores> controlarNombreRecurso() = 0;
 		virtual bool existeNombre() = 0;
 
 

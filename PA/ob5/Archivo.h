@@ -1,5 +1,7 @@
 #ifndef ARCHIVO_H
 #define ARCHIVO_H
+#include <iostream>
+#include <list>
 #include "Recurso.h"
 #include "DataArchivo.h"
 #include "DataErrores.h"
@@ -7,8 +9,8 @@
 class Archivo :public Recurso{
 	
 	private:
-		Set(Colaboradores) listaColaboradores;
-		Set(Recurso) listaRecursos;
+		list<Colaboradores> listaColaboradores;
+		list<Recurso> listaRecursos;
 	public:
 		Archivo();
 		Archivo(Archivo &);
@@ -16,10 +18,10 @@ class Archivo :public Recurso{
 		~Archivo();
 
 
-		Set(DataErrores) controlarNombreRecurso();
+		list<DataErrores> controlarNombreRecurso();
 		bool existeNombre();
-		Set(Recurso) getListaRecursos();
-		Set(Colaboradores) getListaColaboradores();
+		list<Recurso> getListaRecursos();
+		list<Colaboradores> getListaColaboradores();
 
 };
 

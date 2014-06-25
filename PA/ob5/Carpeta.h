@@ -1,8 +1,11 @@
 #ifndef CARPETA_H
 #define CARPETA_H
+#include <iostream>
+#include <list>
 #include "Recurso.h"
 #include "DataCarpeta.h"
 #include "DataErrores.h"
+
 class  Carpeta: public Recurso{
 
 
@@ -16,14 +19,7 @@ class  Carpeta: public Recurso{
 		~Carpeta();
 
 
-		Set(DataErrores) controlarNombreRecurso();
+		list<DataErrores> controlarNombreRecurso();
 		bool existeNombre();
-
-
-
-
-
-
-
 };
 #endif

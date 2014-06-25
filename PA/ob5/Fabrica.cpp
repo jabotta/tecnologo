@@ -4,6 +4,7 @@ Fabrica * Fabrica::instance = NULL;
 
 Fabrica::Fabrica(){
 	mucontroller = ManejadorUsuarioControlador::getInstance();
+	mrcontroller = ManejadorRecursoControlador::getInstance();
 }
 
 Fabrica * Fabrica::getInstance(){
@@ -27,4 +28,12 @@ IUsuarioControlador * Fabrica::getUControlador(int id){
 	return nuevaInstancia;
 }
 
-//IRecursoControlador getRControlador();
+IRecursoControlador * Fabrica::getRControlador(int id){
+	if(id >= 0){
+		return mrcontroller->obtenerControlerPorId(id);
+	}
+	int newId = mrcontroller->getUltimoEnMapa();
+	RecursoControlador* nuevaInstancia = new RecursoControlador(newId);
+	mrcontroller->agregarController(nuevaInstancia);
+	return nuevaInstancia;
+}

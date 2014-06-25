@@ -1,7 +1,7 @@
 #ifndef DATAACCION_H
 #define DATAACCION_H
 #include <string.h>
-#include "Datetime.h"
+#include "DateTime.h"
 #include "DataUsuario.h"
 #include "TipoAccion.h"
 
@@ -9,26 +9,26 @@ class DataAccion {
 	private:
 		DateTime fecha;
 		TipoAccion tipo;
-		DataUsuario Usuario;
+		DataUsuario usuario;
 
 	public:
 		// Constructores	   
 	   	DataAccion(); //por defecto
 		DataAccion(DateTime, TipoAccion, DataUsuario); // por parametro
-		DataAccion(DataAccion &); // por copia
+		DataAccion(const DataAccion &); // por copia
 		
 		// Destructor
 		~DataAccion();
 		 
 		// Selectores
-		int getFecha() const;
-		int getTipo() const;
-		int getUsuario() const;
+		DateTime getFecha() const;
+		TipoAccion getTipo() const;
+		DataUsuario getUsuario() const;
 		
 		// Modificadores
-		void setFecha(string);
-		void setTipo(string);
-		void setUsuario(string);
+		void setFecha(DateTime);
+		void setTipo(TipoAccion);
+		void setUsuario(DataUsuario);
 
 };
 #endif

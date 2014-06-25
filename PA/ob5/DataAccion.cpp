@@ -16,25 +16,25 @@ DataAccion::DataAccion(DateTime fec, TipoAccion ta, DataUsuario du){
 }
 
 // Instancia por copia
-DataAccion::DataAccion(DataAccion &da){
-	fecha = du.getFecha();
-    tipo = du.getTipo();
-    usuario = du.getUsuario();
+DataAccion::DataAccion(const DataAccion &da){
+	fecha = da.getFecha();
+    tipo = da.getTipo();
+    usuario = da.getUsuario();
 }
 
 // Destructor
 DataAccion::~DataAccion(){}
 
 // Selectores
-string DataAccion::getFecha () const{
+DateTime DataAccion::getFecha () const{
 	return fecha;
 }
 
-string DataAccion::getTipo () const{
+TipoAccion DataAccion::getTipo () const{
 	return tipo;
 }
 
-string DataAccion::getAccion () const{
+DataUsuario DataAccion::getUsuario () const{
 	return usuario;
 }
 
@@ -44,9 +44,9 @@ void DataAccion::setFecha(DateTime fec){
 }
 
 void DataAccion::setTipo(TipoAccion ta){
-	tipo = nta;
+	tipo = ta;
 }
 
-void DataAccion::setUsuario(DataUusario du){
-	usuario = da;
+void DataAccion::setUsuario(DataUsuario du){
+	usuario = du;
 }

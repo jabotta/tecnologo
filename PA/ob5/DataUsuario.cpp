@@ -18,7 +18,7 @@ DataUsuario::DataUsuario(string nck, string nm, string sx, int edad, DateTime fn
 }
 
 // Instancia por copia
-DataUsuario::DataUsuario(DataUsuario &du){
+DataUsuario::DataUsuario(const DataUsuario& du){
 	nickname = du.getNickname();
     nombre = du.getNombre();
     sexo = du.getSexo();

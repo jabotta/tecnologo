@@ -18,7 +18,7 @@ class DataUsuario{
 		// Constructores	   
 	   	DataUsuario(); //por defecto
 		DataUsuario(string, string, string, int, DateTime); // por parametro
-		DataUsuario(DataUsuario &); // por copia
+		DataUsuario(const DataUsuario&); // por copia
 		
 		// Destructor
 		~DataUsuario();
