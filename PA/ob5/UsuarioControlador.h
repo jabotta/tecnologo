@@ -41,14 +41,14 @@ public:
 	//Set<Recurso> getRecCreados();
 	//Set<Colaboracion> getcolaboracionList();
 	//Set<Accion>getAccList();
-	Usuario* getUsuarioElegido();
+	// Usuario* getUsuarioElegido();
 	DataUsuario& getDataUsuarioIngresar();
 	string getNickname();
 
 	//otras
 	bool checkeoNickname(string);
 	void ingresarDatosUsuario(DataUsuario);
-	void guardarUsuario();
+	// void guardarUsuario();
 	DataInformacionUsuario obtenerInformacionUsuario();
 	// Set(DataUsuario) ListarUsuarios();
 	void elegirUsuario(string);

@@ -5,7 +5,9 @@
 #include "ManejadorUsuario.h"
 #include "Fabrica.h"
 #include "DataUsuario.h"
+
 using namespace std;
+
 int ingresarNumerico(){
 	int res;
 	cin >> res;
@@ -17,11 +19,11 @@ int ingresarNumerico(){
 	}
 	return res;
 }
+
 bool checkSiCancelo(string s){
 	int value = atoi(s.c_str());
 	return (value == 1);
 }
-
 
 void altaUsuario(){
 
@@ -40,16 +42,15 @@ void altaUsuario(){
 	if(!cancelar){
 
 		DataUsuario du;
-		DateTime dt;
-		cin>>du;
+		DateTime dt;		
 		du.setNickname(nickname);
+		//Ingresa al datatype para completar los datos
+		cin >> du;
 		//Ingresa el usuario en memoria 
 		Fabrica::getInstance().getUControlador()->ingresarDatosUsuario(du);
+		cout << du;
 		//Crea y guarda el Usuario 
-		Fabrica::getInstance().getUControlador()->guardarUsuario();
-
- 
-
+		//Fabrica::getInstance().getUControlador()->guardarUsuario();
 	}
 }
 

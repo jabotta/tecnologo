@@ -26,7 +26,6 @@ class Usuario {
 
 		~Usuario();
 
-
 		void setNickname(string n);
 		void setNombre(string n);
 		void setSexo(string s);
@@ -37,7 +36,7 @@ class Usuario {
 		string getNickname() const;
 		string getNombre() const;
 		string getSexo() const;
-		DateTime& getFechaNac() const;
+		DateTime getFechaNac() const;
 		int getEdad() const;
 
 		Usuario &operator = (Usuario &);

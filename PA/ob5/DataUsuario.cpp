@@ -11,7 +11,6 @@ DataUsuario::DataUsuario(){
 };
 
 DataUsuario::DataUsuario(string nck, string nm, string sx, int edad, DateTime fn){
-
 	nickname = nck;
 	nombre = nm;
 	sexo = sx;
@@ -21,7 +20,6 @@ DataUsuario::DataUsuario(string nck, string nm, string sx, int edad, DateTime fn
 
 // Instancia por copia
 DataUsuario::DataUsuario(DataUsuario &du){
-
 	nickname = du.getNickname();
     nombre = du.getNombre();
     sexo = du.getSexo();
@@ -74,25 +72,35 @@ void DataUsuario::setFechaNac(DateTime fn){
 	fechaNac = fn;
 }
 
-ostream& operator<<(ostream& out,const DataUsuario& o){
-
-    out<<o.getNickname()<<"-"<<o.getNombre()<<o.getFechaNac()<<endl;
+ostream& operator<< (ostream& out,const DataUsuario& o){
+    out<<o.getNickname()<< " - " <<o.getNombre()<< " - " << o.getFechaNac() << endl;
     return out;
-
 }
-istream& operator>>(istream &input,DataUsuario& o){
+
+istream& operator>> (istream &input,DataUsuario& o){
 	string nombretmp, sexotmp;
-	DateTime fechanactmp;
+	int anio,dia,mes;
+
 	/*
 	cout<<"Ingrese Nickname: "<<endl;
     input>>nicknametmp;
 	*/
-	cout<<"Ingrese Nombre: "<<endl;
-    input>>nombretmp;
-	cout<<"Ingrese Sexo: "<<endl;
-    input>>sexotmp;
-	cout<<"Ingrese Fecha de Nacimiento: "<<endl;
-    input>>fechanactmp;
+	
+	cout << "Ingrese Nombre: "<<endl;
+    input >> nombretmp;
+	cout << "Ingrese Sexo: "<<endl;
+    input >> sexotmp;
+	cout << "Ingrese Fecha de Nacimiento"<<endl;
+    
+	cout<<"Ingrese Año: "<<endl;
+    input>>anio;
+	cout<<"Ingrese Mes: "<<endl;
+    input>>mes;
+	cout<<"Ingrese Dia: "<<endl;
+    input>>dia;
+
+    DateTime fechanactmp(anio,mes,dia);
+
     //o.setNickname(nicknametmp);
     o.setNombre(nombretmp);
 	o.setSexo(sexotmp);

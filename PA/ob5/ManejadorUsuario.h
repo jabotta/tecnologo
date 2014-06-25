@@ -9,16 +9,14 @@
 using namespace std;
 
 class ManejadorUsuario {
-
 private:
-
+	static ManejadorUsuario * instance;
 	map<string, Usuario> usuarios;
 	ManejadorUsuario();
-	~ManejadorUsuario();
-
+	
 public:
-
-static ManejadorUsuario& getInstance();
+	static ManejadorUsuario * getInstance();
+	~ManejadorUsuario();
 
 	bool checkeoNickname(string);
 	void guardarUsuario(Usuario&);

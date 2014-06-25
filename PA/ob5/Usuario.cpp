@@ -81,7 +81,7 @@ string Usuario::getSexo()const{
 	return sexo;
 }
 
-DateTime& Usuario::getFechaNac()const{
+DateTime Usuario::getFechaNac()const{
 	DateTime d = DateTime(fechaNac);
 	return (d);
 }

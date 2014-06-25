@@ -254,7 +254,6 @@ DateTime DateTime::operator + (double d){
 }
 
 DateTime& DateTime::operator = (const DateTime& d){
-	cout<<" on date time eq: "<<d<<endl;
 	this->setMinuto(d.getMinuto());
 	this->setHora(d.getHora());
 	this->setDia(d.getDia());
@@ -372,7 +371,7 @@ double DateTime::operator - (DateTime d){
 	} 
 }
  
-std::ostream& operator << (std::ostream& stream, const DateTime& d) {
+std::ostream& operator<< (std::ostream& stream, const DateTime& d) {
 	const char* pref1 = "0";
     return cout << d.getAnio() << "/" <<
     	((d.getMes() < 10) ? pref1 : "") << d.getMes() << "/" << 
@@ -380,23 +379,24 @@ std::ostream& operator << (std::ostream& stream, const DateTime& d) {
 		((d.getHora() < 10)? pref1 : "") << d.getHora() << ":" <<  
 		((d.getMinuto() < 10) ? pref1 : "") << d.getMinuto() << endl;
 }
-std::istream& operator>>(std::istream& input,DateTime& o){
-	int anio,dia,mes,hora,minuto;
-	cout<<"Ingrese Año: "<<endl;
-    input>>anio;
-	cout<<"Ingrese Mes: "<<endl;
-    input>>mes;
-	cout<<"Ingrese Dia: "<<endl;
-    input>>dia;
-	cout<<"Ingrese Hora: "<<endl;
-    input>>hora;
-	cout<<"Ingrese Minuto: "<<endl;
-    input>>minuto;
 
-    o.setAnio(anio);
-    o.setMes(mes);
-    o.setDia(dia);
-    o.setHora(hora);
-    o.setMinuto(minuto);
-	return input;
-}
+// std::istream& operator>> (std::istream& input,DateTime& o){
+// 	int anio,dia,mes,hora,minuto;
+// 	cout<<"Ingrese Año: "<<endl;
+//     input>>anio;
+// 	cout<<"Ingrese Mes: "<<endl;
+//     input>>mes;
+// 	cout<<"Ingrese Dia: "<<endl;
+//     input>>dia;
+// 	cout<<"Ingrese Hora: "<<endl;
+//     input>>hora;
+// 	cout<<"Ingrese Minuto: "<<endl;
+//     input>>minuto;
+
+//     o.setAnio(anio);
+//     o.setMes(mes);
+//     o.setDia(dia);
+//     o.setHora(hora);
+//     o.setMinuto(minuto);
+// 	return input;
+// }
