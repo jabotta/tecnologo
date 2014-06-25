@@ -1,0 +1,4 @@
+#ifndef TIPOACCION_H
+#define TIPOACCION_H
+enum TipoAccion {CREACION=0, MODIFICACION=1, DESCARGA=2};
+#endif

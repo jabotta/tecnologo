@@ -1,0 +1,396 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"str",
+				"strlen"
+			],
+			[
+				"strc",
+				"strcpy"
+			],
+			[
+				"fec",
+				"fechaHora"
+			],
+			[
+				"nu",
+				"NULL"
+			],
+			[
+				"CLAVE",
+				"clave"
+			],
+			[
+				"get",
+				"getAnio"
+			],
+			[
+				"dias",
+				"diasParaQuitar"
+			],
+			[
+				"ge",
+				"getDia"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"dec",
+				"decimalValFact"
+			],
+			[
+				"ho",
+				"hours"
+			],
+			[
+				"ob",
+				"obtenerDiaHoraMinutoDesdeNumero"
+			],
+			[
+				"cur",
+				"currentMonth"
+			],
+			[
+				"current",
+				"currentYear"
+			],
+			[
+				"days",
+				"daysDiff"
+			],
+			[
+				"da",
+				"daysDiff"
+			],
+			[
+				"ma",
+				"obtenerMaximoDiaDelMes"
+			],
+			[
+				"g",
+				"getAnio"
+			],
+			[
+				"di",
+				"diffDeDias"
+			],
+			[
+				"res",
+				"resultado"
+			],
+			[
+				"horas",
+				"horasParaAgregar"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 404.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/ejercicio1/Comparable.h",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/ejercicio1/Comparable.cpp",
+		"/home/usuario/Escritorio/tecnologo/PA/ob5/ResourceController.h",
+		"/home/usuario/Escritorio/tecnologo/REDES/ob2/limpio/mensajeria.c",
+		"/home/usuario/Escritorio/tecnologo/REDES/ob2/limpio/usuarios.conf",
+		"/home/usuario/Escritorio/tecnologo/REDES/ob2/limpio/tosend.txt",
+		"/home/usuario/Escritorio/tecnologo/REDES/ob2/usuarios.conf",
+		"/home/usuario/Escritorio/tecnologo/REDES/ob2/mensajeria.c",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/ejercicio1/DateTime.h",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/ejercicio1/Makefile",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/ejercicio1/DateTime.cpp",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/ejercicio1/main.cpp",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/main.cpp",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/DateTime.h",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/DateTime.cpp",
+		"/home/usuario/Escritorio/tecnologo/PA/ob1/main",
+		"/home/usuario/Escritorio/Prog Av /ob1/jsDatetime.js",
+		"/home/usuario/Escritorio/Prog Av /ob1/main.cpp",
+		"/home/usuario/Escritorio/Prog Av /ob1/DateTime.h",
+		"/home/usuario/Escritorio/Prog Av /ob1/Makefile",
+		"/home/usuario/Escritorio/Prog Av /Obligatorio 1/DateTime.cpp",
+		"/home/usuario/Escritorio/Prog Av /Obligatorio 1/DateTime.h"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"downloadFile",
+			"download",
+			"name",
+			"download",
+			"MAX_LARGO_ARCHIVO",
+			"buffer",
+			"download",
+			"sendFile",
+			"messageSocket",
+			"cleanEntries",
+			"myFile",
+			"messageSocket",
+			"broadcastPermission",
+			"sendBroadcastMessage",
+			"receptorSocket",
+			"myMessage",
+			"sendBroadcastMessage",
+			"cout",
+			"mymessage",
+			"while",
+			"messageSocket",
+			"sendMessage",
+			"cout",
+			"tx",
+			"while",
+			"fechaHora",
+			"downloadFile",
+			"archivo",
+			"redes de ",
+			"authenticate",
+			"userName",
+			"authenticate",
+			"autentic",
+			"send",
+			"sendMe",
+			"}\n",
+			"strcat",
+			"loginMsg",
+			"strcat",
+			"myMessage",
+			"user",
+			"myMessage",
+			"string",
+			"new char",
+			"sendBroadcastMessage",
+			"broadcas",
+			"fopen",
+			"\";\n",
+			"myFile",
+			");\n",
+			"file",
+			"pFile",
+			"myFile",
+			"ipAuth",
+			"                        \n",
+			"myFile",
+			"ipAuth",
+			"myFile",
+			" ;",
+			"myFile",
+			"fileSocket",
+			"fileSoc",
+			"fileSocket =",
+			"myFile",
+			"connect",
+			"fileSocket",
+			"sendFile",
+			"myFile",
+			"receptorSocket",
+			"messagePort",
+			"sendFile",
+			"filePort",
+			"fileSocket",
+			"sendFile",
+			"cleanEntr",
+			"sendFile",
+			"processEntry",
+			"sendBroadcastMessage",
+			"sendMessage",
+			"inet_addr",
+			"authorizationSocket",
+			"authenticate",
+			"sendBroadcastMessage",
+			");\n",
+			"exit",
+			"\n    ",
+			"    //",
+			"    ",
+			"mensaje",
+			"miSocketAuth",
+			"socket",
+			"soket",
+			"ordenarLista",
+			"\n			",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"createDateTimes",
+			"c",
+			"\n	",
+			";\n",
+			"if((*this)==d)return 0;",
+			"	if((*this)==d)return 0;",
+			"maxDays",
+			"cout",
+			"1",
+			"log",
+			"dayDiffToEndMonth",
+			"cout",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"hminDecimal",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"cou",
+			"cout",
+			"obtenerMaximoDiaDelMes",
+			"this->getAnio()",
+			"esBiciesto",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"endl",
+			"getMinuto",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"getMinuto",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"this.",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"obtenerDiaHoraMinutoDesdeNumero\n",
+			"obtenerDiaHoraMinutoDesdeNumero",
+			"this->",
+			"h",
+			"DateTime"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"//exit",
+			"maxDias",
+			"anio",
+			"this->",
+			"fecha.",
+			"obtenerMaximoDiaDelMes",
+			"esBiciesto",
+			"obtenerDiaHoraMinutoDesdeNumero"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "ob5.sublime-workspace",
+	"replace":
+	{
+		"height": 114.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 192.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
