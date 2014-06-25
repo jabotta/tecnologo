@@ -2,10 +2,17 @@
 
 //Constructores
 UsuarioControlador::UsuarioControlador(){
+	
+}
 
+UsuarioControlador::UsuarioControlador(int iduc){
+	id = iduc;
 }
 
 UsuarioControlador::~UsuarioControlador(){
+	//debemos liberar la memoria de todos los pseudoatributos 
+}
+UsuarioControlador::UsuarioControlador(const UsuarioControlador& i){
 	//debemos liberar la memoria de todos los pseudoatributos 
 }
 
@@ -67,7 +74,9 @@ void UsuarioControlador::guardarUsuario(){
 	Usuario us = Usuario(dataUsuarioIngresar);
 	ManejadorUsuario::getInstance()->guardarUsuario(us);
 }
-
+int UsuarioControlador::getId(){
+	return id;
+}
 DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 
 }

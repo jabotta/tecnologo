@@ -8,6 +8,8 @@
 
 using namespace std;
 
+int idUsuarioControlador;
+
 int ingresarNumerico(){
 	int res;
 	cin >> res;
@@ -30,28 +32,25 @@ void altaUsuario(){
 	string nickname;
 	bool cancelar = false;
 	bool existe = true;
-
-	IUsuarioControlador * controller;
-	controller = Fabrica::getInstance()->getUControlador();
 	
 	while(!cancelar && existe){
 		cout<<"Ingrese Nickname o 1 para cancelar:"<<endl;
 		cin>>nickname;
 		cancelar = checkSiCancelo(nickname);
 		if(!cancelar){
-			existe = controller->checkeoNickname(nickname);
+			existe = Fabrica::getInstance()->getUControlador(idUsuarioControlador)->checkeoNickname(nickname);
 		}
 	}
 	if(!cancelar){
-		DataUsuario du;	
+		DataUsuario du;
+		DateTime dt;		
 		du.setNickname(nickname);
 		//Ingresa al datatype para completar los datos
 		cin >> du;
 		//Ingresa el usuario en memoria 
-		controller->ingresarDatosUsuario(du);
+		Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(du);
 		//Crea y guarda el Usuario 
-		controller->guardarUsuario();
-		
+		Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
 	}
 }
 
@@ -59,6 +58,7 @@ void altaUsuario(){
 int main(){
 
 	int opcion;
+	idUsuarioControlador = Fabrica::getInstance()->getUControlador(-1)->getId();
 
 	do{
 		cout << "*****************************************" << endl;		

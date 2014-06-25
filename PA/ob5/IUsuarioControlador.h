@@ -14,5 +14,6 @@ class IUsuarioControlador{
 		virtual DataInformacionUsuario obtenerInformacionUsuario() = 0;
 	//	virtual IUserDictionary listarUsuarios() = 0;
 		virtual void elegirUsuario(string) = 0;
+		virtual int getId() = 0;
 };
 #endif

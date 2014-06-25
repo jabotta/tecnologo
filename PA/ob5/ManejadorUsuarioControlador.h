@@ -12,7 +12,7 @@ class ManejadorUsuarioControlador {
 private:
 	static ManejadorUsuarioControlador * instance;
 	ManejadorUsuarioControlador();
-	map<int, UsuarioControlador> usuarioControladores;
+	map<int, UsuarioControlador*> usuarioControladores;
 	int ultimoEnMapa;
 
 public:
@@ -20,6 +20,6 @@ public:
 	static ManejadorUsuarioControlador * getInstance();
 	UsuarioControlador* obtenerControlerPorId(int);
 	int getUltimoEnMapa();
-	void agregarController(UsuarioControlador);
+	void agregarController(UsuarioControlador *);
 };
 #endif

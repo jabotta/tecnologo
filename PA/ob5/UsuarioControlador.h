@@ -23,10 +23,13 @@ private:
 	bool existe;
 	DataUsuario dataUsuarioIngresar;
 	string nickname;
+	int id;
 
 public:
 	//Constructores
 	UsuarioControlador();
+	UsuarioControlador(int);
+	UsuarioControlador(const UsuarioControlador&);
 	//Destructor	
 	~UsuarioControlador();
 	//Setters
@@ -52,7 +55,7 @@ public:
 	DataInformacionUsuario obtenerInformacionUsuario();
 	// Set(DataUsuario) ListarUsuarios();
 	void elegirUsuario(string);
-
+	int getId();
 
 };
 #endif
