@@ -4,15 +4,15 @@
 #include "UsuarioControlador.h"
 class Fabrica {
 	
-public:
-	IUsuarioControlador* getUControlador();
-	static Fabrica& getInstance();
-	//IRecursoControlador getRControlador();
 private:
+	static Fabrica * instance;	
+	Fabrica();	
 
-	//Constructor
+public:
+	static Fabrica * getInstance();
+	IUsuarioControlador * getUControlador();
+	//IRecursoControlador getRControlador();
 
-	Fabrica();
 	//Destructor
 	~Fabrica();
 };

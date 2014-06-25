@@ -19,7 +19,7 @@ public:
 	~ManejadorUsuario();
 
 	bool checkeoNickname(string);
-	void guardarUsuario(Usuario&);
+	void guardarUsuario(Usuario);
 	list<Usuario*>ListarUsuarios();
 	Usuario* elegirUsuario(string);
 };

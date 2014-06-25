@@ -19,10 +19,11 @@ private:
 	//Set(Recurso) recCreados;
 	//Set(Colaboracion) colaboracionList;
 	//Set(Accion) accList;
-	Usuario* usuarioElegido;
+	Usuario * usuarioElegido;
 	bool existe;
 	DataUsuario dataUsuarioIngresar;
 	string nickname;
+
 public:
 	//Constructores
 	UsuarioControlador();
@@ -45,10 +46,9 @@ public:
 	DataUsuario& getDataUsuarioIngresar();
 	string getNickname();
 
-	//otras
 	bool checkeoNickname(string);
 	void ingresarDatosUsuario(DataUsuario);
-	// void guardarUsuario();
+	void guardarUsuario();
 	DataInformacionUsuario obtenerInformacionUsuario();
 	// Set(DataUsuario) ListarUsuarios();
 	void elegirUsuario(string);

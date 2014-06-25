@@ -7,29 +7,24 @@ Usuario::Usuario(){
 	nickname = "";
 	nombre = "";
 	sexo = "";
-	cout<< "usuario por def"<<endl;
 	fechaNac = DateTime();
 }
 
 Usuario::Usuario(DataUsuario & d){
-cout<< " usuario datausercop"<<endl;
-cout<<d<<endl;
 	nickname = d.getNickname();
 	nombre = d.getNombre();
 	sexo = d.getSexo();
 	fechaNac = d.getFechaNac();
 }
 
-Usuario::Usuario(const Usuario& u){
-cout<< " usuario cop ."<<endl;
-cout<<u.getNickname()<<endl;
-	nickname = u.getNickname();
-	nombre = u.getNombre();
-	sexo = u.getSexo();
-	fechaNac = u.getFechaNac();
-}
+// Usuario::Usuario(const Usuario& u){
+// 	nickname = u.getNickname();
+// 	nombre = u.getNombre();
+// 	sexo = u.getSexo();
+// 	fechaNac = u.getFechaNac();
+// }
 
-Usuario::Usuario(string nickname,string nombre,string sexo,DateTime fc){
+Usuario::Usuario(string nickname, string nombre, string sexo, DateTime fc){
 	nickname = nickname;
 	nombre = nombre;
 	sexo = sexo;
@@ -70,7 +65,7 @@ void Usuario::setFechaNac(DateTime t){
 // }
 
 string Usuario::getNickname() const{
-	return this->nickname;
+	return nickname;
 }
 
 string Usuario::getNombre()const{

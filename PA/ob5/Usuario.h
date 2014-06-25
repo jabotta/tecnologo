@@ -21,8 +21,8 @@ class Usuario {
 
 		Usuario();
 		Usuario(DataUsuario &);
-		Usuario(const Usuario &);
-		Usuario(string,string,string,DateTime);
+		// Usuario(const Usuario &);
+		Usuario(string, string, string, DateTime);
 
 		~Usuario();
 

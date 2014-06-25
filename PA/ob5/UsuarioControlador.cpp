@@ -6,25 +6,24 @@ UsuarioControlador::UsuarioControlador(){
 }
 
 UsuarioControlador::~UsuarioControlador(){
-	//debemos liberar la memoria de todos los pseudo atributos 
+	//debemos liberar la memoria de todos los pseudoatributos 
 }
 
 //Setters
-/*
-void UsuarioControlador::setRecCreados(Set<Recurso> r){
+// void UsuarioControlador::setRecCreados(Set<Recurso> r){
 
-	recCreados = r;
+// 	recCreados = r;
 
-}
+// }
 
-void UsuarioControlador::setcolaboracionList(Set<Colaboracion> c){
-	colaboracionList = c ;
-}
+// void UsuarioControlador::setcolaboracionList(Set<Colaboracion> c){
+// 	colaboracionList = c ;
+// }
 
-void UsuarioControlador::setAccList(Set<Accion> a){
-	accList = a;
-}
-*/
+// void UsuarioControlador::setAccList(Set<Accion> a){
+// 	accList = a;
+// }
+
 void UsuarioControlador::setUsuarioElegido(Usuario *u){
 	usuarioElegido = u;
 }
@@ -38,11 +37,12 @@ void UsuarioControlador::setNickname(string n){
 }
 
 //Getters
-/*
-Set<Recurso> UsuarioControlador::getRecCreados(){}
-Set<Colaboracion> UsuarioControlador::getcolaboracionList(){}
-Set<Accion>UsuarioControlador::getAccList(){}
-*/
+// Set<Recurso> UsuarioControlador::getRecCreados(){}
+
+// Set<Colaboracion> UsuarioControlador::getcolaboracionList(){}
+
+// Set<Accion>UsuarioControlador::getAccList(){}
+
 // Usuario* UsuarioControlador::getUsuarioElegido(){
 // 	return usuarioElegido;
 // }
@@ -55,19 +55,18 @@ string UsuarioControlador::getNickname(){
 	return nickname;
 }
 
-//otras
 bool UsuarioControlador::checkeoNickname(string nickname){
 	return ManejadorUsuario::getInstance()->checkeoNickname(nickname);
 }
 
 void UsuarioControlador::ingresarDatosUsuario(DataUsuario d){
-	dataUsuarioIngresar = d;
+	dataUsuarioIngresar = DataUsuario(d);
 }
 
-// void UsuarioControlador::guardarUsuario(){
-// 	Usuario us = new Usuario(dataUsuarioIngresar);
-// 	ManejadorUsuario::getInstance().guardarUsuario(us);
-// }
+void UsuarioControlador::guardarUsuario(){
+	Usuario us = Usuario(dataUsuarioIngresar);
+	ManejadorUsuario::getInstance()->guardarUsuario(us);
+}
 
 DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 

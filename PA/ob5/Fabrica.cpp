@@ -1,21 +1,24 @@
 #include "Fabrica.h"
 
+Fabrica * Fabrica::instance = NULL;
+
 Fabrica::Fabrica(){
 
 }
+
+Fabrica * Fabrica::getInstance(){
+	if (Fabrica::instance == NULL){
+		Fabrica::instance = new Fabrica();
+	}
+	return Fabrica::instance;
+}
+
 Fabrica::~Fabrica(){
 	
 }
 
-IUsuarioControlador* Fabrica::getUControlador(){
-
+IUsuarioControlador * Fabrica::getUControlador(){
 	return new UsuarioControlador();
-
 }
-Fabrica& Fabrica::getInstance(){
-	
-	static Fabrica instance;
 
-	return instance;
-}
 //IRecursoControlador getRControlador();

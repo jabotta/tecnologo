@@ -30,27 +30,28 @@ void altaUsuario(){
 	string nickname;
 	bool cancelar = false;
 	bool existe = true;
+
+	IUsuarioControlador * controller;
+	controller = Fabrica::getInstance()->getUControlador();
 	
 	while(!cancelar && existe){
 		cout<<"Ingrese Nickname o 1 para cancelar:"<<endl;
 		cin>>nickname;
 		cancelar = checkSiCancelo(nickname);
 		if(!cancelar){
-			existe = Fabrica::getInstance().getUControlador()->checkeoNickname(nickname);
+			existe = controller->checkeoNickname(nickname);
 		}
 	}
 	if(!cancelar){
-
 		DataUsuario du;
 		DateTime dt;		
 		du.setNickname(nickname);
 		//Ingresa al datatype para completar los datos
 		cin >> du;
 		//Ingresa el usuario en memoria 
-		Fabrica::getInstance().getUControlador()->ingresarDatosUsuario(du);
-		cout << du;
+		controller->ingresarDatosUsuario(du);
 		//Crea y guarda el Usuario 
-		//Fabrica::getInstance().getUControlador()->guardarUsuario();
+		controller->guardarUsuario();
 	}
 }
 

@@ -2,7 +2,6 @@
 
 // Constructores
 DataUsuario::DataUsuario(){
-
     nickname = ""; 
     nombre = "";
     sexo = "";
@@ -81,27 +80,20 @@ istream& operator>> (istream &input,DataUsuario& o){
 	string nombretmp, sexotmp;
 	int anio,dia,mes;
 
-	/*
-	cout<<"Ingrese Nickname: "<<endl;
-    input>>nicknametmp;
-	*/
-	
-	cout << "Ingrese Nombre: "<<endl;
+	cout << "Ingrese Nombre: " << endl;
     input >> nombretmp;
-	cout << "Ingrese Sexo: "<<endl;
+	cout << "Ingrese Sexo: " << endl;
     input >> sexotmp;
-	cout << "Ingrese Fecha de Nacimiento"<<endl;
-    
-	cout<<"Ingrese Año: "<<endl;
-    input>>anio;
-	cout<<"Ingrese Mes: "<<endl;
-    input>>mes;
-	cout<<"Ingrese Dia: "<<endl;
+
+	cout << "Ingrese Fecha de Nacimiento" << endl;    
+	cout << "Ingrese Año: " << endl;
+    input >> anio;
+	cout << "Ingrese Mes: " << endl;
+    input >> mes;
+	cout << "Ingrese Dia: " << endl;
     input>>dia;
 
     DateTime fechanactmp(anio,mes,dia);
-
-    //o.setNickname(nicknametmp);
     o.setNombre(nombretmp);
 	o.setSexo(sexotmp);
     o.setFechaNac(fechanactmp);

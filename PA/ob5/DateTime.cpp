@@ -218,7 +218,6 @@ DateTime DateTime::operator + (double d){
 	//guardo en minuto ya la suma de los minutos que tengo con los que voy a agregar
 	int minuto = this->getMinuto() + listaDeValoresSegunDecimal[2];
 	
-	//cout<< " "<<listaDeValoresSegunDecimal[0]<<  " "<<listaDeValoresSegunDecimal[1] << " "<<listaDeValoresSegunDecimal[2]<<endl;
 	double diffDeDias = 0;
 	
 	// me fijo en el rango de minutos para saber si no agrego horas
