@@ -18,7 +18,7 @@ private:
 public:
 	~ManejadorUsuarioControlador();
 	static ManejadorUsuarioControlador * getInstance();
-	UsuarioControlador obtenerControlerPorId(int);
+	UsuarioControlador* obtenerControlerPorId(int);
 	int getUltimoEnMapa();
 	void agregarController(UsuarioControlador);
 };

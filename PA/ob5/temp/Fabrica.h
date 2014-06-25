@@ -8,7 +8,7 @@ class Fabrica {
 private:
 	static Fabrica * instance;	
 	Fabrica();	
-	ManejadorUsuarioControlador mucontroller;
+	ManejadorUsuarioControlador* mucontroller;
 public:
 	static Fabrica * getInstance();
 	IUsuarioControlador * getUControlador(int id);

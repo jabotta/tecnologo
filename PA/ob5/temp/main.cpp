@@ -32,7 +32,7 @@ void altaUsuario(){
 	bool existe = true;
 
 	IUsuarioControlador * controller;
-	controller = Fabrica::getInstance()->getUControlador();
+	controller = Fabrica::getInstance()->getUControlador(0);
 	
 	while(!cancelar && existe){
 		cout<<"Ingrese Nickname o 1 para cancelar:"<<endl;

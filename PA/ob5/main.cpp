@@ -43,8 +43,7 @@ void altaUsuario(){
 		}
 	}
 	if(!cancelar){
-		DataUsuario du;
-		DateTime dt;		
+		DataUsuario du;	
 		du.setNickname(nickname);
 		//Ingresa al datatype para completar los datos
 		cin >> du;
@@ -52,6 +51,7 @@ void altaUsuario(){
 		controller->ingresarDatosUsuario(du);
 		//Crea y guarda el Usuario 
 		controller->guardarUsuario();
+		
 	}
 }
 

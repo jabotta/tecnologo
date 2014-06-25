@@ -21,9 +21,11 @@ IUsuarioControlador * Fabrica::getUControlador(int id){
 	//if(id != NULL){
 	//	return mucontroller.obtenerControlerPorId(id);
 	//}
-	int newId = ManejadorUsuarioControlador::getUltimoEnMapa();
-	UsuarioControlador nuevaInstancia = new UsuarioControlador(id);
-	mucontroller.agregarController(nuevaInstancia);
+	int newId = mucontroller->getUltimoEnMapa();
+	UsuarioControlador* nuevaInstancia = new UsuarioControlador(id);
+	//esta linea de aca abajo no va a doblar 
+
+	mucontroller->agregarController(*nuevaInstancia);
 	return nuevaInstancia;
 }
 

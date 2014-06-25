@@ -1,5 +1,5 @@
-mmmain:	  DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o Fabrica.o main.o
-	g++   DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o Fabrica.o main.o -o main
+mmmain:	  DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o ManejadorUsuarioControlador.o Fabrica.o main.o
+	g++   DateTime.o Comparable.o DataUsuario.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o ManejadorUsuario.o ManejadorUsuarioControlador.o Fabrica.o main.o -o main
 
 DateTime.o:	DateTime.cpp	DateTime.h
 	g++ -c DateTime.cpp -I.
@@ -30,8 +30,8 @@ UsuarioControlador.o:	UsuarioControlador.cpp	UsuarioControlador.h
 ManejadorUsuario.o: ManejadorUsuario.cpp ManejadorUsuario.h
 	g++ -c ManejadorUsuario.cpp -I.
 
-ManejadorUsuario.o: ManejadorUsuarioControlador.cpp ManejadorUsuarioControlador.h
-	g++ -c ManejadorUsuario.cpp -I.
+ManejadorUsuarioControlador.o: ManejadorUsuarioControlador.cpp ManejadorUsuarioControlador.h
+	g++ -c ManejadorUsuarioControlador.cpp -I.
 
 limpiar:
 	rm *.o

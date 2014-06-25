@@ -29,6 +29,7 @@ public:
 	//Constructores
 	UsuarioControlador();
 	UsuarioControlador(int);
+	UsuarioControlador(const UsuarioControlador&);
 	//Destructor	
 	~UsuarioControlador();
 	//Setters
