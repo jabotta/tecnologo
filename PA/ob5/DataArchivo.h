@@ -15,21 +15,5 @@ class DataArchivo: public DataRecurso{
 
 		//Destructor
 		~DataArchivo();
-
-		//Selectores
-		string getNombre() const;
-		DataUsuario getUsuarioCreo() const;
-		string getDescripcion() const;
-		DateTime getFechaUltimoAcceso() const;
-		DateTime getFechaCreacion() const;
-		string getUbicacion() const;
-
-		//Modificadores
-		void setNombre(string);
-		void getUsuarioCreo(DataUsuario);
-		void getDescripcion(string);
-		void getFechaUltimoAcceso(DateTime);
-		void getFechaCreacion(DateTime);
-		void getUbicacion(string);
 };
 #endif

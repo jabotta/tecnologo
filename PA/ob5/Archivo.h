@@ -13,8 +13,8 @@ class Archivo :public Recurso{
 		list<Recurso> listaRecursos;
 	public:
 		Archivo();
-		Archivo(Archivo &);
-		Archivo(DataArchivo &);
+		Archivo(const Archivo &);
+		Archivo(const DataArchivo &);
 		~Archivo();
 
 
@@ -22,7 +22,6 @@ class Archivo :public Recurso{
 		bool existeNombre();
 		list<Recurso> getListaRecursos();
 		list<Colaboradores> getListaColaboradores();
-
 };
 
 #endif

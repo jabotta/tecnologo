@@ -4,6 +4,7 @@
 #include <string>
 #include "IRecursoControlador.h"
 #include "Comentario.h"
+#include "Recurso.h"
 #include "Carpeta.h"
 #include "Archivo.h"
 #include "Colaborador.h"	
@@ -20,7 +21,7 @@ private:
 	Archivo archivoElegido;
 	Colaborador colaboradorCreado;
 	list<DataErrores> errores;
-	//list<Recurso> recursosLista;
+	list<Recurso> recursosLista;
 	Usuario usuarioElegido;
 	Usuario usuarioColaborador;
 	bool existen;

@@ -10,20 +10,37 @@
 
 class Recurso {
 	private: 
-		string Nombre ; 
-		string Ubicacion;
-		Usuario UsuarioCrea;
-		string Descripcion; 
-		DateTime FechaUltimoAcceso;
-		DateTime FechaCreacion;
-		DateTime FechaModificacion;	
+		string nombre ; 
+		string ubicacion;
+		Usuario usuarioCrea;
+		string descripcion; 
+		DateTime fechaUltimoAcceso;
+		DateTime fechaCreacion;
+		DateTime fechaModificacion;	
 	public:
+		Recurso();
+		Recurso(const Recurso&);
 		//Destructor
-		virtual ~Recurso();
+		~Recurso();
 		//Funciones virtuales 
-		virtual list<DataErrores> controlarNombreRecurso() = 0;
-		virtual bool existeNombre() = 0;
+		virtual list<DataErrores> controlarNombreRecurso() ;
+		virtual bool existeNombre() ;
 
+		void setNombre(string);
+		void setUbicacion(string);
+		void setUsuarioCrea(Usuario);
+		void setDescripcion(string);
+		void setFechaUltimoAcceso(DateTime);
+		void setFechaCreacion(DateTime);
+		void setFechaModificacion(DateTime);
+
+		string getNombre() const;
+		string getUbicacion() const;
+		Usuario getUsuarioCrea() const;
+		string getDescripcion() const;
+		DateTime getFechaUltimoAcceso() const;
+		DateTime getFechaCreacion() const;
+		DateTime getFechaModificacion() const;
 
 };
 #endif

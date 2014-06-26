@@ -3,10 +3,12 @@
 #include <iostream>
 #include <string>
 #include "DataRecurso.h"
-
+#include <list>
 using namespace std;
 
 class DataCarpeta: public DataRecurso{
+	private:
+		list<DataRecurso> recursos;
 	public:
 		//Constructores
 		DataCarpeta();
@@ -16,20 +18,8 @@ class DataCarpeta: public DataRecurso{
 		//Destructor
 		~DataCarpeta();
 
-		//Selectores
-		string getNombre() const;
-		DataUsuario getUsuarioCreo() const;
-		string getDescripcion() const;
-		DateTime getFechaUltimoAcceso() const;
-		DateTime getFechaCreacion() const;
-		string getUbicacion() const;
+		void setRecursos(list<DataRecurso>);
+		list<DataRecurso> getRecursos();
 
-		//Modificadores
-		void setNombre(string);
-		void getUsuarioCreo(DataUsuario);
-		void getDescripcion(string);
-		void getFechaUltimoAcceso(DateTime);
-		void getFechaCreacion(DateTime);
-		void getUbicacion(string);
 };
 #endif

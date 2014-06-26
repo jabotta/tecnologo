@@ -12,8 +12,8 @@ class  Carpeta: public Recurso{
 	public:
 		//Constructores
 		Carpeta();
-		Carpeta(Carpeta &);
-		Carpeta(DataCarpeta &);
+		Carpeta(const Carpeta &);
+		Carpeta(const DataCarpeta &);
 
 		//Destructor
 		~Carpeta();
