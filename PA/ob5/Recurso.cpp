@@ -59,8 +59,8 @@ Recurso Recurso::operator = (const Recurso& rCopy){
 	return (rCopy);
 
 }
-list<DataErrores> controlarNombreRecurso(){
+list<DataErrores> Recurso::controlarNombreRecurso(){
 	list<DataErrores> errores;
 	return errores;
 }
-bool existeNombre(){return true;}
+bool Recurso::existeNombre(){return true;}
