@@ -5,6 +5,8 @@
 #include "DataUsuario.h"
 #include "DateTime.h"
 
+using namespace std;
+
 class DataRecurso{
 	private:
 		string nombre;
@@ -13,6 +15,7 @@ class DataRecurso{
 		DateTime fechaUltimoAcceso;
 		DateTime fechaCreacion;
 		string ubicacion;
+		
 	public:
 		//Destructor
 		virtual ~DataRecurso();

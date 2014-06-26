@@ -4,7 +4,7 @@ DataCarpeta::DataCarpeta(){
 
 }
 
-DataCarpeta::DataCarpeta(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc,string lc){
+DataCarpeta::DataCarpeta(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc){
 	nombre = nm;
 	usuarioCreo = uc;
 	descripcion = dc;

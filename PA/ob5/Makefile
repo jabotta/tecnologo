@@ -1,11 +1,26 @@
-mmmain:	  DateTime.o Comparable.o DataUsuario.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o RecursoControlador.o Comentario.o Colaborador.o ManejadorUsuario.o Fabrica.o main.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o
-	g++   DateTime.o Comparable.o DataUsuario.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o RecursoControlador.o Comentario.o Colaborador.o ManejadorUsuario.o Fabrica.o main.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o -o main
+main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o RecursoControlador.o Comentario.o Colaborador.o ManejadorUsuario.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o main.o
+	g++  Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o UsuarioControlador.o RecursoControlador.o Comentario.o Colaborador.o ManejadorUsuario.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o main.o -o main
+
+Fabrica.o: Fabrica.cpp Fabrica.h
+	g++ -c Fabrica.cpp -I.
 
 DateTime.o:	DateTime.cpp	DateTime.h
 	g++ -c DateTime.cpp -I.
 
+Comparable.o:	Comparable.cpp	Comparable.h
+	g++ -c Comparable.cpp -I.
+
 DataUsuario.o:	DataUsuario.cpp	DataUsuario.h
 	g++ -c DataUsuario.cpp -I.
+
+DataRecurso.o:	DataRecurso.h 
+	g++ -c DataRecurso.h -I.
+
+DataCarpeta.o:	DataCarpeta.cpp	DataCarpeta.h
+	g++ -c DataCarpeta.cpp -I.
+
+DataArchivo.o:	DataArchivo.cpp	DataArchivo.h
+	g++ -c DataArchivo.cpp -I.
 
 DataColaborador.o:	DataColaborador.cpp	DataColaborador.h
 	g++ -c DataColaborador.cpp -I.
@@ -13,18 +28,8 @@ DataColaborador.o:	DataColaborador.cpp	DataColaborador.h
 DataErrores.o:	DataErrores.cpp	DataErrores.h
 	g++ -c DataErrores.cpp -I.
 
-
 DataAccion.o:	DataAccion.cpp	DataAccion.h
 	g++ -c DataAccion.cpp -I.
-
-main.o:	main.cpp 
-	g++ -c main.cpp -I.
-
-Fabrica.o: Fabrica.cpp Fabrica.h
-	g++ -c Fabrica.cpp -I.
-
-Comparable.o:	Comparable.cpp	Comparable.h
-	g++ -c Comparable.cpp -I.
 
 DataInformacionUsuario.o: DataInformacionUsuario.cpp DataInformacionUsuario.h
 	g++ -c DataInformacionUsuario.cpp -I.
@@ -52,6 +57,9 @@ ManejadorUsuarioControlador.o: ManejadorUsuarioControlador.cpp ManejadorUsuarioC
 
 ManejadorRecursoControlador.o: ManejadorRecursoControlador.cpp ManejadorRecursoControlador.h
 	g++ -c ManejadorRecursoControlador.cpp -I.
+
+main.o:	main.cpp 
+	g++ -c main.cpp -I.
 
 limpiar:
 	rm *.o

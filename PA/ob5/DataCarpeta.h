@@ -1,12 +1,16 @@
 #ifndef DATACARPETA_H 
 #define DATACARPETA_H
+#include <iostream>
+#include <string>
 #include "DataRecurso.h"
+
+using namespace std;
 
 class DataCarpeta: public DataRecurso{
 	public:
 		//Constructores
 		DataCarpeta();
-		DataCarpeta(string, DataUsuario, string, DateTime, DateTime,string);
+		DataCarpeta(string, DataUsuario, string, DateTime, DateTime, string);
 		DataCarpeta(const DataCarpeta&);
 
 		//Destructor

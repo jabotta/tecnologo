@@ -1,6 +1,10 @@
 #ifndef DATAARCHIVO_H 
 #define DATAARCHIVO_H
+#include <iostream>
+#include <string>
 #include "DataRecurso.h"
+
+using namespace std;
 
 class DataArchivo: public DataRecurso{
 	public:
