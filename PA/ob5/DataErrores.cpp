@@ -2,19 +2,19 @@
 
 // Constructores
 DataErrores::DataErrores(){
-    codigo = -1;
-	mensaje = "";
+    setCodigo(-1);
+	setMensaje("");
 };
 
 DataErrores::DataErrores(int cd, string msj){
-	codigo = cd;
-	mensaje = msj;
+	setCodigo(cd);
+	setMensaje(msj);
 }
 
 // Instancia por copia
 DataErrores::DataErrores(const DataErrores& de){
-	codigo = de.getCodigo();
-    mensaje = de.getMensaje();
+	setCodigo(de.getCodigo());
+    setMensaje(de.getMensaje());
 }
 
 // Destructor

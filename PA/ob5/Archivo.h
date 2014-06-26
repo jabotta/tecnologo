@@ -5,11 +5,11 @@
 #include "Recurso.h"
 #include "DataArchivo.h"
 #include "DataErrores.h"
-#include "Colaboradores.h"
+#include "Colaborador.h"
 class Archivo :public Recurso{
 	
 	private:
-		list<Colaboradores> listaColaboradores;
+		list<Colaborador> listaColaboradores;
 		list<Recurso> listaRecursos;
 	public:
 		Archivo();
@@ -21,7 +21,7 @@ class Archivo :public Recurso{
 		list<DataErrores> controlarNombreRecurso();
 		bool existeNombre();
 		list<Recurso> getListaRecursos();
-		list<Colaboradores> getListaColaboradores();
+		list<Colaborador> getListaColaboradores();
 };
 
 #endif

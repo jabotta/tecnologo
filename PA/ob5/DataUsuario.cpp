@@ -2,28 +2,28 @@
 
 // Constructores
 DataUsuario::DataUsuario(){
-    nickname = ""; 
-    nombre = "";
-    sexo = "";
-	edad = 0;
-	fechaNac = DateTime();
+    setNickname(""); 
+    setNombre("");
+    setSexo("");
+	setEdad(0);
+	setFechaNac(DateTime());
 };
 
 DataUsuario::DataUsuario(string nck, string nm, string sx, int edad, DateTime fn){
-	nickname = nck;
-	nombre = nm;
-	sexo = sx;
-	edad = edad;
-	fechaNac = fn;
+	setNickname(nck);
+	setNombre(nm);
+	setSexo(sx);
+	setEdad(edad);
+	setFechaNac(fn);
 }
 
 // Instancia por copia
 DataUsuario::DataUsuario(const DataUsuario& du){
-	nickname = du.getNickname();
-    nombre = du.getNombre();
-    sexo = du.getSexo();
-    edad = du.getEdad();
-    fechaNac = du.getFechaNac();
+	setNickname(du.getNickname());
+    setNombre(du.getNombre());
+    setSexo(du.getSexo());
+    setEdad(du.getEdad());
+    setFechaNac(du.getFechaNac());
 }
 
 // Destructor

@@ -4,22 +4,22 @@ using namespace std;
 
 // Constructores
 DataAccion::DataAccion(){
-	fecha = DateTime();
-	tipo = TipoAccion();
-	usuario = DataUsuario();
+	setFecha(DateTime());
+	setTipo(TipoAccion());
+	setUsuario(DataUsuario());
 };
 
 DataAccion::DataAccion(DateTime fec, TipoAccion ta, DataUsuario du){
-	fecha = fec;
-	tipo = ta;
-	usuario = du;
+	setFecha(fec);
+	setTipo(ta);
+	setUsuario(du);
 }
 
 // Instancia por copia
 DataAccion::DataAccion(const DataAccion &da){
-	fecha = da.getFecha();
-    tipo = da.getTipo();
-    usuario = da.getUsuario();
+	setFecha(da.getFecha());
+    setTipo(da.getTipo());
+    setUsuario(da.getUsuario());
 }
 
 // Destructor

@@ -24,6 +24,6 @@ bool Archivo::existeNombre(){
 list<Recurso> Archivo::getListaRecursos(){
 	return listaRecursos;
 }
-list<Colaboradores> Archivo::getListaColaboradores(){
+list<Colaborador> Archivo::getListaColaboradores(){
 	return listaColaboradores;
 }

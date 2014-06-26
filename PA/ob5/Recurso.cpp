@@ -1,4 +1,5 @@
 #include "Recurso.h"
+#include <string>
 
 Recurso::Recurso(){
 
@@ -17,7 +18,7 @@ void Recurso::Recurso::setNombre(string n ){
 void Recurso::Recurso::setUbicacion(string u){
 	ubicacion = u;
 }
-void Recurso::setUsuarioCrea(Usuario u ){
+void Recurso::setUsuarioCrea(Usuario* u ){
 	usuarioCrea = u;
 }
 void Recurso::setDescripcion(string d){
@@ -39,7 +40,7 @@ string Recurso::getNombre() const{
 string Recurso::getUbicacion() const{
 	return ubicacion;
 }
-Usuario Recurso::getUsuarioCrea() const{
+Usuario* Recurso::getUsuarioCrea() const{
 	return usuarioCrea;
 }
 string Recurso::getDescripcion() const{
@@ -53,6 +54,11 @@ DateTime Recurso::getFechaCreacion() const{
 }
 DateTime Recurso::getFechaModificacion() const{
 	return fechaModificacion;
+}
+string Recurso::getPath() const{
+	//string aux = strcat(ubicacion,"/");
+	//string result = strcat(aux,nombre);
+	return ubicacion;
 }
 
 Recurso Recurso::operator = (const Recurso& rCopy){

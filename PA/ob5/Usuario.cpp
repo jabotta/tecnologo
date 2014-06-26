@@ -4,17 +4,17 @@ using namespace std;
 
 //Constructores
 Usuario::Usuario(){
-	nickname = "";
-	nombre = "";
-	sexo = "";
-	fechaNac = DateTime();
+	setNickname("");
+	setNombre("");
+	setSexo("");
+	setFechaNac(DateTime());
 }
 
 Usuario::Usuario(DataUsuario & d){
-	nickname = d.getNickname();
-	nombre = d.getNombre();
-	sexo = d.getSexo();
-	fechaNac = d.getFechaNac();
+	setNickname(d.getNickname());
+	setNombre(d.getNombre());
+	setSexo(d.getSexo());
+	setFechaNac(d.getFechaNac());
 }
 
 // Usuario::Usuario(const Usuario& u){
@@ -25,10 +25,10 @@ Usuario::Usuario(DataUsuario & d){
 // }
 
 Usuario::Usuario(string nickname, string nombre, string sexo, DateTime fc){
-	nickname = nickname;
-	nombre = nombre;
-	sexo = sexo;
-	fechaNac = fc;
+	setNickname(nickname);
+	setNombre(nombre);
+	setSexo(sexo);
+	setFechaNac(fc);
 }
 
 //Destructor
@@ -60,9 +60,9 @@ void Usuario::setFechaNac(DateTime t){
 // }
 
 //Getters
-// Set<Accion> Usuario::obtenerAcciones(){
-// 	return acciones;
-// }
+/*list<Accion*> Usuario::obtenerAcciones(){
+ 	return acciones;
+}*/
 
 string Usuario::getNickname() const{
 	return nickname;

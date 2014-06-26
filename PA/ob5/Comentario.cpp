@@ -6,17 +6,17 @@ Comentario::Comentario(){
 }
 
 Comentario::Comentario(const Comentario& cm){
-	codigo = cm.getCodigo();
-	contenido = cm.getContenido();
-	usuario = cm.getUsuario();
-	archivo = cm.getArchivo();
+	setCodigo(cm.getCodigo());
+	setContenido(cm.getContenido());
+	setUsuario(cm.getUsuario());
+	setArchivo(cm.getArchivo());
 }
 
 Comentario::Comentario(int cd, string con, Usuario* usr, Archivo* arc){
-	codigo = cd;
-	contenido = con;
-	usuario = usr;
-	archivo = arc;
+	setCodigo(cd);
+	setContenido(con);
+	setUsuario(usr);
+	setArchivo(arc);
 }
 
 //Destructor

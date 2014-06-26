@@ -2,19 +2,19 @@
 
 // Constructores
 DataColaborador::DataColaborador(){
-    carpeta = DataCarpeta();
-	fecha = DateTime();
+    setCarpeta(DataCarpeta());
+	setFecha(DateTime());
 };
 
 DataColaborador::DataColaborador(DataCarpeta dc, DateTime fc){
-	carpeta = dc;
-	fecha = fc;
+	setCarpeta(dc);
+	setFecha(fc);
 }
 
 // Instancia por copia
 DataColaborador::DataColaborador(const DataColaborador& dc){
-	carpeta = dc.getCarpeta();
-    fecha = dc.getFecha();
+	setCarpeta(dc.getCarpeta());
+    setFecha(dc.getFecha());
 }
 
 // Destructor

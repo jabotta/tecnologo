@@ -1,5 +1,5 @@
-main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o main.o
-	g++  Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o main.o -o main
+main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o
+	g++  Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o -o main
 
 Fabrica.o: Fabrica.cpp Fabrica.h
 	g++ -c Fabrica.cpp -I.
@@ -55,6 +55,9 @@ ManejadorUsuario.o: ManejadorUsuario.cpp ManejadorUsuario.h
 RecursoControlador.o: RecursoControlador.cpp	RecursoControlador.h
 	g++ -c RecursoControlador.cpp -I.
 
+ManejadorRecursos.o: ManejadorRecursos.cpp ManejadorRecursos.h
+	g++ -c ManejadorRecursos.cpp -I.
+
 Comentario.o: Comentario.cpp Comentario.h
 	g++ -c Comentario.cpp -I.
 
@@ -66,6 +69,12 @@ ManejadorUsuarioControlador.o: ManejadorUsuarioControlador.cpp ManejadorUsuarioC
 
 ManejadorRecursoControlador.o: ManejadorRecursoControlador.cpp ManejadorRecursoControlador.h
 	g++ -c ManejadorRecursoControlador.cpp -I.
+
+ManejadorColaborador.o: ManejadorColaborador.cpp ManejadorColaborador.h
+	g++ -c ManejadorColaborador.cpp -I.
+
+Accion.o: Accion.cpp Accion.h
+	g++ -c Accion.cpp -I.
 
 main.o:	main.cpp 
 	g++ -c main.cpp -I.

@@ -4,7 +4,8 @@
 #include "DataUsuario.h"
 #include <iostream>
 #include <string>
-// #include "Accion.h"
+#include <list>
+#include "Accion.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ class Usuario {
 		string sexo;
 		DateTime fechaNac;
 		int edad;
-		//Set<Accion> acciones;
+		list<Accion*> acciones;
 
 	public:
 
@@ -30,9 +31,8 @@ class Usuario {
 		void setNombre(string n);
 		void setSexo(string s);
 		void setFechaNac(DateTime t);
-		//setAccion(Set<Accion> s);
 
-		//Set<Accion> obtenerAcciones();
+		list<Accion*> obtenerAcciones();
 		string getNickname() const;
 		string getNombre() const;
 		string getSexo() const;

@@ -2,23 +2,23 @@
 #define USUARIOCONTROLADOR_H
 #include "IUsuarioControlador.h"
 #include "Usuario.h"
-//#include "Recurso.h"
-// #include "Accion.h"
+#include "Recurso.h"
+#include "Accion.h"
 #include "DataUsuario.h"
-//#include "Colaboracion.h"
-//#include "DataInformacionUsuario.h"
+#include "Colaborador.h"
+#include "DataInformacionUsuario.h"
 #include "ManejadorUsuario.h"
-#include <iostream>
-#include <string>
+#include "ManejadorRecursos.h"
+#include "ManejadorColaborador.h"
 
 using namespace std;
 
 class UsuarioControlador : public IUsuarioControlador{
 
 private:
-	//Set(Recurso) recCreados;
-	//Set(Colaboracion) colaboracionList;
-	//Set(Accion) accList;
+	list<Recurso> recCreados;
+	list<Colaborador> colaboracionList;
+	list<Accion> accList;
 	Usuario * usuarioElegido;
 	bool existe;
 	DataUsuario dataUsuarioIngresar;
@@ -33,19 +33,19 @@ public:
 	//Destructor	
 	~UsuarioControlador();
 	//Setters
-/*	void setRecCreados(Set<Recurso>);
-	void setcolaboracionList(Set<Colaboracion>);
-	void setAccList(Set<Accion>);
-*/
+	void setRecCreados(list<Recurso>);
+	void setcolaboracionList(list<Colaborador>);
+	void setAccList(list<Accion>);
+
 	void setUsuarioElegido(Usuario *);
 	void setDataUsuarioIngresar(DataUsuario);
 	void setNickname(string);
 
 	//Getters
-	//Set<Recurso> getRecCreados();
-	//Set<Colaboracion> getcolaboracionList();
-	//Set<Accion>getAccList();
-	// Usuario* getUsuarioElegido();
+	list<Recurso> getRecCreados();
+	list<Colaborador> getcolaboracionList();
+	list<Accion>getAccList();
+	Usuario* getUsuarioElegido();
 	DataUsuario& getDataUsuarioIngresar();
 	string getNickname();
 
@@ -53,7 +53,7 @@ public:
 	void ingresarDatosUsuario(DataUsuario);
 	void guardarUsuario();
 	DataInformacionUsuario obtenerInformacionUsuario();
-	// Set(DataUsuario) ListarUsuarios();
+	list<DataUsuario> listarUsuarios();
 	void elegirUsuario(string);
 	int getId();
 

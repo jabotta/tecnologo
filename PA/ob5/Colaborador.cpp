@@ -6,13 +6,13 @@ Colaborador::Colaborador(){
 }
 
 Colaborador::Colaborador(const Colaborador& col){
-	fechaIngreso = col.getFechaIngreso();
-	carpeta = col.getCarpeta();
+	setFechaIngreso(col.getFechaIngreso());
+	setCarpeta(col.getCarpeta());
 }
 
 Colaborador::Colaborador(DateTime fi, Carpeta* car){
-	fechaIngreso = fi;
-	carpeta = car;
+	setFechaIngreso(fi);
+	setCarpeta(car);
 }
 
 //Destructor

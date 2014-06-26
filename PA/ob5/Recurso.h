@@ -8,11 +8,13 @@
 #include "Usuario.h"
 #include "DataErrores.h"
 
+using namespace std;
+
 class Recurso {
 	private: 
 		string nombre ; 
 		string ubicacion;
-		Usuario usuarioCrea;
+		Usuario* usuarioCrea;
 		string descripcion; 
 		DateTime fechaUltimoAcceso;
 		DateTime fechaCreacion;
@@ -28,7 +30,7 @@ class Recurso {
 
 		void setNombre(string);
 		void setUbicacion(string);
-		void setUsuarioCrea(Usuario);
+		void setUsuarioCrea(Usuario*);
 		void setDescripcion(string);
 		void setFechaUltimoAcceso(DateTime);
 		void setFechaCreacion(DateTime);
@@ -36,11 +38,12 @@ class Recurso {
 
 		string getNombre() const;
 		string getUbicacion() const;
-		Usuario getUsuarioCrea() const;
+		Usuario* getUsuarioCrea() const;
 		string getDescripcion() const;
 		DateTime getFechaUltimoAcceso() const;
 		DateTime getFechaCreacion() const;
 		DateTime getFechaModificacion() const;
+		string getPath() const;
 
 		Recurso operator = (const Recurso&);
 
