@@ -54,3 +54,13 @@ DateTime Recurso::getFechaCreacion() const{
 DateTime Recurso::getFechaModificacion() const{
 	return fechaModificacion;
 }
+
+Recurso Recurso::operator = (const Recurso& rCopy){
+	return (rCopy);
+
+}
+list<DataErrores> controlarNombreRecurso(){
+	list<DataErrores> errores;
+	return errores;
+}
+bool existeNombre(){return true;}

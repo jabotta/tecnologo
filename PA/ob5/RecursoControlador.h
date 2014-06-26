@@ -10,12 +10,13 @@
 #include "Colaborador.h"	
 #include "Usuario.h"
 #include "DataRecurso.h"
+//#include "DataComentario.h"
 
 class  RecursoControlador: public IRecursoControlador{
 	
 private:
 	string accionTipo;
-	Comentario nuevoComantario;
+	Comentario nuevoComentario;
 	Comentario padreComentario;
 	Carpeta carpetaElegida;
 	Archivo archivoElegido;
@@ -35,7 +36,7 @@ public:
 
 	list<DataCarpeta> ListarCarpetasPorUsuario();
 	void agregarColaborador();
-	//void ingresarRecurso(DataRecurso recurso,string tipo );
+	void ingresarRecurso(DataRecurso recurso,string tipo );
 	void controlDeErrores();
 	void guardarRecurso();
 	list<DataErrores> imprimirErroresGenerados();
@@ -50,24 +51,24 @@ public:
 
 
 	string getAccionTipo()const;
-	Comentario getNuevoComantario()const;
+	Comentario getNuevoComentario()const;
 	Comentario getPadreComentario()const;
 	Carpeta getCarpetaElegida()const;
 	Archivo getArchivoElegido()const;
 	Colaborador getColaboradorCreado()const;
 	list<DataErrores> getErrores()const;
-	//list<Recurso> getRecursosLista()const;
+	list<Recurso> getRecursosLista()const;
 	Usuario getUsuarioElegido()const;
 	Usuario getUsuarioColaborador()const;
 
 	void setAccionTipo (string);
-	void setNuevoComantario (Comentario);
+	void setNuevoComentario (Comentario);
 	void setPadreComentario (Comentario);
 	void setCarpetaElegida (Carpeta);
 	void setArchivoElegido (Archivo);
 	void setColaboradorCreado(Colaborador);
 	void setErrores(list<DataErrores> );
-	//void setRecursosLista(list<Recurso>);
+	void setRecursosLista(list<Recurso>);
 	void setUsuarioElegido(Usuario&);
 	void setUsuarioColaborador(Usuario&);
 	void setExisten(bool);

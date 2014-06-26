@@ -23,7 +23,7 @@ class Recurso {
 		//Destructor
 		~Recurso();
 		//Funciones virtuales 
-		virtual list<DataErrores> controlarNombreRecurso() ;
+		virtual list<DataErrores> controlarNombreRecurso();
 		virtual bool existeNombre() ;
 
 		void setNombre(string);
@@ -41,6 +41,8 @@ class Recurso {
 		DateTime getFechaUltimoAcceso() const;
 		DateTime getFechaCreacion() const;
 		DateTime getFechaModificacion() const;
+
+		Recurso operator = (const Recurso&);
 
 };
 #endif
