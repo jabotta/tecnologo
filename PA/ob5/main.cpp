@@ -153,9 +153,19 @@ void crearRecurso(){
 }
 
 void agregarColaborador(){
+	elegirUsuario();
+	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetasPorUsuario();
+	list<DataCarpeta>::iterator it;
 	
-	DataRecurso dc = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetas().front();
-	cout<< (&dc) ;
+	string carp;
+	cout<<"Listado de Carpetas: "<<endl;
+	cout<<"Ubicacion - Descripcion"<<endl;
+	for(it = drl.begin(); it!= drl.end();++it){
+		cout<<(*it)<<endl;
+	}	
+	cout<<"Ingrese la ubicacion de la carpeta:";
+	cin>>carp;
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
 
 int main(){
