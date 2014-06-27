@@ -32,7 +32,7 @@ map<string, Recurso*> Carpeta::getRecursos()const{
 
 
 list<DataErrores> Carpeta::controlarNombreRecurso(){
-	cout<<"carpeta linea 31"<<endl;
+
 	list<DataErrores> errores;
 	int size = getNombre().size();
 	

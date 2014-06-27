@@ -132,7 +132,25 @@ void elegirCarpeta(){
 	cin>>carp;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
+void crearRecurso(){
+	crearTipoDeRecurso();
+	elegirUsuario();	
+	elegirCarpeta();
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->controlDeErrores();
+	list<DataErrores> dtErrores = Fabrica::getInstance()->getRControlador(idRecursoControlador)->imprimirErroresGenerados();
 
+	if(dtErrores.size()!=0){
+		
+		list<DataErrores>::iterator ite ;
+		for(ite = dtErrores.begin();ite!=dtErrores.end();++ite){
+			cout<<(*ite)<<endl;
+		}	
+
+	}else{
+		Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+
+	}
+}
 
 void agregarColaborador(){
 	
@@ -184,12 +202,7 @@ int main(){
 			case 3:{
 				try{
 					
-					crearTipoDeRecurso();
-					elegirUsuario();	
-					elegirCarpeta();
-					cout<<"y aca? main 190"<<endl;
-					Fabrica::getInstance()->getRControlador(idRecursoControlador)->controlDeErrores();
-
+					crearRecurso();
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}

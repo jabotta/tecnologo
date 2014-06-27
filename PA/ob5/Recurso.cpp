@@ -5,7 +5,7 @@ Recurso::Recurso(){
 }
 
 Recurso::Recurso(const Recurso& da){
-	cout<< "adsf"<<endl;
+	
 	setNombre(da.getNombre()); 
 	setDescripcion(da.getDescripcion());
 	setFechaUltimoAcceso( da.getFechaUltimoAcceso());

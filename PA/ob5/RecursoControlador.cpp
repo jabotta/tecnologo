@@ -31,6 +31,26 @@ int RecursoControlador::RecursoControlador::getId(){
  
 
 list<DataCarpeta> RecursoControlador::ListarCarpetasPorUsuario(){
+	list<DataCarpeta> ret;
+	list<Carpeta*> carpetas = ManejadorRecursos::getInstance()->listarCarpetas("");
+	list<Carpeta*>::iterator it; 
+	for(it = carpetas.begin() ; it != carpetas.end();++it){
+	
+		Carpeta* c = *it;
+		Usuario* u =c->getUsuarioCrea();
+
+		if(u->getNickname() == usuarioElegido->getNickname()){
+			
+
+			DataUsuario dUsario;
+			dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
+
+			DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion());
+			ret.push_back(dc);
+
+		}
+	}
+	return ret;
 
 }
 void RecursoControlador::agregarColaborador(){
@@ -50,7 +70,7 @@ void RecursoControlador::ingresarRecurso(DataRecurso recurso,string tipo ){
 }
 void RecursoControlador::controlDeErrores(){
 	Recurso* r;
-	if(tiporec == "carpeta"){
+	if(tiporec == "carpeta"){ 
 
  		r = new Carpeta(dataCarpeta);  
  		
@@ -59,13 +79,12 @@ void RecursoControlador::controlDeErrores(){
 		r =  new Archivo(dataArchivo); 
 
 	}
- 	
-	cout<<"RecrusoControlador linea 63"<<endl;
- 	errores = r->controlarNombreRecurso(); 
-	cout<<"RecrusoControlador linea 64"<<endl;
-	//controla que no exista 
+ 
+ 	errores = r->controlarNombreRecurso();  
+	//controla que no exista  
+	cout<<carpetaElegida->getNombre()<<endl;
 	map<string, Recurso*> recMap = carpetaElegida->getRecursos();
-	map<string, Recurso*>::iterator it;
+	map<string, Recurso*>::iterator it; 
 	/*
 		Esto se podria hacer con el find del mapa y si no hay elementos esta todo bien 
 	*/
@@ -84,11 +103,6 @@ void RecursoControlador::controlDeErrores(){
 		DataErrores sizeError = DataErrores(7,"El nombre del recurso ya existe dentro de la carpeta seleccionada");
 		errores.push_back(sizeError);
 	}
-	list<DataErrores>::iterator ite ;
-	for(ite = errores.begin();ite!=errores.end();++ite){
-		cout<<(*ite)<< "sapes"<<endl;
-	}	
-
 }
 void RecursoControlador::guardarRecurso(){
 	Recurso* r;
@@ -106,7 +120,7 @@ void RecursoControlador::guardarRecurso(){
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 }
 list<DataErrores> RecursoControlador::imprimirErroresGenerados(){
-
+	return errores;
 }
 list<DataCarpeta> RecursoControlador::ListarCarpetas(){
 	list<DataCarpeta> dataCarpetas;	
@@ -131,16 +145,29 @@ void RecursoControlador::elegirUsuario(string nickname){
 	usuarioElegido = ManejadorUsuario::getInstance()->elegirUsuario(nickname);
 }
 void RecursoControlador::elegirCarpeta(string path){
-	cout<<"llega aca RecursoControlador linea 131"<<endl;
 	carpetaElegida = ManejadorRecursos::getInstance()->elegirCarpeta(path);
-	cout<<"llega aca RecursoControlador linea 133"<<endl;
-	//setCarpetaElegida();
 }
 list<DataArchivo> RecursoControlador::ListarArchivos(){
+	list<DataArchivo> dataArchivos;	
 
+	list<Archivo*> carpetas = ManejadorRecursos::getInstance()->listarArchivos("");
+	list<Archivo*>::iterator it; 
+	for(it = carpetas.begin() ; it != carpetas.end();++it){
+
+		Archivo* c = *it;
+		Usuario* u =c->getUsuarioCrea();
+		DataUsuario dUsario;
+		if(u!=NULL)
+			 dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
+
+		DataArchivo dc = DataArchivo(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion());
+		dataArchivos.push_back(dc);
+	}
+
+	return dataArchivos;
 }
 void RecursoControlador::elegirArchivo(string path){
-
+	archivoElegido = ManejadorRecursos::getInstance()->elegirArchivo(path);
 }
 //list<DataComentario> listarComentario(){}
 void RecursoControlador::accionSobreComentario(string acc){

@@ -18,7 +18,14 @@ ManejadorRecursos::~ManejadorRecursos(){
 }
 
 void ManejadorRecursos::ingresarRecurso(Recurso* r){
-	recursos.insert(pair<string, Recurso*>(r->getPath(),r));
+	/****
+	
+		Atencion !!! cambiar nombre por id correspondiente 
+		el id tiene que estar setteado antes de llamar a ingresar recurso 
+
+
+	*****/
+	recursos.insert(pair<string, Recurso*>(r->getNombre(),r));
 }
 
 list<Recurso*> ManejadorRecursos::listarRecursos(){
@@ -45,12 +52,12 @@ list<Carpeta*> ManejadorRecursos::listarCarpetas(string loc){
 }
 
 Carpeta* ManejadorRecursos::elegirCarpeta(string key){
-	if(recursos.count(key) > 0){ 
-		map<string, Recurso*>::iterator it = recursos.find(key);
+ 	if(recursos.count(key) > 0){ 
+	 	map<string, Recurso*>::iterator it = recursos.find(key);
 		Recurso* r = it->second;
 		Carpeta* newc = dynamic_cast<Carpeta*>(r);
 		if(newc != 0){
-			return newc;
+	 		return newc;
 		}	
 	}
 	return NULL;

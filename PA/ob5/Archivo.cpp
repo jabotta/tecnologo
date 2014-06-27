@@ -24,7 +24,6 @@ Archivo::~Archivo(){
 
 
 list<DataErrores> Archivo::controlarNombreRecurso(){
-	cout<<"archivo linea 25"<<endl;
 	list<DataErrores> errores;
 	int size = getNombre().size();
 	if(getNombre().find("/")!=-1){
