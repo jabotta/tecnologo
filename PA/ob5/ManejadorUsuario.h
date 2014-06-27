@@ -20,7 +20,7 @@ class ManejadorUsuario {
 
 		bool checkeoNickname(string);
 		void guardarUsuario(Usuario);
-		list<DataUsuario> listarUsuarios();
+		list<Usuario> listarUsuarios();
 		Usuario* elegirUsuario(string);
 };
 #endif

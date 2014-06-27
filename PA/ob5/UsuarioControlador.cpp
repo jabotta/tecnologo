@@ -107,7 +107,14 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 }
 
 list<DataUsuario> UsuarioControlador::listarUsuarios(){
-	list<DataUsuario> du = ManejadorUsuario::getInstance()->listarUsuarios();
+	list<DataUsuario> du;
+	list<Usuario> uList = ManejadorUsuario::getInstance()->listarUsuarios();
+
+	for (list<Usuario>::iterator it = uList.begin(); it != uList.end(); ++it){
+		DataUsuario tmp_du = DataUsuario((*it).getNickname(), (*it).getNombre(), (*it).getSexo(), (*it).getEdad(), (*it).getFechaNac());
+		du.push_back(tmp_du);
+	}
+
 	return du;
 }
 
