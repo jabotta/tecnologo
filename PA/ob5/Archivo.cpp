@@ -6,8 +6,13 @@ Archivo::Archivo(){
 Archivo::Archivo(const Archivo &){
 
 }
-Archivo::Archivo(const DataArchivo &){
-
+Archivo::Archivo(const DataArchivo & da){
+	setNombre(da.getNombre());
+	//setUsuarioCrea(da.getUsuarioCreo());
+	setDescripcion(da.getDescripcion());
+	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
+	setFechaCreacion( da.getFechaCreacion());
+	setUbicacion( da.getUbicacion());
 }
 Archivo::~Archivo(){
 

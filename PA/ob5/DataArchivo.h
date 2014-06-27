@@ -15,5 +15,6 @@ class DataArchivo: public DataRecurso{
 
 		//Destructor
 		~DataArchivo();
+		DataArchivo& operator = (const DataRecurso&);
 };
 #endif

@@ -22,5 +22,7 @@ class DataCarpeta: public DataRecurso{
 
 		void setRecursos(list<DataRecurso>);
 		list<DataRecurso> getRecursos();
+
+		DataCarpeta& operator = (const DataRecurso&);
 };
 #endif

@@ -11,14 +11,14 @@ using namespace std;
 class ManejadorRecursos {
 private:
 	static ManejadorRecursos * instance;
-	map<string, Recurso> recursos;
+	map<string, Recurso*> recursos;
 	ManejadorRecursos();
 	
 public:
 	static ManejadorRecursos * getInstance();
 	~ManejadorRecursos();
 
-	void ingresarRecurso(Recurso);
+	void ingresarRecurso(Recurso*);
 	list<Recurso*> listarRecursos();
 	list<Carpeta*> listarCarpetas(string);
 	Carpeta* elegirCarpeta(string);

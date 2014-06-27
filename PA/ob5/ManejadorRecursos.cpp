@@ -17,34 +17,37 @@ ManejadorRecursos::~ManejadorRecursos(){
 	// delete lista de usuarios antes de borrar
 }
 
-void ManejadorRecursos::ingresarRecurso(Recurso r){
-	recursos.insert(pair<string, Recurso>(r.getPath(),r));
+void ManejadorRecursos::ingresarRecurso(Recurso* r){
+	recursos.insert(pair<string, Recurso*>(r->getPath(),r));
 }
 
 list<Recurso*> ManejadorRecursos::listarRecursos(){
 	list<Recurso*> r;
-	for (map<string, Recurso>::iterator it = recursos.begin(); it != recursos.end(); ++it){
-		r.push_back(&it->second);
+	for (map<string, Recurso*>::iterator it = recursos.begin(); it != recursos.end(); ++it){
+		r.push_back(it->second);
 	}	
 	return r;
 }
 
 list<Carpeta*> ManejadorRecursos::listarCarpetas(string loc){
+ 
 	list<Carpeta*> c;
-	for (map<string, Recurso>::iterator it = recursos.begin(); it != recursos.end(); ++it){
-		Recurso* r = &it->second;
+	
+	for (map<string, Recurso*>::iterator it = recursos.begin(); it != recursos.end(); ++it){
+		Recurso* r = it->second;
 		Carpeta* newc = dynamic_cast<Carpeta*>(r);
+	
 		if(newc != 0){
 			c.push_back(newc);
 		}
-	}	
+	}
 	return c;
 }
 
 Carpeta* ManejadorRecursos::elegirCarpeta(string key){
 	if(recursos.count(key) > 0){
-		map<string, Recurso>::iterator it = recursos.find(key);
-		Recurso* r = &it->second;
+		map<string, Recurso*>::iterator it = recursos.find(key);
+		Recurso* r = it->second;
 		Carpeta* newc = dynamic_cast<Carpeta*>(r);
 		if(newc != 0){
 			return newc;
@@ -55,8 +58,8 @@ Carpeta* ManejadorRecursos::elegirCarpeta(string key){
 
 list<Archivo*> ManejadorRecursos::listarArchivos(string loc){
 	list<Archivo*> c;
-	for (map<string, Recurso>::iterator it = recursos.begin(); it != recursos.end(); ++it){
-		Recurso* r = &it->second;
+	for (map<string, Recurso*>::iterator it = recursos.begin(); it != recursos.end(); ++it){
+		Recurso* r = it->second;
 		Archivo* newa = dynamic_cast<Archivo*>(r);
 		if(newa != 0){
 			c.push_back(newa);
@@ -67,8 +70,8 @@ list<Archivo*> ManejadorRecursos::listarArchivos(string loc){
 
 Archivo* ManejadorRecursos::elegirArchivo(string key){
 	if(recursos.count(key) > 0){
-		map<string, Recurso>::iterator it = recursos.find(key);
-		Recurso* r = &it->second;
+		map<string, Recurso*>::iterator it = recursos.find(key);
+		Recurso* r = it->second;
 		Archivo* newa = dynamic_cast<Archivo*>(r);
 		if(newa != 0){
 			return newa;

@@ -14,6 +14,7 @@ Recurso::~Recurso(){
 }
 
 void Recurso::Recurso::setNombre(string n ){
+	
 	nombre = n;
 }
 

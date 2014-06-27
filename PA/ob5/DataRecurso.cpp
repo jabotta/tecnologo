@@ -4,8 +4,13 @@ DataRecurso::DataRecurso(){
 
 }
 
-DataRecurso::DataRecurso(const DataRecurso& dr){
-
+DataRecurso::DataRecurso(const DataRecurso& r){
+	setNombre(r.getNombre());
+	setUbicacion(r.getUbicacion());
+	setDescripcion(r.getDescripcion());
+	setUsuarioCreo(r.getUsuarioCreo());
+	setFechaUltimoAcceso(r.getFechaUltimoAcceso());
+	setFechaCreacion(r.getFechaCreacion());
 }
 
 DataRecurso::~DataRecurso(){
@@ -62,6 +67,16 @@ void DataRecurso::setUbicacion(string u){
 	ubicacion = u;
 }
 
+DataRecurso& DataRecurso::operator = (const DataRecurso& r){
+
+	(*this).setNombre(r.getNombre());
+	(*this).setUbicacion(r.getUbicacion());
+	(*this).setDescripcion(r.getDescripcion());
+	(*this).setUsuarioCreo(r.getUsuarioCreo());
+	(*this).setFechaUltimoAcceso(r.getFechaUltimoAcceso());
+	(*this).setFechaCreacion(r.getFechaCreacion());
+	return (*this);
+}
 
 ostream& operator<< (ostream& out,const DataRecurso& o){
     out << o.getNombre() << " - " << o.getDescripcion() << endl;

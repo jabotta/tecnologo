@@ -27,3 +27,15 @@ DataArchivo::DataArchivo(const DataArchivo& da){
 DataArchivo::~DataArchivo(){
 
 }
+
+DataArchivo& DataArchivo::operator = (const DataRecurso& r){
+	(*this).setNombre(r.getNombre());
+	(*this).setUbicacion(r.getUbicacion());
+	(*this).setDescripcion(r.getDescripcion());
+	(*this).setUsuarioCreo(r.getUsuarioCreo());
+	(*this).setFechaUltimoAcceso(r.getFechaUltimoAcceso());
+	(*this).setFechaCreacion(r.getFechaCreacion());
+	return (*this);
+
+
+}

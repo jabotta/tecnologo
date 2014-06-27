@@ -5,8 +5,14 @@ Carpeta::Carpeta(){
 Carpeta::Carpeta(const Carpeta &){
 
 }
-Carpeta::Carpeta(const DataCarpeta &){
+Carpeta::Carpeta(const DataCarpeta & da){ 
 
+	setNombre(da.getNombre());
+//	setUsuarioCrea(da.getUsuarioCreo());
+	setDescripcion(da.getDescripcion());
+	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
+	setFechaCreacion( da.getFechaCreacion());
+	setUbicacion( da.getUbicacion());
 }
 
 //Destructor

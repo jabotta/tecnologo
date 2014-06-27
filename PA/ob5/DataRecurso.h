@@ -37,7 +37,7 @@ class DataRecurso{
 		void setFechaUltimoAcceso(DateTime) ;
 		void setFechaCreacion(DateTime) ;
 		void setUbicacion(string) ;
-		ostream& operator << (const DataRecurso&);
+		DataRecurso& operator = (const DataRecurso& );
 };
 	std::ostream& operator<< (std::ostream& stream, const DataRecurso&);
 #endif

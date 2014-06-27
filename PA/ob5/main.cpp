@@ -19,7 +19,14 @@ int ingresarNumerico(){
 	}
 	return res;
 }
-
+void crearCarpetaRaiz(){
+	DataCarpeta dc;
+	dc.setNombre("/");
+	dc.setDescripcion("Carpeta Raiz");
+	dc.setUbicacion("/");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+}
 bool checkSiCancelo(string s){
 	int value = atoi(s.c_str());
 	return (value == 1);
@@ -71,6 +78,7 @@ void crearTipoDeRecurso(){
 
 				cout << dc;
 				salir = true;
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"");
 				break;
 			}
 			case 2:{
@@ -85,11 +93,12 @@ void crearTipoDeRecurso(){
 				
 				cout << da;
 				salir = true;
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(da,"");
 				break;
 			}
 		}
 	}while(salir != true);
-	
+
 
 }
 void elegirUsuario(){
@@ -107,7 +116,20 @@ void elegirUsuario(){
 
 	cout << "Ingrese el Nickname del usuario seleccionado: " << endl;
 	cin >> nickname;
-	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->elegirUsuario(nickname);
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(nickname);
+}
+void elegirCarpeta(){
+	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetas();
+	list<DataCarpeta>::iterator it;
+	
+	string carp;
+	cout<<"Listado de Carpetas: "<<endl;
+	for(it = drl.begin(); it!= drl.end();++it){
+		cout<<(*it)<<endl;
+	}	
+
+	//cin>>carp;
+	//Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
 
 
@@ -122,6 +144,8 @@ int main(){
 	int opcion;
 	idUsuarioControlador = Fabrica::getInstance()->getUControlador(-1)->getId();
 	idRecursoControlador = Fabrica::getInstance()->getRControlador(-1)->getId();
+	crearCarpetaRaiz();
+
  	do{
 		cout << "*****************************************" << endl;		
 		cout << " 1) Cargar Datos Prueba " << endl;
@@ -160,7 +184,9 @@ int main(){
 				try{
 					
 					crearTipoDeRecurso();
-					elegirUsuario();					
+					elegirUsuario();	
+					elegirCarpeta();
+
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}
@@ -180,7 +206,7 @@ int main(){
 			/******************************* Ingresar Comentario ****************************/
 			case 5:{
 				try{
-
+					elegirCarpeta();
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}
