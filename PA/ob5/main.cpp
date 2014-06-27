@@ -89,7 +89,7 @@ void crearTipoDeRecurso(){
 			}
 		}
 	}while(salir != true);
-
+	
 
 }
 void elegirUsuario(){
