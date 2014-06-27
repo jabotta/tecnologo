@@ -48,14 +48,14 @@ void Usuario::setFechaNac(DateTime t){
 }
 
 // esta no se si tiene sentido
-// Usuario::setAccion(Set<Accion> s){
+//Usuario::setAccion(Set<Accion> s){
 // 	acciones = s;
-// }
+//}
 
 //Getters
-/*list<Accion*> Usuario::obtenerAcciones(){
+list<Accion*> Usuario::obtenerAcciones(){
  	return acciones;
-}*/
+}
 
 string Usuario::getNickname() const{
 	return nickname;

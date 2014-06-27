@@ -39,7 +39,7 @@ class Recurso {
 
 		string getNombre() const;
 		string getUbicacion() const;
-		Usuario* getUsuarioCrea() const;
+		Usuario* getUsuarioCreo() const;
 		string getDescripcion() const;
 		DateTime getFechaUltimoAcceso() const;
 		DateTime getFechaCreacion() const;

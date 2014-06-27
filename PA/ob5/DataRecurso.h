@@ -19,6 +19,7 @@ class DataRecurso{
 	public:
 		//Destructor
 		DataRecurso();
+		DataRecurso(string, DataUsuario, string, DateTime, DateTime, string);
 		DataRecurso(const DataRecurso&);
 		~DataRecurso();
 

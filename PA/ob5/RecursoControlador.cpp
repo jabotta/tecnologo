@@ -37,7 +37,7 @@ list<DataCarpeta> RecursoControlador::ListarCarpetasPorUsuario(){
 	for(it = carpetas.begin() ; it != carpetas.end();++it){
 	
 		Carpeta* c = *it;
-		Usuario* u =c->getUsuarioCrea();
+		Usuario* u =c->getUsuarioCreo();
 
 		if(u != NULL && u->getNickname() == usuarioElegido->getNickname()){
 			
@@ -117,8 +117,8 @@ void RecursoControlador::guardarRecurso(){
 
 	}
 	r->setUsuarioCrea(usuarioElegido);
-	if(r->getUsuarioCrea()!=NULL)
-	cout<<"ALERTAAA "<<r->getUsuarioCrea()->getNombre();
+	if(r->getUsuarioCreo()!=NULL)
+	cout<<"ALERTAAA "<<r->getUsuarioCreo()->getNombre();
 
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 }
@@ -133,7 +133,7 @@ list<DataCarpeta> RecursoControlador::ListarCarpetas(){
 	for(it = carpetas.begin() ; it != carpetas.end();++it){
 
 		Carpeta* c = *it;
-		Usuario* u =c->getUsuarioCrea();
+		Usuario* u =c->getUsuarioCreo();
 		DataUsuario dUsario;
 		if(u!=NULL)
 			 dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
@@ -158,7 +158,7 @@ list<DataArchivo> RecursoControlador::ListarArchivos(){
 	for(it = carpetas.begin() ; it != carpetas.end();++it){
 
 		Archivo* c = *it;
-		Usuario* u =c->getUsuarioCrea();
+		Usuario* u =c->getUsuarioCreo();
 		DataUsuario dUsario;
 		if(u!=NULL)
 			 dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());

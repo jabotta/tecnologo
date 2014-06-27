@@ -7,26 +7,26 @@
 #include "TipoAccion.h"
 
 using namespace std;
-
+class Archivo;
 class Accion {
 	private:
 		TipoAccion tipo;
 		DateTime fecha;
-		//Archivo* archivo;
+		Archivo* archivo;
 	public:
 		//Constructores
 		Accion();
 		Accion(const Accion&);
-		//Accion(TipoAccion, Archivo*);
+		Accion(TipoAccion, Archivo*);
 		//Destructor
 		~Accion();
 		//Selectores
 		TipoAccion getTipo() const;
 		DateTime getFecha() const;
-		//Archivo* getArchivo() const;
+		Archivo* getArchivo() const;
 		//Modificadores
 		void setTipo(TipoAccion);
-		//void setArchivo(Archivo*);
+		void setArchivo(Archivo*);
 
 
 };

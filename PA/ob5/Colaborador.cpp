@@ -29,6 +29,10 @@ Carpeta* Colaborador::getCarpeta() const{
 	return carpeta;
 }
 
+Usuario* Colaborador::getUsuario() const{
+	return usuario;
+}
+
 //Modificadores
 void Colaborador::setFechaIngreso(DateTime fi){
 	fechaIngreso = fi;
@@ -36,5 +40,9 @@ void Colaborador::setFechaIngreso(DateTime fi){
 
 void Colaborador::setCarpeta(Carpeta* car){
 	carpeta = car;
+}
+
+void Colaborador::setUsuario(Usuario* usu){
+	usuario = usu;
 };
 

@@ -55,7 +55,7 @@ string Recurso::getUbicacion() const{
 	return ubicacion;
 }
 
-Usuario* Recurso::getUsuarioCrea() const{
+Usuario* Recurso::getUsuarioCreo() const{
 	return usuarioCrea;
 }
 

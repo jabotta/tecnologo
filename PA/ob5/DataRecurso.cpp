@@ -4,6 +4,15 @@ DataRecurso::DataRecurso(){
 
 }
 
+DataRecurso::DataRecurso(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc){
+	setNombre(nm);
+	setUsuarioCreo(uc);
+	setDescripcion(dc);
+	setFechaUltimoAcceso(fua);
+	setFechaCreacion(fc);
+	setUbicacion(lc);
+}
+
 DataRecurso::DataRecurso(const DataRecurso& r){
 	setNombre(r.getNombre());
 	setUbicacion(r.getUbicacion());
