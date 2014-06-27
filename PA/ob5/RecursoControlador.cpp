@@ -38,7 +38,9 @@ list<DataCarpeta> RecursoControlador::ListarCarpetasPorUsuario(){
 	
 		Carpeta* c = *it;
 		Usuario* u =c->getUsuarioCrea();
-
+		cout<<"gre"<<endl;
+		//u is null
+		cout<<u->getNickname()<<endl;
 		if(u->getNickname() == usuarioElegido->getNickname()){
 			
 
@@ -117,6 +119,8 @@ void RecursoControlador::guardarRecurso(){
 
 	}
 	r->setUsuarioCrea(usuarioElegido);
+	cout<<"ads"<<r->getUsuarioCrea();
+
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 }
 list<DataErrores> RecursoControlador::imprimirErroresGenerados(){
