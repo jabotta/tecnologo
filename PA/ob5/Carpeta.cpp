@@ -2,10 +2,14 @@
 Carpeta::Carpeta(){
 
 }
-Carpeta::Carpeta(const Carpeta &){
-
+Carpeta::Carpeta(const Carpeta& da){
+	setNombre(da.getNombre()); 
+	setDescripcion(da.getDescripcion());
+	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
+	setFechaCreacion( da.getFechaCreacion());
+	setUbicacion( da.getUbicacion());	
 }
-Carpeta::Carpeta(const DataCarpeta & da){ 
+Carpeta::Carpeta(const DataCarpeta da){ 
 
 	setNombre(da.getNombre()); 
 	setDescripcion(da.getDescripcion());
@@ -28,9 +32,10 @@ map<string, Recurso*> Carpeta::getRecursos()const{
 
 
 list<DataErrores> Carpeta::controlarNombreRecurso(){
-	cout<<"archivo linea 31"<<endl;
+	cout<<"carpeta linea 31"<<endl;
 	list<DataErrores> errores;
 	int size = getNombre().size();
+	
 	if(getNombre().find("/")!=-1){
 		DataErrores raizConflict = DataErrores(1,"El nombre de la carpeta no puede contener caracteres del tipo '/' ");
 		errores.push_back(raizConflict);

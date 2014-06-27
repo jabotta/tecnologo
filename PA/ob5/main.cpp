@@ -78,7 +78,7 @@ void crearTipoDeRecurso(){
 
 				cout << dc;
 				salir = true;
-				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"");
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"carpeta");
 				break;
 			}
 			case 2:{
@@ -93,7 +93,7 @@ void crearTipoDeRecurso(){
 				
 				cout << da;
 				salir = true;
-				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(da,"");
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(da,"archivo");
 				break;
 			}
 		}

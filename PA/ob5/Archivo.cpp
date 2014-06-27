@@ -3,10 +3,14 @@
 Archivo::Archivo(){
 
 }
-Archivo::Archivo(const Archivo &){
-
+Archivo::Archivo(const Archivo& da){
+	setNombre(da.getNombre()); 
+	setDescripcion(da.getDescripcion());
+	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
+	setFechaCreacion( da.getFechaCreacion());
+	setUbicacion( da.getUbicacion());
 }
-Archivo::Archivo(const DataArchivo & da){
+Archivo::Archivo(const DataArchivo da){
 	setNombre(da.getNombre());
 	//setUsuarioCrea(da.getUsuarioCreo());
 	setDescripcion(da.getDescripcion());
@@ -42,7 +46,7 @@ list<DataErrores> Archivo::controlarNombreRecurso(){
 
 	}
 
-	
+
 	return 	errores;
 }
 bool Archivo::existeNombre(string nombre){

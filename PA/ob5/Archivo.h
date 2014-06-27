@@ -14,12 +14,13 @@ class Archivo :public Recurso{
 	public:
 		Archivo();
 		Archivo(const Archivo &);
-		Archivo(const DataArchivo &);
+		Archivo(const DataArchivo );
 		~Archivo();
 
 
 		list<DataErrores> controlarNombreRecurso();
 		bool existeNombre(string);
+		
 		list<Recurso> getListaRecursos();
 		list<Colaborador> getListaColaboradores();
 };

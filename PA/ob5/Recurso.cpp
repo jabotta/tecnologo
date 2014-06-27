@@ -4,8 +4,13 @@ Recurso::Recurso(){
 
 }
 
-Recurso::Recurso(const Recurso& rCopy){
-
+Recurso::Recurso(const Recurso& da){
+	cout<< "adsf"<<endl;
+	setNombre(da.getNombre()); 
+	setDescripcion(da.getDescripcion());
+	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
+	setFechaCreacion( da.getFechaCreacion());
+	setUbicacion( da.getUbicacion());
 }
 
 //Destructor
@@ -76,8 +81,17 @@ string Recurso::getPath() const{
 	return ubicacion;
 }
 
-Recurso Recurso::operator = (const Recurso& rCopy){
-	return (rCopy);
+Recurso& Recurso::operator = (const Recurso& da){
+
+	(*this).setNombre(da.getNombre()); 
+	(*this).setDescripcion(da.getDescripcion());
+	(*this).setFechaUltimoAcceso( da.getFechaUltimoAcceso());
+	(*this).setFechaCreacion( da.getFechaCreacion());
+	(*this).setUbicacion( da.getUbicacion());
+
+
+
+	return (*this);
 
 }
 list<DataErrores> Recurso::controlarNombreRecurso(){

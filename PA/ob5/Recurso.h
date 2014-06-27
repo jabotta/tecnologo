@@ -46,6 +46,6 @@ class Recurso {
 		DateTime getFechaModificacion() const;
 		string getPath() const;
 
-		Recurso operator = (const Recurso&);
+		Recurso& operator = (const Recurso&);
 };
 #endif

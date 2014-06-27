@@ -52,15 +52,17 @@ void RecursoControlador::controlDeErrores(){
 	Recurso* r;
 	if(tiporec == "carpeta"){
 
- 		r = new Carpeta(dataCarpeta); 
+ 		r = new Carpeta(dataCarpeta);  
  		
 	}else if(tiporec == "archivo"){
 		
-		r =  new Archivo(dataArchivo);
+		r =  new Archivo(dataArchivo); 
 
 	}
+ 	
 	cout<<"RecrusoControlador linea 63"<<endl;
-	errores = r->controlarNombreRecurso(); 
+ 	errores = r->controlarNombreRecurso(); 
+	cout<<"RecrusoControlador linea 64"<<endl;
 	//controla que no exista 
 	map<string, Recurso*> recMap = carpetaElegida->getRecursos();
 	map<string, Recurso*>::iterator it;
@@ -84,7 +86,7 @@ void RecursoControlador::controlDeErrores(){
 	}
 	list<DataErrores>::iterator ite ;
 	for(ite = errores.begin();ite!=errores.end();++ite){
-		cout<<(*ite)<<endl;
+		cout<<(*ite)<< "sapes"<<endl;
 	}	
 
 }
