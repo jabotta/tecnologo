@@ -53,6 +53,10 @@ void altaUsuario(){
 		Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
 	}
 }
+void agregarColaborador(){
+
+
+}
 
 
 int main(){
@@ -96,7 +100,6 @@ int main(){
 			/************************ Crear Recurso ********************************************/
 			case 3:{
 				try{
-
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}
@@ -104,6 +107,8 @@ int main(){
 			}
 			/***************************** Agregar Colaborador ********************************/
 			case 4:{
+				
+					agregarColaborador();
 				try{
 
 				}catch(const invalid_argument& ia){

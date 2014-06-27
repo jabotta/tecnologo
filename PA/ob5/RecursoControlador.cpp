@@ -50,6 +50,19 @@ list<DataErrores> RecursoControlador::imprimirErroresGenerados(){
 
 }
 list<DataCarpeta> RecursoControlador::ListarCarpetas(){
+	list<Carpeta*> carpetas = ManejadorRecursos::getInstance()->listarCarpetas("");
+	list<Carpeta*>::iterator it;
+	list<DataCarpeta> dataCarpetas;	
+
+	for(it = carpetas.begin() ; it != carpetas.end();++it){
+
+		Carpeta* c = *it;
+		Usuario* u =c->getUsuarioCrea();
+		DataUsuario dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
+
+		DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion());
+		dataCarpetas.push_back(dc);
+	}
 
 }
 void RecursoControlador::elegirCarpeta(string path){
@@ -63,7 +76,7 @@ void RecursoControlador::elegirArchivo(string path){
 }
 //list<DataComentario> listarComentario(){}
 void RecursoControlador::accionSobreComentario(string acc){
-
+	setAccionTipo(acc);
 }
 void RecursoControlador::agregarComentario(string comentario){
 
