@@ -107,9 +107,10 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 }
 
 list<DataUsuario> UsuarioControlador::listarUsuarios(){
-
+	list<DataUsuario> du = ManejadorUsuario::getInstance()->listarUsuarios();
+	return du;
 }
 
 void UsuarioControlador::elegirUsuario(string nickname){
-
+	usuarioElegido = ManejadorUsuario::getInstance()->elegirUsuario(nickname);
 }

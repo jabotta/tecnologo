@@ -2,13 +2,12 @@
 #include <limits>
 #include <stdexcept>
 #include <stdlib.h>
-#include "ManejadorUsuario.h"
 #include "Fabrica.h"
-#include "DataUsuario.h"
 
 using namespace std;
 
 int idUsuarioControlador;
+int idRecursoControlador;
 
 int ingresarNumerico(){
 	int res;
@@ -27,38 +26,29 @@ bool checkSiCancelo(string s){
 	return (value == 1);
 }
 
-void altaUsuario(){
-
-	string nickname;
-	bool cancelar = false;
-	bool existe = true;
+void elegirUsuario(){
+	string nickname;	
+	list<DataUsuario> uList = Fabrica::getInstance()->getUControlador(idUsuarioControlador)->listarUsuarios();
 	
-	while(!cancelar && existe){
-		cout<<"Ingrese Nickname o 1 para cancelar:"<<endl;
-		cin>>nickname;
-		cancelar = checkSiCancelo(nickname);
-		if(!cancelar){
-			existe = Fabrica::getInstance()->getUControlador(idUsuarioControlador)->checkeoNickname(nickname);
-		}
-	}
-	if(!cancelar){
-		DataUsuario du;
-		DateTime dt;		
-		du.setNickname(nickname);
-		//Ingresa al datatype para completar los datos
-		cin >> du;
-		//Ingresa el usuario en memoria 
-		Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(du);
-		//Crea y guarda el Usuario 
-		Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
-	}
-}
+	cout << "*****************************************" << endl;
+	cout << "********** Seleccionar Usuario **********" << endl;
+	cout << "*****************************************" << endl;
+	cout << 'Nickname - Nombre' << endl;
 
+	for (list<DataUsuario>::iterator it = uList.begin(); it != uList.end(); ++it){	
+		cout << (*it).getNickname() << ' - ' << (*it).getNombre() << endl;
+	}
+
+	cout << 'Ingrese el Nickname del usuario seleccionado: ' << endl;
+	cin >> nickname;
+	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->elegirUsuario(nickname);
+}
 
 int main(){
 
 	int opcion;
 	idUsuarioControlador = Fabrica::getInstance()->getUControlador(-1)->getId();
+	idRecursoControlador = Fabrica::getInstance()->getRControlador(-1)->getId();
 
 	do{
 		cout << "*****************************************" << endl;		
@@ -77,7 +67,7 @@ int main(){
 			/******************* Cargar Datos Prueba *********************************************/			
 			case 1:{
 				try{
-
+					
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}
@@ -87,7 +77,28 @@ int main(){
 			case 2:{
 				
 				try{
-					altaUsuario();
+					string nickname;
+					bool cancelar = false;
+					bool existe = true;
+					
+					while(!cancelar && existe){
+						cout << "Ingrese Nickname o 1 para cancelar:" << endl;
+						cin >> nickname;
+						cancelar = checkSiCancelo(nickname);
+						if(!cancelar){
+							existe = Fabrica::getInstance()->getUControlador(idUsuarioControlador)->checkeoNickname(nickname);
+						}
+					}
+					if(!cancelar){
+						DataUsuario du;
+						du.setNickname(nickname);
+						//Ingresa al datatype para completar los datos
+						cin >> du;
+						//Ingresa el usuario en memoria 
+						Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(du);
+						//Crea y guarda el Usuario 
+						Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
+					}
 		 		}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}
@@ -96,7 +107,48 @@ int main(){
 			/************************ Crear Recurso ********************************************/
 			case 3:{
 				try{
+					int tipo;
+					bool salir;
+					do{
+						cout << "1 - Carpeta" << endl;
+						cout << "2 - Archivo" << endl;
+						cout << "Ingrese el Tipo de Recurso:" << endl;
+						tipo = ingresarNumerico();
+						salir = false;
+						switch(tipo){
+							case 1:{
+								DataCarpeta dc;
+								string tmp;
+								cout << "Nombre de la Carpeta:" << endl;
+								cin >> tmp;
+								dc.setNombre(tmp);
+								cout << "Descripcion de la Carpeta:" << endl;
+								cin >> tmp;
+								dc.setDescripcion(tmp);
 
+								cout << dc;
+								salir = true;
+								break;
+							}
+							case 2:{
+								DataArchivo da;
+								string tmp;
+								cout << "Nombre del Archivo:" << endl;
+								cin >> tmp;
+								da.setNombre(tmp);
+								cout << "Descripcion del Archivo:" << endl;
+								cin >> tmp;
+								da.setDescripcion(tmp);
+								
+								cout << da;
+								salir = true;
+								break;
+							}
+						}
+					}while(salir != true);
+
+					elegirUsuario();					
+					
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}

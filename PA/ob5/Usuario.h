@@ -19,10 +19,8 @@ class Usuario {
 		list<Accion*> acciones;
 
 	public:
-
 		Usuario();
-		Usuario(DataUsuario &);
-		// Usuario(const Usuario &);
+		Usuario(DataUsuario);
 		Usuario(string, string, string, DateTime);
 
 		~Usuario();

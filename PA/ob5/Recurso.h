@@ -18,7 +18,8 @@ class Recurso {
 		string descripcion; 
 		DateTime fechaUltimoAcceso;
 		DateTime fechaCreacion;
-		DateTime fechaModificacion;	
+		DateTime fechaModificacion;
+
 	public:
 		Recurso();
 		Recurso(const Recurso&);
@@ -46,6 +47,5 @@ class Recurso {
 		string getPath() const;
 
 		Recurso operator = (const Recurso&);
-
 };
 #endif

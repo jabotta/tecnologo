@@ -4,11 +4,13 @@
 #include <string>
 #include "DataRecurso.h"
 #include <list>
+
 using namespace std;
 
 class DataCarpeta: public DataRecurso{
 	private:
 		list<DataRecurso> recursos;
+		
 	public:
 		//Constructores
 		DataCarpeta();
@@ -20,6 +22,5 @@ class DataCarpeta: public DataRecurso{
 
 		void setRecursos(list<DataRecurso>);
 		list<DataRecurso> getRecursos();
-
 };
 #endif

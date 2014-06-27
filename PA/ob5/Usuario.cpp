@@ -10,19 +10,12 @@ Usuario::Usuario(){
 	setFechaNac(DateTime());
 }
 
-Usuario::Usuario(DataUsuario & d){
+Usuario::Usuario(DataUsuario d){
 	setNickname(d.getNickname());
 	setNombre(d.getNombre());
 	setSexo(d.getSexo());
 	setFechaNac(d.getFechaNac());
 }
-
-// Usuario::Usuario(const Usuario& u){
-// 	nickname = u.getNickname();
-// 	nombre = u.getNombre();
-// 	sexo = u.getSexo();
-// 	fechaNac = u.getFechaNac();
-// }
 
 Usuario::Usuario(string nickname, string nombre, string sexo, DateTime fc){
 	setNickname(nickname);

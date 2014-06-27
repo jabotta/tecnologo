@@ -37,6 +37,6 @@ class DataUsuario{
 		void setEdad(int);
 		void setFechaNac(DateTime);		
 };
-	std::ostream& operator<< (std::ostream& stream, const DataUsuario& );
-	std::istream& operator>> (std::istream& stream,  DataUsuario& );
+	std::ostream& operator<< (std::ostream& stream, const DataUsuario&);
+	std::istream& operator>> (std::istream& stream,  DataUsuario&);
 #endif

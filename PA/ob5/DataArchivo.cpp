@@ -1,5 +1,9 @@
 #include "DataArchivo.h"
 
+DataArchivo::DataArchivo(){
+
+}
+
 DataArchivo::DataArchivo(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc){
 	setNombre(nm);
 	setUsuarioCreo(uc);
