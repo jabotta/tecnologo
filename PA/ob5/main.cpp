@@ -50,7 +50,8 @@ void altaUsuario(){
 
 }
 void crearTipoDeRecurso(){
-	
+	int tipo;
+	bool salir;
 	do{
 		cout << "1 - Carpeta" << endl;
 		cout << "2 - Archivo" << endl;
@@ -98,13 +99,13 @@ void elegirUsuario(){
 	cout << "*****************************************" << endl;
 	cout << "********** Seleccionar Usuario **********" << endl;
 	cout << "*****************************************" << endl;
-	cout << 'Nickname - Nombre' << endl;
+	cout << "Nickname - Nombre" << endl;
 
 	for (list<DataUsuario>::iterator it = uList.begin(); it != uList.end(); ++it){	
-		cout << (*it).getNickname() << ' - ' << (*it).getNombre() << endl;
+		cout << (*it).getNickname() << " - " << (*it).getNombre() << endl;
 	}
 
-	cout << 'Ingrese el Nickname del usuario seleccionado: ' << endl;
+	cout << "Ingrese el Nickname del usuario seleccionado: " << endl;
 	cin >> nickname;
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->elegirUsuario(nickname);
 }
@@ -157,8 +158,7 @@ int main(){
 			/************************ Crear Recurso ********************************************/
 			case 3:{
 				try{
-					int tipo;
-					bool salir;
+					
 					crearTipoDeRecurso();
 					elegirUsuario();					
 				}catch(const invalid_argument& ia){
