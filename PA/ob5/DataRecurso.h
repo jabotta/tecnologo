@@ -37,5 +37,6 @@ class DataRecurso{
 		void setFechaUltimoAcceso(DateTime) ;
 		void setFechaCreacion(DateTime) ;
 		void setUbicacion(string) ;
+		ostream& operator << (const DataRecurso&);
 };
 #endif

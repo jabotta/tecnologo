@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int idUsuarioControlador;
+int idUsuarioControlador,idRecursoControlador;
 
 int ingresarNumerico(){
 	int res;
@@ -54,6 +54,9 @@ void altaUsuario(){
 	}
 }
 void agregarColaborador(){
+	
+	DataRecurso dc = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetas().front();
+	cout<< (&dc) ;
 
 
 }
@@ -63,7 +66,7 @@ int main(){
 
 	int opcion;
 	idUsuarioControlador = Fabrica::getInstance()->getUControlador(-1)->getId();
-
+	idRecursoControlador = Fabrica::getInstance()->getRControlador(-1)->getId();
 	do{
 		cout << "*****************************************" << endl;		
 		cout << " 1) Cargar Datos Prueba " << endl;
@@ -107,7 +110,7 @@ int main(){
 			}
 			/***************************** Agregar Colaborador ********************************/
 			case 4:{
-				
+
 					agregarColaborador();
 				try{
 

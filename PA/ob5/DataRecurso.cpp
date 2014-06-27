@@ -49,3 +49,8 @@ void DataRecurso::setUbicacion(string u){
 	ubicacion = u;
 
 }
+
+ostream& operator << (ostream& i, const DataRecurso&){
+	i << "sape";
+	return i;
+}
