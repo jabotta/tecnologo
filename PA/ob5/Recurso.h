@@ -27,7 +27,7 @@ class Recurso {
 		~Recurso();
 		//Funciones virtuales 
 		virtual list<DataErrores> controlarNombreRecurso();
-		virtual bool existeNombre() ;
+		virtual bool existeNombre(string ) ;
 
 		void setNombre(string);
 		void setUbicacion(string);

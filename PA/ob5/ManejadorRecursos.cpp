@@ -45,7 +45,7 @@ list<Carpeta*> ManejadorRecursos::listarCarpetas(string loc){
 }
 
 Carpeta* ManejadorRecursos::elegirCarpeta(string key){
-	if(recursos.count(key) > 0){
+	if(recursos.count(key) > 0){ 
 		map<string, Recurso*>::iterator it = recursos.find(key);
 		Recurso* r = it->second;
 		Carpeta* newc = dynamic_cast<Carpeta*>(r);

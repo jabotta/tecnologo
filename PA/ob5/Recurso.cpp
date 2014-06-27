@@ -81,7 +81,8 @@ Recurso Recurso::operator = (const Recurso& rCopy){
 
 }
 list<DataErrores> Recurso::controlarNombreRecurso(){
+	cout<<"Recurso linea 85 "<<endl;
 	list<DataErrores> errores;
 	return errores;
 }
-bool Recurso::existeNombre(){return true;}
+bool Recurso::existeNombre(string s){return getNombre()==s;}

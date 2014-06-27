@@ -25,7 +25,6 @@ RecursoControlador::RecursoControlador(const RecursoControlador& i){
 
 int RecursoControlador::RecursoControlador::getId(){
 
-
 	return id;
 }
 
@@ -50,6 +49,43 @@ void RecursoControlador::ingresarRecurso(DataRecurso recurso,string tipo ){
 	}
 }
 void RecursoControlador::controlDeErrores(){
+	Recurso* r;
+	if(tiporec == "carpeta"){
+
+ 		r = new Carpeta(dataCarpeta); 
+ 		
+	}else if(tiporec == "archivo"){
+		
+		r =  new Archivo(dataArchivo);
+
+	}
+	cout<<"RecrusoControlador linea 63"<<endl;
+	errores = r->controlarNombreRecurso(); 
+	//controla que no exista 
+	map<string, Recurso*> recMap = carpetaElegida->getRecursos();
+	map<string, Recurso*>::iterator it;
+	/*
+		Esto se podria hacer con el find del mapa y si no hay elementos esta todo bien 
+	*/
+	bool existe = false;	
+	for(it = recMap.begin();it!=recMap.end();++it){
+
+		Recurso* tmp = (it->second);
+		if(tmp->existeNombre(r->getNombre())){
+
+			existe = true;
+
+		}
+	}
+	if(existe){
+
+		DataErrores sizeError = DataErrores(7,"El nombre del recurso ya existe dentro de la carpeta seleccionada");
+		errores.push_back(sizeError);
+	}
+	list<DataErrores>::iterator ite ;
+	for(ite = errores.begin();ite!=errores.end();++ite){
+		cout<<(*ite)<<endl;
+	}	
 
 }
 void RecursoControlador::guardarRecurso(){
@@ -64,7 +100,7 @@ void RecursoControlador::guardarRecurso(){
 		r =  new Archivo(dataArchivo);
 
 	}
-
+	r->setUsuarioCrea(usuarioElegido);
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 }
 list<DataErrores> RecursoControlador::imprimirErroresGenerados(){
@@ -93,7 +129,10 @@ void RecursoControlador::elegirUsuario(string nickname){
 	usuarioElegido = ManejadorUsuario::getInstance()->elegirUsuario(nickname);
 }
 void RecursoControlador::elegirCarpeta(string path){
-	setCarpetaElegida(ManejadorRecursos::getInstance()->elegirCarpeta(path));
+	cout<<"llega aca RecursoControlador linea 131"<<endl;
+	carpetaElegida = ManejadorRecursos::getInstance()->elegirCarpeta(path);
+	cout<<"llega aca RecursoControlador linea 133"<<endl;
+	//setCarpetaElegida();
 }
 list<DataArchivo> RecursoControlador::ListarArchivos(){
 

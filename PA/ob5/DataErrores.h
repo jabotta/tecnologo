@@ -28,4 +28,5 @@ class DataErrores{
 		void setCodigo(int);
 		void setMensaje(string);	
 };
+	ostream& operator<<(ostream& ,const DataErrores&);
 #endif

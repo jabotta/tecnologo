@@ -19,7 +19,7 @@ class Archivo :public Recurso{
 
 
 		list<DataErrores> controlarNombreRecurso();
-		bool existeNombre();
+		bool existeNombre(string);
 		list<Recurso> getListaRecursos();
 		list<Colaborador> getListaColaboradores();
 };

@@ -124,12 +124,13 @@ void elegirCarpeta(){
 	
 	string carp;
 	cout<<"Listado de Carpetas: "<<endl;
+	cout<<"Ubicacion - Descripcion"<<endl;
 	for(it = drl.begin(); it!= drl.end();++it){
 		cout<<(*it)<<endl;
 	}	
-
-	//cin>>carp;
-	//Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
+	cout<<"Ingrese la ubicacion de la carpeta:";
+	cin>>carp;
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
 
 
@@ -186,6 +187,8 @@ int main(){
 					crearTipoDeRecurso();
 					elegirUsuario();	
 					elegirCarpeta();
+					cout<<"y aca? main 190"<<endl;
+					Fabrica::getInstance()->getRControlador(idRecursoControlador)->controlDeErrores();
 
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
