@@ -25,13 +25,12 @@ void ManejadorUsuario::guardarUsuario(Usuario u){
 	usuarios.insert(pair<string, Usuario>(u.getNickname(),u));
 }
 
-list<Usuario*> ManejadorUsuario::ListarUsuarios(){
-	list<Usuario*> a;
+list<Usuario> ManejadorUsuario::listarUsuarios(){
+	list<Usuario> u;
 	for (map<string, Usuario>::iterator it = usuarios.begin(); it != usuarios.end(); ++it){
-		Usuario u = it->second;
-		a.push_back(&u);
+		u.push_back((*it).second);
 	}	
-	return a;
+	return u;
 }
 
 Usuario* ManejadorUsuario::elegirUsuario(string nickname){

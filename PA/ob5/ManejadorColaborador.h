@@ -8,6 +8,7 @@
 using namespace std;
 
 class ManejadorColaborador {
+	
 private:
 	static ManejadorColaborador * instance;
 	list<Colaborador*> colaboradores;
@@ -19,7 +20,5 @@ public:
 
 	void agregarALista(Colaborador*);
 	list<Colaborador*> listarColaboradores();
-
-
 };
 #endif

@@ -72,7 +72,7 @@ void DataUsuario::setFechaNac(DateTime fn){
 }
 
 ostream& operator<< (ostream& out,const DataUsuario& o){
-    out<<o.getNickname()<< " - " <<o.getNombre()<< " - " << o.getFechaNac() << endl;
+    out << o.getNickname() << " - " << o.getNombre() << " - " << o.getFechaNac() << endl;
     return out;
 }
 

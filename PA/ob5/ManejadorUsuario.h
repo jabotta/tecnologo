@@ -9,18 +9,18 @@
 using namespace std;
 
 class ManejadorUsuario {
-private:
-	static ManejadorUsuario * instance;
-	map<string, Usuario> usuarios;
-	ManejadorUsuario();
-	
-public:
-	static ManejadorUsuario * getInstance();
-	~ManejadorUsuario();
+	private:
+		static ManejadorUsuario * instance;
+		map<string, Usuario> usuarios;
+		ManejadorUsuario();
+		
+	public:
+		static ManejadorUsuario * getInstance();
+		~ManejadorUsuario();
 
-	bool checkeoNickname(string);
-	void guardarUsuario(Usuario);
-	list<Usuario*>ListarUsuarios();
-	Usuario* elegirUsuario(string);
+		bool checkeoNickname(string);
+		void guardarUsuario(Usuario);
+		list<Usuario> listarUsuarios();
+		Usuario* elegirUsuario(string);
 };
 #endif

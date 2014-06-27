@@ -39,4 +39,5 @@ class DataRecurso{
 		void setUbicacion(string) ;
 		ostream& operator << (const DataRecurso&);
 };
+	std::ostream& operator<< (std::ostream& stream, const DataRecurso&);
 #endif
