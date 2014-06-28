@@ -81,6 +81,33 @@ void UsuarioControlador::guardarUsuario(){
 int UsuarioControlador::getId(){
 	return id;
 }
+
+
+DataUsuario generarDataUsuario(Usuario* usu){
+	return DataUsuario(usu->getNickname(), usu->getNombre(), usu->getSexo(), usu->getEdad(), usu->getFechaNac());
+}
+
+DataAccion generarDataAccion(Accion* acc){
+	DataUsuario du = generarDataUsuario(acc->getUsuario());
+	return  DataAccion(acc->getFecha(),acc->getTipo(),du);
+}
+
+DataRecurso generarDataRecurso(Recurso* rec){
+	DataUsuario usuarioCreo = generarDataUsuario(rec->getUsuarioCreo());
+	return DataRecurso(rec->getNombre(), usuarioCreo, rec->getDescripcion(), rec->getFechaUltimoAcceso(), rec->getFechaCreacion(), rec->getUbicacion());
+}
+
+DataCarpeta generarDataCarpeta(Carpeta* car){
+	DataUsuario usuarioCreo = generarDataUsuario(car->getUsuarioCreo());
+	return DataCarpeta(car->getNombre(), usuarioCreo, car->getDescripcion(), car->getFechaUltimoAcceso(), car->getFechaCreacion(), car->getUbicacion());
+}
+
+DataColaborador generarDataColaborador(Colaborador* col){
+	DataUsuario du = generarDataUsuario(col->getUsuario());
+	DataCarpeta dc = generarDataCarpeta(col->getCarpeta());
+	return DataColaborador(du, dc, col->getFechaIngreso());
+}
+
 DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 	list<Recurso*> recList = ManejadorRecursos::getInstance()->listarRecursos();
 	list<DataRecurso> recCreados = list<DataRecurso>();
@@ -89,8 +116,7 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 		Usuario* usuario = r->getUsuarioCreo();
 		
 		if(usuarioElegido->getNickname() == usuario->getNickname()){
-			DataUsuario usuarioCreo = DataUsuario(r->getUsuarioCreo()->getNickname(), r->getUsuarioCreo()->getNombre(), r->getUsuarioCreo()->getSexo(), r->getUsuarioCreo()->getEdad(), r->getUsuarioCreo()->getFechaNac());
-			DataRecurso dr = DataRecurso(r->getNombre(), usuarioCreo, r->getDescripcion(), r->getFechaUltimoAcceso(), r->getFechaCreacion(), r->getUbicacion());
+			DataRecurso dr = generarDataRecurso(r);
 			recCreados.push_back(dr);
 		}
 	}
@@ -102,15 +128,20 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 		Usuario* uc = c->getUsuario();
 		string uc_nickname = uc->getNickname();
 		if(usuarioElegido->getNickname() == uc_nickname){
-			DataUsuario du = DataUsuario(c->getUsuario()->getNickname(), c->getUsuario()->getNombre(), c->getUsuario()->getSexo(), c->getUsuario()->getEdad(), c->getUsuario()->getFechaNac());
-			DataUsuario duc = DataUsuario(c->getCarpeta()->getUsuarioCreo()->getNickname(), c->getCarpeta()->getUsuarioCreo()->getNombre(), c->getCarpeta()->getUsuarioCreo()->getSexo(), c->getCarpeta()->getUsuarioCreo()->getEdad(), c->getCarpeta()->getUsuarioCreo()->getFechaNac());
-			DataCarpeta dc = DataCarpeta(c->getCarpeta()->getNombre(), duc, c->getCarpeta()->getDescripcion(), c->getCarpeta()->getFechaUltimoAcceso(), c->getCarpeta()->getFechaCreacion(), c->getCarpeta()->getUbicacion());
-			DataColaborador result = DataColaborador(du, dc, c->getFechaIngreso());
+			DataColaborador result = generarDataColaborador(c);
 			colaboracionList.push_back(result);
 		}
 	}
 	// crear ListDataColaborador
 	list<Accion*> accList = usuarioElegido->obtenerAcciones();
+	list<DataAccion> accionesList = list<DataAccion>();
+	for (list<Accion*>::iterator it = accList.begin(); it != accList.end(); ++it){
+		Accion* a = *it;
+		DataAccion da = generarDataAccion(a);
+		accionesList.push_back(da);
+	}
+	DataUsuario dataUsuarioElegido = generarDataUsuario(usuarioElegido);
+	return DataInformacionUsuario(dataUsuarioElegido,recCreados,colaboracionList,accionesList);
 }
 
 list<DataUsuario> UsuarioControlador::listarUsuarios(){
