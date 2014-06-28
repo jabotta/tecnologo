@@ -54,12 +54,24 @@ void agregarDatosDePrueba(){
 	DataCarpeta Carpeta3 = DataCarpeta("Proyecto",Usuario3,"Almacena recursos relacionados con proyectos de software.",DateTime(),DateTime(),"/Proyecto/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta3,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario2,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Futbol/");
+	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario2,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta4,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	DataCarpeta Carpeta5 = DataCarpeta("CopaAm",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/CopaAm/");
+	DataCarpeta Carpeta5 = DataCarpeta("CopaAm",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta5,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	DataCarpeta Carpeta6 = DataCarpeta("Mundial",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial/");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta6,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	DataCarpeta Carpeta7 = DataCarpeta("Salud",Usuario2,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud/");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta7,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	DataCarpeta Carpeta8 = DataCarpeta("Tesis",Usuario2,"Informe final de la tésis",DateTime(),DateTime(),"/Proyecto/Tesis/");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta8,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	//DataColaborador Colaborador2 = DataColaborador(Usuario2,Carpeta1,DateTime());
+	//Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta8,"carpeta");
+	//Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 }
 
 void altaUsuario(){
