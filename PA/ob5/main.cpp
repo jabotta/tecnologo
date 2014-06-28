@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int idUsuarioControlador,idRecursoControlador;
+int idUsuarioControlador, idRecursoControlador;
 
 int ingresarNumerico(){
 	int res;
@@ -19,6 +19,7 @@ int ingresarNumerico(){
 	}
 	return res;
 }
+
 void crearCarpetaRaiz(){
 	DataCarpeta dc;
 	dc.setNombre("/");
@@ -27,10 +28,12 @@ void crearCarpetaRaiz(){
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 }
+
 bool checkSiCancelo(string s){
 	int value = atoi(s.c_str());
 	return (value == 1);
 }
+
 void altaUsuario(){
 	string nickname;
 	bool cancelar = false;
@@ -54,11 +57,12 @@ void altaUsuario(){
 		//Crea y guarda el Usuario 
 		Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
 	}
-
 }
+
 void crearTipoDeRecurso(){
 	int tipo;
 	bool salir;
+	
 	do{
 		cout << "1 - Carpeta" << endl;
 		cout << "2 - Archivo" << endl;
@@ -75,10 +79,8 @@ void crearTipoDeRecurso(){
 				cout << "Descripcion de la Carpeta:" << endl;
 				cin >> tmp;
 				dc.setDescripcion(tmp);
-
-				cout << dc;
-				salir = true;
 				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"carpeta");
+				salir = true;
 				break;
 			}
 			case 2:{
@@ -90,27 +92,23 @@ void crearTipoDeRecurso(){
 				cout << "Descripcion del Archivo:" << endl;
 				cin >> tmp;
 				da.setDescripcion(tmp);
-				
-				cout << da;
-				salir = true;
 				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(da,"archivo");
+				salir = true;
 				break;
 			}
 		}
 	}while(salir != true);
-
-
 }
+
 void elegirUsuario(){
 	string nickname;	
 	list<DataUsuario> uList = Fabrica::getInstance()->getUControlador(idUsuarioControlador)->listarUsuarios();
-	
-	cout << "*****************************************" << endl;
+	list<DataUsuario>::iterator it;
+
 	cout << "********** Seleccionar Usuario **********" << endl;
-	cout << "*****************************************" << endl;
 	cout << "Nickname - Nombre" << endl;
 
-	for (list<DataUsuario>::iterator it = uList.begin(); it != uList.end(); ++it){	
+	for (it = uList.begin(); it != uList.end(); ++it){	
 		cout << (*it).getNickname() << " - " << (*it).getNombre() << endl;
 	}
 
@@ -118,20 +116,37 @@ void elegirUsuario(){
 	cin >> nickname;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(nickname);
 }
+
 void elegirCarpeta(){
 	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetas();
 	list<DataCarpeta>::iterator it;
 	
 	string carp;
-	cout<<"Listado de Carpetas: "<<endl;
-	cout<<"Ubicacion - Descripcion"<<endl;
-	for(it = drl.begin(); it!= drl.end();++it){
-		cout<<(*it)<<endl;
+	cout << "********** Seleccionar Carpeta **********" << endl;
+	cout << "Ubicacion - Descripcion"<<endl;
+	for(it = drl.begin(); it!= drl.end(); ++it){
+		cout << (*it) << endl;
 	}	
-	cout<<"Ingrese la ubicacion de la carpeta:";
-	cin>>carp;
+	cout << "Ingrese la ubicacion de la carpeta:";
+	cin >> carp;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
+
+void elegirCarpetaPorUsuario(){
+	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetasPorUsuario();
+	list<DataCarpeta>::iterator it;
+	
+	string carp;
+	cout << "********** Seleccionar Carpeta **********" << endl;
+	cout << "Ubicacion - Descripcion"<<endl;
+	for(it = drl.begin(); it!= drl.end(); ++it){
+		cout << (*it) << endl;
+	}	
+	cout << "Ingrese la ubicacion de la carpeta:";
+	cin >> carp;
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
+}
+
 void crearRecurso(){
 	crearTipoDeRecurso();
 	elegirUsuario();	
@@ -139,37 +154,22 @@ void crearRecurso(){
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->controlDeErrores();
 	list<DataErrores> dtErrores = Fabrica::getInstance()->getRControlador(idRecursoControlador)->imprimirErroresGenerados();
 
-	if(dtErrores.size()!=0){
-		
+	if(dtErrores.size() != 0){		
 		list<DataErrores>::iterator ite ;
-		for(ite = dtErrores.begin();ite!=dtErrores.end();++ite){
-			cout<<(*ite)<<endl;
-		}	
-
+		for(ite = dtErrores.begin(); ite!=dtErrores.end(); ++ite){
+			cout << (*ite) << endl;
+		}
 	}else{
 		Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-
 	}
 }
 
 void agregarColaborador(){
 	elegirUsuario();
-	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetasPorUsuario();
-	list<DataCarpeta>::iterator it;
-	
-	string carp;
-	cout<<"Listado de Carpetas: "<<endl;
-	cout<<"Ubicacion - Descripcion"<<endl;
-	for(it = drl.begin(); it!= drl.end();++it){
-		cout<<(*it)<<endl;
-	}	
-	cout<<"Ingrese la ubicacion de la carpeta:";
-	cin>>carp;
-	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
+	elegirCarpetaPorUsuario();
 }
 
 int main(){
-
 	int opcion;
 	idUsuarioControlador = Fabrica::getInstance()->getUControlador(-1)->getId();
 	idRecursoControlador = Fabrica::getInstance()->getRControlador(-1)->getId();
@@ -200,7 +200,6 @@ int main(){
 			}
 			/********************** Alta Usuario ************************************************/
 			case 2:{
-				
 				try{
 					altaUsuario();
 		 		}catch(const invalid_argument& ia){
@@ -211,7 +210,6 @@ int main(){
 			/************************ Crear Recurso ********************************************/
 			case 3:{
 				try{
-					
 					crearRecurso();
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
@@ -220,7 +218,6 @@ int main(){
 			}
 			/***************************** Agregar Colaborador ********************************/
 			case 4:{
-
 					agregarColaborador();
 				try{
 
