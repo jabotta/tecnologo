@@ -18,14 +18,7 @@ ManejadorRecursos::~ManejadorRecursos(){
 }
 
 void ManejadorRecursos::ingresarRecurso(Recurso* r){
-	/****
-	
-		Atencion !!! cambiar nombre por id correspondiente 
-		el id tiene que estar setteado antes de llamar a ingresar recurso 
-
-
-	*****/
-	recursos.insert(pair<string, Recurso*>(r->getNombre(),r));
+	recursos.insert(pair<string, Recurso*>(r->getPath(),r));
 }
 
 list<Recurso*> ManejadorRecursos::listarRecursos(){

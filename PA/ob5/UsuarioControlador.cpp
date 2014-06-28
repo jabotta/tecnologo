@@ -87,11 +87,6 @@ DataUsuario generarDataUsuario(Usuario* usu){
 	return DataUsuario(usu->getNickname(), usu->getNombre(), usu->getSexo(), usu->getEdad(), usu->getFechaNac());
 }
 
-DataAccion generarDataAccion(Accion* acc){
-	DataUsuario du = generarDataUsuario(acc->getUsuario());
-	return  DataAccion(acc->getFecha(),acc->getTipo(),du);
-}
-
 DataRecurso generarDataRecurso(Recurso* rec){
 	DataUsuario usuarioCreo = generarDataUsuario(rec->getUsuarioCreo());
 	return DataRecurso(rec->getNombre(), usuarioCreo, rec->getDescripcion(), rec->getFechaUltimoAcceso(), rec->getFechaCreacion(), rec->getUbicacion());
@@ -100,6 +95,17 @@ DataRecurso generarDataRecurso(Recurso* rec){
 DataCarpeta generarDataCarpeta(Carpeta* car){
 	DataUsuario usuarioCreo = generarDataUsuario(car->getUsuarioCreo());
 	return DataCarpeta(car->getNombre(), usuarioCreo, car->getDescripcion(), car->getFechaUltimoAcceso(), car->getFechaCreacion(), car->getUbicacion());
+}
+
+DataArchivo generarDataArchivo(Archivo* arc){
+	DataUsuario usuarioCreo = generarDataUsuario(arc->getUsuarioCreo());
+	return DataArchivo(arc->getNombre(), usuarioCreo, arc->getDescripcion(), arc->getFechaUltimoAcceso(), arc->getFechaCreacion(), arc->getUbicacion());
+}
+
+DataAccion generarDataAccion(Accion* acc){
+	DataUsuario du = generarDataUsuario(acc->getUsuario());
+	DataArchivo da = generarDataArchivo(acc->getArchivo());
+	return  DataAccion(acc->getFecha(),acc->getTipo(),du,da);
 }
 
 DataColaborador generarDataColaborador(Colaborador* col){
