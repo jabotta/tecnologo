@@ -1,5 +1,6 @@
 #include "Accion.h"
 #include "Archivo.h"
+#include "Usuario.h"
 
 //Constructores
 Accion::Accion(){
@@ -9,13 +10,15 @@ Accion::Accion(){
 Accion::Accion(const Accion& acc){
 	setTipo(acc.getTipo());
 	fecha = acc.getFecha();
-	//setArchivo(acc.getArchivo());
+	setArchivo(acc.getArchivo());
+	setUsuario(acc.getUsuario());
 }
 
-Accion::Accion(TipoAccion tp, Archivo* arc){
+Accion::Accion(TipoAccion tp, Archivo* arc, Usuario* usu){
 	setTipo(tp);
 	fecha = DateTime();
 	setArchivo(arc);
+	setUsuario(usu);
 }
 
 //Destructor
@@ -36,6 +39,10 @@ Archivo* Accion::getArchivo() const{
 	return archivo;
 }
 
+Usuario* Accion::getUsuario() const{
+	return usuario;
+}
+
 //Modificadores
 void Accion::setTipo(TipoAccion tp){
 	tipo = tp;
@@ -43,4 +50,8 @@ void Accion::setTipo(TipoAccion tp){
 
 void Accion::setArchivo(Archivo* arc){
 	archivo = arc;
+};
+
+void Accion::setUsuario(Usuario* usu){
+	usuario = usu;
 };

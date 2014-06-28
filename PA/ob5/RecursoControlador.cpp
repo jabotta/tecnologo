@@ -116,6 +116,8 @@ void RecursoControlador::guardarRecurso(){
 		r =  new Archivo(dataArchivo);
 
 	}
+	if(carpetaElegida != NULL)
+		r->setUbicacion(carpetaElegida->getUbicacion() + r->getNombre() + "/");
 	r->setUsuarioCrea(usuarioElegido);
 	if(r->getUsuarioCreo()!=NULL)
 	cout<<"ALERTAAA "<<r->getUsuarioCreo()->getNombre();
