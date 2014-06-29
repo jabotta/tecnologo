@@ -1,5 +1,5 @@
-#ifndef MANEJADORCOLABORADOR_H
-#define MANEJADORCOLABORADOR_H
+#ifndef MANEJADORCOMENTARIO_H
+#define MANEJADORCOMENTARIO_H
 #include <map>
 #include <list>
 #include <string>
@@ -10,14 +10,14 @@ using namespace std;
 class ManejadorComentario {	
 	private:
 		static ManejadorComentario * instance;
-		map<string, Comentario> comentarios;
+		map<string, Comentario*> comentarios;
 		ManejadorComentario();
 		
 	public:
 		static ManejadorComentario * getInstance();
 		~ManejadorComentario();
 
-		void guardarComentario(Comentario);
-		list<Comentario> listarComentarios();
+		void guardarComentario(Comentario*);
+		list<Comentario*> listarComentarios();
 };
 #endif
