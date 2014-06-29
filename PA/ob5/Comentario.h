@@ -14,7 +14,7 @@ class Comentario {
 		string contenido;
 		Usuario* usuario;
 		Archivo* archivo;
-		Comentario* parent;
+		// Comentario* parent;
 
 	public:
 		//Constructores
@@ -29,13 +29,13 @@ class Comentario {
 		string getContenido() const;
 		Usuario* getUsuario() const;
 		Archivo* getArchivo() const;
-		Comentario* getParent() const;
+		// Comentario* getParent() const;
 
 		//Modificadores
 		void setCodigo(int);
 		void setContenido(string);
 		void setUsuario(Usuario*);
 		void setArchivo(Archivo*);
-		void setParent(Comentario*);
+		// void setParent(Comentario*);
 };
 #endif

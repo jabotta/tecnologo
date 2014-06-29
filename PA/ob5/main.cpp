@@ -278,27 +278,23 @@ void accionSobreComentario(){
 		salir = false;
 		switch(tipo){
 			case 1:{
-				DataComentario cm;
 				string contenido;
 				cout << "Comentario: ";
 				cin >> contenido;
-				cm.setContenido(contenido);
 				elegirUsuario();
-				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(cm, '');
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(contenido, '');
 				salir = true;
 				break;
 			}
 			case 2:{
-				DataComentario cm;
 				string contenido;
 				string parent;
 				cout << "Id comentario a responder: ";
-				cin >> contenido;
+				cin >> parent;
 				cout << "Comentario: ";
 				cin >> contenido;
-				cm.setContenido(contenido);
 				elegirUsuario();
-				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(cm, parent);
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(contenido, parent);
 				salir = true;
 				break;
 			}
