@@ -7,11 +7,12 @@ ManejadorRecursoControlador * ManejadorRecursoControlador::getInstance(){
 		ManejadorRecursoControlador::instance = new ManejadorRecursoControlador();
 	}
 	return ManejadorRecursoControlador::instance;
-
 }
+
 ManejadorRecursoControlador::ManejadorRecursoControlador(){
 
 }
+
 ManejadorRecursoControlador::~ManejadorRecursoControlador(){
 	// delete lista de controllers antes de borrar
 }

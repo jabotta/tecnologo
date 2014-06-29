@@ -7,18 +7,17 @@
 
 using namespace std;
 
-class ManejadorColaborador {
-	
-private:
-	static ManejadorColaborador * instance;
-	list<Colaborador*> colaboradores;
-	ManejadorColaborador();
-	
-public:
-	static ManejadorColaborador * getInstance();
-	~ManejadorColaborador();
+class ManejadorColaborador {	
+	private:
+		static ManejadorColaborador * instance;
+		list<Colaborador*> colaboradores;
+		ManejadorColaborador();
+		
+	public:
+		static ManejadorColaborador * getInstance();
+		~ManejadorColaborador();
 
-	void agregarALista(Colaborador*);
-	list<Colaborador*> listarColaboradores();
+		void agregarALista(Colaborador*);
+		list<Colaborador*> listarColaboradores();
 };
 #endif

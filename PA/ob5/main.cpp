@@ -35,42 +35,66 @@ bool checkSiCancelo(string s){
 }
 
 void agregarDatosDePrueba(){
+	cout << "********** Usuarios **********" << endl;
 	DateTime fec = DateTime(1988, 12, 28, 0,0);
 	DataUsuario Usuario1 = DataUsuario("James",  "James", "Masculino", 24, fec);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(Usuario1);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
+	cout << Usuario1 << endl;
+
 	DateTime fec2 = DateTime(1990, 1, 1, 0,0);
 	DataUsuario Usuario2 = DataUsuario("Jennifer",  "Jeniffer", "Femenino", 23, fec2);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(Usuario2);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
+	cout << Usuario2 << endl;
+
 	DateTime fec3 = DateTime(1980, 3, 3, 0,0);
 	DataUsuario Usuario3 = DataUsuario("Jhon",  "Jhon", "Masculino", 33, fec3);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(Usuario3);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
+	cout << Usuario3 << endl;
+
+	cout << "********** Carpetas **********" << endl;
 	DataCarpeta Carpeta1 = DataCarpeta("Deporte",Usuario3,"Almacena información de deportes.",DateTime(),DateTime(),"/Deporte/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta1,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta1 << endl;
+
 	DataCarpeta Carpeta2 = DataCarpeta("Juegos",Usuario3,"Almacena información de los últimos juegos para PC.",DateTime(),DateTime(),"/Juegos/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta2,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta2 << endl;
+
 	DataCarpeta Carpeta3 = DataCarpeta("Proyecto",Usuario3,"Almacena recursos relacionados con proyectos de software.",DateTime(),DateTime(),"/Proyecto/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta3,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta3 << endl;
+
 	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario2,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta4,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta4 << endl;
+
 	DataCarpeta Carpeta5 = DataCarpeta("CopaAm",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta5,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta5 << endl;
+
 	DataCarpeta Carpeta6 = DataCarpeta("Mundial",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta6,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta6 << endl;
+
 	DataCarpeta Carpeta7 = DataCarpeta("Salud",Usuario2,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta7,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta7 << endl;
+
 	DataCarpeta Carpeta8 = DataCarpeta("Tesis",Usuario2,"Informe final de la tésis",DateTime(),DateTime(),"/Proyecto/Tesis/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta8,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
+	cout << Carpeta8 << endl;
+
 	//DataColaborador Colaborador2 = DataColaborador(Usuario2,Carpeta1,DateTime());
 	//Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta8,"carpeta");
 	//Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
@@ -108,17 +132,17 @@ void crearTipoDeRecurso(){
 	do{
 		cout << "1 - Carpeta" << endl;
 		cout << "2 - Archivo" << endl;
-		cout << "Ingrese el Tipo de Recurso:" << endl;
+		cout << "Ingrese el Tipo de Recurso: ";
 		tipo = ingresarNumerico();
 		salir = false;
 		switch(tipo){
 			case 1:{
 				DataCarpeta dc;
 				string tmp;
-				cout << "Nombre de la Carpeta:" << endl;
+				cout << "Nombre de la Carpeta: ";
 				cin >> tmp;
 				dc.setNombre(tmp);
-				cout << "Descripcion de la Carpeta:" << endl;
+				cout << "Descripcion de la Carpeta: ";
 				cin >> tmp;
 				dc.setDescripcion(tmp);
 				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(dc,"carpeta");
@@ -128,10 +152,10 @@ void crearTipoDeRecurso(){
 			case 2:{
 				DataArchivo da;
 				string tmp;
-				cout << "Nombre del Archivo:" << endl;
+				cout << "Nombre del Archivo: ";
 				cin >> tmp;
 				da.setNombre(tmp);
-				cout << "Descripcion del Archivo:" << endl;
+				cout << "Descripcion del Archivo: ";
 				cin >> tmp;
 				da.setDescripcion(tmp);
 				Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(da,"archivo");
@@ -154,37 +178,37 @@ void elegirUsuario(){
 		cout << (*it).getNickname() << " - " << (*it).getNombre() << endl;
 	}
 
-	cout << "Ingrese el Nickname del usuario seleccionado: " << endl;
+	cout << "Ingrese el Nickname del usuario: ";
 	cin >> nickname;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(nickname);
 }
 
 void elegirCarpeta(){
-	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetas();
+	string carp;
+	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarCarpetas();
 	list<DataCarpeta>::iterator it;
 	
-	string carp;
 	cout << "********** Seleccionar Carpeta **********" << endl;
-	cout << "Ubicacion - Descripcion"<<endl;
-	for(it = drl.begin(); it!= drl.end();++it){
-		cout << it->getNombre() << " - " << it->getUbicacion() <<endl;
+	cout << "Ubicacion - Descripcion" << endl;
+	for(it = drl.begin(); it!= drl.end(); ++it){
+		cout << it->getUbicacion() << " - " << it->getNombre() <<endl;
 	}	
-	cout << "Ingrese la ubicacion de la carpeta:";
+	cout << "Ingrese la ubicacion de la carpeta: ";
 	cin >> carp;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
 
 void elegirCarpetaPorUsuario(){
-	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->ListarCarpetasPorUsuario();
-	list<DataCarpeta>::iterator it;
-	
 	string carp;
+	list<DataCarpeta> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarCarpetasPorUsuario();
+	list<DataCarpeta>::iterator it;	
+	
 	cout << "********** Seleccionar Carpeta **********" << endl;
 	cout << "Ubicacion - Descripcion"<<endl;
 	for(it = drl.begin(); it!= drl.end(); ++it){
 		cout << (*it) << endl;
 	}	
-	cout << "Ingrese la ubicacion de la carpeta:";
+	cout << "Ingrese la ubicacion de la carpeta: ";
 	cin >> carp;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
 }
@@ -219,15 +243,18 @@ void verInformacionUsuario(){
 	cout << "Sexo: " << info.getUsuario().getSexo() << endl;
 	cout << "Edad: " << info.getUsuario().getEdad() << endl;
 	cout << "Fecha de nacimiento: " << info.getUsuario().getFechaNac() << endl;
-	cout << "Recursos creados" << endl;
+
+	cout << "************** Recursos creados **************" << endl;
 	for(list<DataRecurso>::iterator it = info.getRecursos().begin() ; it != info.getRecursos().end();++it){
 		cout << "Recurso: " << it->getNombre() << endl;
 	}
-	cout << "Carpetas en las que es colaborador" << endl;
+
+	cout << "***** Carpetas en las que es colaborador *****" << endl;
 	for(list<DataColaborador>::iterator it = info.getColaboradores().begin() ; it != info.getColaboradores().end();++it){
 		cout << "Colaborando en carpeta: " << it->getCarpeta().getNombre() << " desde: " << it->getFecha() << endl;
 	}
-	cout << "Acciones realizadas" << endl;
+
+	cout << "************* Acciones realizadas ************" << endl;
 	for(list<DataAccion>::iterator it = info.getAcciones().begin() ; it != info.getAcciones().end();++it){
 		cout << "Accion: " << it->getTipo() << " en: " << it->getFecha() << " sobre: " << it->getArchivo().getNombre() << endl;
 	}

@@ -29,7 +29,6 @@ class DataInformacionUsuario{
 		list<DataRecurso> getRecursos() const;
 		list<DataColaborador> getColaboradores() const;
 		list<DataAccion> getAcciones() const;
-
 		
 		// Modificadores
 		void setUsuario(DataUsuario);

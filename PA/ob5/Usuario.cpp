@@ -47,11 +47,6 @@ void Usuario::setFechaNac(DateTime t){
 	fechaNac = t;
 }
 
-// esta no se si tiene sentido
-//Usuario::setAccion(Set<Accion> s){
-// 	acciones = s;
-//}
-
 //Getters
 list<Accion*> Usuario::obtenerAcciones(){
  	return acciones;

@@ -19,10 +19,12 @@ class Usuario {
 		list<Accion*> acciones;
 
 	public:
+		// Constructores
 		Usuario();
 		Usuario(DataUsuario);
 		Usuario(string, string, string, DateTime);
 
+		// Destructor
 		~Usuario();
 
 		void setNickname(string n);

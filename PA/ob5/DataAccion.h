@@ -33,6 +33,5 @@ class DataAccion {
 		void setTipo(TipoAccion);
 		void setUsuario(DataUsuario);
 		void setArchivo(DataArchivo);
-
 };
 #endif

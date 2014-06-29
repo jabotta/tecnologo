@@ -9,9 +9,9 @@
 #include "DataErrores.h"
 
 class  Carpeta: public Recurso{
-
 	private:
 		map<string, Recurso*> recursos;
+		
 	public:
 		//Constructores
 		Carpeta();

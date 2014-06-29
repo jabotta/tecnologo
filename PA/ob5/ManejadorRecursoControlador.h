@@ -8,18 +8,17 @@
 using namespace std;
 
 class ManejadorRecursoControlador {
+	private:
+		static ManejadorRecursoControlador * instance;
+		ManejadorRecursoControlador();
+		map<int, RecursoControlador*> recursoControladores;
+		int ultimoEnMapa;
 
-private:
-	static ManejadorRecursoControlador * instance;
-	ManejadorRecursoControlador();
-	map<int, RecursoControlador*> recursoControladores;
-	int ultimoEnMapa;
-
-public:
-	~ManejadorRecursoControlador();
-	static ManejadorRecursoControlador * getInstance();
-	RecursoControlador* obtenerControlerPorId(int);
-	int getUltimoEnMapa();
-	void agregarController(RecursoControlador *);
+	public:
+		~ManejadorRecursoControlador();
+		static ManejadorRecursoControlador * getInstance();
+		RecursoControlador* obtenerControlerPorId(int);
+		int getUltimoEnMapa();
+		void agregarController(RecursoControlador *);
 };
 #endif

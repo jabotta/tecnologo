@@ -8,18 +8,17 @@
 using namespace std;
 
 class ManejadorUsuarioControlador {
+	private:
+		static ManejadorUsuarioControlador * instance;
+		ManejadorUsuarioControlador();
+		map<int, UsuarioControlador*> usuarioControladores;
+		int ultimoEnMapa;
 
-private:
-	static ManejadorUsuarioControlador * instance;
-	ManejadorUsuarioControlador();
-	map<int, UsuarioControlador*> usuarioControladores;
-	int ultimoEnMapa;
-
-public:
-	~ManejadorUsuarioControlador();
-	static ManejadorUsuarioControlador * getInstance();
-	UsuarioControlador* obtenerControlerPorId(int);
-	int getUltimoEnMapa();
-	void agregarController(UsuarioControlador *);
+	public:
+		~ManejadorUsuarioControlador();
+		static ManejadorUsuarioControlador * getInstance();
+		UsuarioControlador* obtenerControlerPorId(int);
+		int getUltimoEnMapa();
+		void agregarController(UsuarioControlador *);
 };
 #endif

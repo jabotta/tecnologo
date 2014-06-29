@@ -29,7 +29,7 @@ list<Recurso*> ManejadorRecursos::listarRecursos(){
 	return r;
 }
 
-list<Carpeta*> ManejadorRecursos::listarCarpetas(string loc){
+list<Carpeta*> ManejadorRecursos::listarCarpetas(){
  
 	list<Carpeta*> c;
 	
@@ -56,7 +56,7 @@ Carpeta* ManejadorRecursos::elegirCarpeta(string key){
 	return NULL;
 }
 
-list<Archivo*> ManejadorRecursos::listarArchivos(string loc){
+list<Archivo*> ManejadorRecursos::listarArchivos(){
 	list<Archivo*> c;
 	for (map<string, Recurso*>::iterator it = recursos.begin(); it != recursos.end(); ++it){
 		Recurso* r = it->second;

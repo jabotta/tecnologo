@@ -12,6 +12,7 @@ UsuarioControlador::UsuarioControlador(int iduc){
 UsuarioControlador::~UsuarioControlador(){
 	//debemos liberar la memoria de todos los pseudoatributos 
 }
+
 UsuarioControlador::UsuarioControlador(const UsuarioControlador& i){
 	//debemos liberar la memoria de todos los pseudoatributos 
 }
@@ -78,10 +79,10 @@ void UsuarioControlador::guardarUsuario(){
 	Usuario us = Usuario(dataUsuarioIngresar);
 	ManejadorUsuario::getInstance()->guardarUsuario(us);
 }
+
 int UsuarioControlador::getId(){
 	return id;
 }
-
 
 DataUsuario generarDataUsuario(Usuario* usu){
 	return DataUsuario(usu->getNickname(), usu->getNombre(), usu->getSexo(), usu->getEdad(), usu->getFechaNac());
@@ -115,6 +116,7 @@ DataColaborador generarDataColaborador(Colaborador* col){
 }
 
 DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
+	// crear ListDataRecurso
 	list<Recurso*> recList = ManejadorRecursos::getInstance()->listarRecursos();
 	list<DataRecurso> recCreados = list<DataRecurso>();
 	for (list<Recurso*>::iterator it = recList.begin(); it != recList.end(); ++it){
@@ -126,7 +128,8 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 			recCreados.push_back(dr);
 		}
 	}
-	// crear ListDataRecursos
+	
+	// crear ListDataColaborador
 	list<Colaborador*> cList = ManejadorColaborador::getInstance()->listarColaboradores();
 	list<DataColaborador> colaboracionList = list<DataColaborador>();
 	for (list<Colaborador*>::iterator it = cList.begin(); it != cList.end(); ++it){
@@ -138,7 +141,8 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 			colaboracionList.push_back(result);
 		}
 	}
-	// crear ListDataColaborador
+
+	// crear ListDataAccion
 	list<Accion*> accList = usuarioElegido->obtenerAcciones();
 	list<DataAccion> accionesList = list<DataAccion>();
 	for (list<Accion*>::iterator it = accList.begin(); it != accList.end(); ++it){
@@ -146,7 +150,10 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 		DataAccion da = generarDataAccion(a);
 		accionesList.push_back(da);
 	}
+
+	// crear DataUsuario
 	DataUsuario dataUsuarioElegido = generarDataUsuario(usuarioElegido);
+
 	return DataInformacionUsuario(dataUsuarioElegido,recCreados,colaboracionList,accionesList);
 }
 

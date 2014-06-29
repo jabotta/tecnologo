@@ -14,14 +14,12 @@ DataArchivo::DataArchivo(string nm, DataUsuario uc, string dc, DateTime fua, Dat
 }
 
 DataArchivo::DataArchivo(const DataArchivo& da){
-	
 	setNombre(da.getNombre());
 	setUsuarioCreo(da.getUsuarioCreo());
 	setDescripcion(da.getDescripcion());
 	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
 	setFechaCreacion( da.getFechaCreacion());
 	setUbicacion( da.getUbicacion());
-
 }
 
 DataArchivo::~DataArchivo(){
@@ -36,6 +34,4 @@ DataArchivo& DataArchivo::operator = (const DataRecurso& r){
 	(*this).setFechaUltimoAcceso(r.getFechaUltimoAcceso());
 	(*this).setFechaCreacion(r.getFechaCreacion());
 	return (*this);
-
-
 }

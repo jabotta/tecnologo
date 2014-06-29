@@ -27,7 +27,6 @@ class DataColaborador {
 		DataCarpeta getCarpeta() const;
 		DataUsuario getUsuario() const;
 		DateTime getFecha() const;
-
 		
 		// Modificadores
 		void setCarpeta(DataCarpeta);

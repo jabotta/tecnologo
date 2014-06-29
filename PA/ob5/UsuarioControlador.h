@@ -14,48 +14,47 @@
 using namespace std;
 
 class UsuarioControlador : public IUsuarioControlador{
+	private:
+		list<Recurso> recCreados;
+		list<Colaborador> colaboracionList;
+		list<Accion> accList;
+		Usuario * usuarioElegido;
+		bool existe;
+		DataUsuario dataUsuarioIngresar;
+		string nickname;
+		int id;
 
-private:
-	list<Recurso> recCreados;
-	list<Colaborador> colaboracionList;
-	list<Accion> accList;
-	Usuario * usuarioElegido;
-	bool existe;
-	DataUsuario dataUsuarioIngresar;
-	string nickname;
-	int id;
+	public:
+		//Constructores
+		UsuarioControlador();
+		UsuarioControlador(int);
+		UsuarioControlador(const UsuarioControlador&);
 
-public:
-	//Constructores
-	UsuarioControlador();
-	UsuarioControlador(int);
-	UsuarioControlador(const UsuarioControlador&);
-	//Destructor	
-	~UsuarioControlador();
-	//Setters
-	void setRecCreados(list<Recurso>);
-	void setcolaboracionList(list<Colaborador>);
-	void setAccList(list<Accion>);
+		//Destructor	
+		~UsuarioControlador();
 
-	void setUsuarioElegido(Usuario *);
-	void setDataUsuarioIngresar(DataUsuario);
-	void setNickname(string);
+		//Setters
+		void setRecCreados(list<Recurso>);
+		void setcolaboracionList(list<Colaborador>);
+		void setAccList(list<Accion>);
+		void setUsuarioElegido(Usuario *);
+		void setDataUsuarioIngresar(DataUsuario);
+		void setNickname(string);
 
-	//Getters
-	list<Recurso> getRecCreados();
-	list<Colaborador> getcolaboracionList();
-	list<Accion>getAccList();
-	Usuario* getUsuarioElegido();
-	DataUsuario& getDataUsuarioIngresar();
-	string getNickname();
+		//Getters
+		list<Recurso> getRecCreados();
+		list<Colaborador> getcolaboracionList();
+		list<Accion>getAccList();
+		Usuario* getUsuarioElegido();
+		DataUsuario& getDataUsuarioIngresar();
+		string getNickname();
 
-	bool checkeoNickname(string);
-	void ingresarDatosUsuario(DataUsuario);
-	void guardarUsuario();
-	DataInformacionUsuario obtenerInformacionUsuario();
-	list<DataUsuario> listarUsuarios();
-	void elegirUsuario(string);
-	int getId();
-
+		bool checkeoNickname(string);
+		void ingresarDatosUsuario(DataUsuario);
+		void guardarUsuario();
+		DataInformacionUsuario obtenerInformacionUsuario();
+		list<DataUsuario> listarUsuarios();
+		void elegirUsuario(string);
+		int getId();
 };
 #endif

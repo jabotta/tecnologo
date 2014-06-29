@@ -1,6 +1,5 @@
 #ifndef	RECURSO_H
 #define RECURSO_H
-
 #include <iostream>
 #include <string>
 #include <list>
@@ -14,24 +13,27 @@ class Recurso {
 	private: 
 		string nombre ; 
 		string ubicacion;
-		Usuario* usuarioCrea;
+		Usuario* usuarioCreo;
 		string descripcion; 
 		DateTime fechaUltimoAcceso;
 		DateTime fechaCreacion;
 		DateTime fechaModificacion;
 
 	public:
+		//Constructores
 		Recurso();
 		Recurso(const Recurso&);
+
 		//Destructor
 		~Recurso();
+		
 		//Funciones virtuales 
 		virtual list<DataErrores> controlarNombreRecurso();
 		virtual bool existeNombre(string ) ;
 
 		void setNombre(string);
 		void setUbicacion(string);
-		void setUsuarioCrea(Usuario*);
+		void setUsuarioCreo(Usuario*);
 		void setDescripcion(string);
 		void setFechaUltimoAcceso(DateTime);
 		void setFechaCreacion(DateTime);

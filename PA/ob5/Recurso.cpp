@@ -5,12 +5,11 @@ Recurso::Recurso(){
 }
 
 Recurso::Recurso(const Recurso& da){
-	
 	setNombre(da.getNombre()); 
 	setDescripcion(da.getDescripcion());
-	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
-	setFechaCreacion( da.getFechaCreacion());
-	setUbicacion( da.getUbicacion());
+	setFechaUltimoAcceso(da.getFechaUltimoAcceso());
+	setFechaCreacion(da.getFechaCreacion());
+	setUbicacion(da.getUbicacion());
 }
 
 //Destructor
@@ -18,8 +17,7 @@ Recurso::~Recurso(){
 
 }
 
-void Recurso::Recurso::setNombre(string n ){
-	
+void Recurso::Recurso::setNombre(string n){
 	nombre = n;
 }
 
@@ -27,8 +25,8 @@ void Recurso::Recurso::setUbicacion(string u){
 	ubicacion = u;
 }
 
-void Recurso::setUsuarioCrea(Usuario* u ){
-	usuarioCrea = u;
+void Recurso::setUsuarioCreo(Usuario* u){
+	usuarioCreo = u;
 }
 
 void Recurso::setDescripcion(string d){
@@ -56,7 +54,7 @@ string Recurso::getUbicacion() const{
 }
 
 Usuario* Recurso::getUsuarioCreo() const{
-	return usuarioCrea;
+	return usuarioCreo;
 }
 
 string Recurso::getDescripcion() const{
@@ -76,27 +74,24 @@ DateTime Recurso::getFechaModificacion() const{
 }
 
 string Recurso::getPath() const{
-	//string aux = strcat(ubicacion,"/");
-	//string result = strcat(aux,nombre);
 	return ubicacion;
 }
 
 Recurso& Recurso::operator = (const Recurso& da){
-
 	(*this).setNombre(da.getNombre()); 
 	(*this).setDescripcion(da.getDescripcion());
-	(*this).setFechaUltimoAcceso( da.getFechaUltimoAcceso());
-	(*this).setFechaCreacion( da.getFechaCreacion());
-	(*this).setUbicacion( da.getUbicacion());
-
-
-
+	(*this).setFechaUltimoAcceso(da.getFechaUltimoAcceso());
+	(*this).setFechaCreacion(da.getFechaCreacion());
+	(*this).setUbicacion(da.getUbicacion());
 	return (*this);
-
 }
+
 list<DataErrores> Recurso::controlarNombreRecurso(){
 	cout<<"Recurso linea 85 "<<endl;
 	list<DataErrores> errores;
 	return errores;
 }
-bool Recurso::existeNombre(string s){return getNombre()==s;}
+
+bool Recurso::existeNombre(string s){
+	return getNombre() == s;
+}

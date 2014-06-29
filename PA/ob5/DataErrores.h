@@ -22,7 +22,6 @@ class DataErrores{
 		// Selectores
 		int getCodigo() const;
 		string getMensaje() const;
-
 		
 		// Modificadores
 		void setCodigo(int);

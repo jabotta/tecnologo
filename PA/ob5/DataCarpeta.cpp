@@ -28,12 +28,12 @@ DataCarpeta::~DataCarpeta(){
 
 void DataCarpeta::setRecursos(list<DataRecurso> lr){
 	recursos = lr;
-
 }
 
 list<DataRecurso> DataCarpeta::getRecursos(){
 	return recursos;
 }
+
 DataCarpeta& DataCarpeta::operator = (const DataRecurso& r){
 	(*this).setNombre(r.getNombre());
 	(*this).setUbicacion(r.getUbicacion());
@@ -41,6 +41,5 @@ DataCarpeta& DataCarpeta::operator = (const DataRecurso& r){
 	(*this).setUsuarioCreo(r.getUsuarioCreo());
 	(*this).setFechaUltimoAcceso(r.getFechaUltimoAcceso());
 	(*this).setFechaCreacion(r.getFechaCreacion());
-	return (*this);
-	
+	return (*this);	
 }

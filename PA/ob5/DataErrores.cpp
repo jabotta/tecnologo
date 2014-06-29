@@ -39,7 +39,6 @@ void DataErrores::setMensaje(string msj){
 }
 
 ostream& operator<<(ostream& o,const DataErrores& e){
-
-	o<<"Error #: "<<e.getCodigo()<<":"<<e.getMensaje()<<endl;
+	o << "Error #: " <<e.getCodigo() << ":" << e.getMensaje();
 	return o;
 }

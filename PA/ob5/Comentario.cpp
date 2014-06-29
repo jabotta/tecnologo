@@ -58,4 +58,3 @@ void Comentario::setUsuario(Usuario* usu){
 void Comentario::setArchivo(Archivo* arc){
 	archivo = arc;
 };
-

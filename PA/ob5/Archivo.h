@@ -6,23 +6,23 @@
 #include "DataArchivo.h"
 #include "DataErrores.h"
 #include "Colaborador.h"
+
 class Archivo :public Recurso{
-	
 	private:
 		list<Colaborador> listaColaboradores;
-		list<Recurso> listaRecursos;
+
 	public:
+		// Constructores
 		Archivo();
 		Archivo(const Archivo &);
 		Archivo(const DataArchivo );
-		~Archivo();
 
+		// Destructor
+		~Archivo();
 
 		list<DataErrores> controlarNombreRecurso();
 		bool existeNombre(string);
 		
-		list<Recurso> getListaRecursos();
 		list<Colaborador> getListaColaboradores();
 };
-
 #endif

@@ -17,10 +17,12 @@ class DataRecurso{
 		string ubicacion;
 		
 	public:
-		//Destructor
+		//Constructores
 		DataRecurso();
 		DataRecurso(string, DataUsuario, string, DateTime, DateTime, string);
 		DataRecurso(const DataRecurso&);
+
+		//Destructor		
 		~DataRecurso();
 
 		//Selectores
@@ -38,6 +40,7 @@ class DataRecurso{
 		void setFechaUltimoAcceso(DateTime) ;
 		void setFechaCreacion(DateTime) ;
 		void setUbicacion(string) ;
+		
 		DataRecurso& operator = (const DataRecurso& );
 };
 	std::ostream& operator<< (std::ostream& stream, const DataRecurso&);
