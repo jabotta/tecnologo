@@ -161,8 +161,8 @@ void RecursoControlador::elegirArchivo(string path){
 
 list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 	list<DataComentario> ret;
-	list<Comentario> comentarios = ManejadorComentario::getInstance()->listarComentarios();
-	list<Comentario>::iterator it; 
+	list<Comentario*> comentarios = ManejadorComentario::getInstance()->listarComentarios();
+	list<Comentario*>::iterator it; 
 
 	for(it = comentarios.begin() ; it != comentarios.end(); ++it){
 		Comentario* cm = *it;		
@@ -172,9 +172,9 @@ list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 			Usuario* uc = a->getUsuarioCreo();
 			DataUsuario dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
 			DataUsuario dUsarioCreo = DataUsuario(uc->getNickname(),uc->getNombre(),uc->getSexo(),uc->getEdad(),uc->getFechaNac());
-			dArchivo = DataArchivo(a->getNombre(), dUsarioCreo, a->getDescripcion(), a->getFechaUltimoAcceso(),a->getFechaCreacion(), a->getUbicacion(), a->getPath());
+			DataArchivo dArchivo = DataArchivo(a->getNombre(), dUsarioCreo, a->getDescripcion(), a->getFechaUltimoAcceso(),a->getFechaCreacion(), a->getUbicacion(), a->getPath());
 			DataComentario dcm = DataComentario(cm->getCodigo(), cm->getContenido(), dUsario, dArchivo);
-			ret.push_back(ret);
+			ret.push_back(dcm);
 		}
 	}
 	return ret;
