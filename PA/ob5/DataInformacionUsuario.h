@@ -6,8 +6,8 @@
 #include "DataUsuario.h"
 #include "DataRecurso.h"
 #include "DataColaborador.h"
-#include "DataAccion.h"
 
+class DataAccion;
 class DataInformacionUsuario{
 	private:
 		DataUsuario usuario;

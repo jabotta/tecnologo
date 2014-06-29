@@ -1,4 +1,5 @@
 #include "DataInformacionUsuario.h"
+#include "DataAccion.h"
 
 // Constructores
 DataInformacionUsuario::DataInformacionUsuario(){
