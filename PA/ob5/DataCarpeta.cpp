@@ -4,13 +4,14 @@ DataCarpeta::DataCarpeta(){
 
 }
 
-DataCarpeta::DataCarpeta(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc){
+DataCarpeta::DataCarpeta(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc, string pt){
 	setNombre(nm);
 	setUsuarioCreo(uc);
 	setDescripcion(dc);
 	setFechaUltimoAcceso(fua);
 	setFechaCreacion(fc);
 	setUbicacion(lc);
+	setPath(pt);
 }
 
 DataCarpeta::DataCarpeta(const DataCarpeta& da){	
@@ -20,6 +21,7 @@ DataCarpeta::DataCarpeta(const DataCarpeta& da){
 	setFechaUltimoAcceso( da.getFechaUltimoAcceso());
 	setFechaCreacion( da.getFechaCreacion());
 	setUbicacion( da.getUbicacion());
+	setPath( da.getPath());
 }
 
 DataCarpeta::~DataCarpeta(){
@@ -41,5 +43,7 @@ DataCarpeta& DataCarpeta::operator = (const DataRecurso& r){
 	(*this).setUsuarioCreo(r.getUsuarioCreo());
 	(*this).setFechaUltimoAcceso(r.getFechaUltimoAcceso());
 	(*this).setFechaCreacion(r.getFechaCreacion());
+	(*this).setUbicacion(r.getUbicacion());
+	(*this).setPath(r.getPath());
 	return (*this);	
 }

@@ -18,7 +18,7 @@ class Colaborador {
 		//Constructores
 		Colaborador();
 		Colaborador(const Colaborador&);
-		Colaborador(DateTime, Carpeta*);
+		Colaborador(DateTime, Carpeta*,Usuario*);
 
 		//Destructor
 		~Colaborador();

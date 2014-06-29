@@ -8,11 +8,13 @@ Colaborador::Colaborador(){
 Colaborador::Colaborador(const Colaborador& col){
 	setFechaIngreso(col.getFechaIngreso());
 	setCarpeta(col.getCarpeta());
+	setUsuario(col.getUsuario());
 }
 
-Colaborador::Colaborador(DateTime fi, Carpeta* car){
+Colaborador::Colaborador(DateTime fi, Carpeta* car, Usuario* usu){
 	setFechaIngreso(fi);
 	setCarpeta(car);
+	setUsuario(usu);
 }
 
 //Destructor

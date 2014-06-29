@@ -12,6 +12,7 @@
 #include "DataRecurso.h"
 #include "ManejadorRecursos.h"
 #include "ManejadorUsuario.h"
+#include "ManejadorColaborador.h"
 //#include "DataComentario.h"
 
 class  RecursoControlador: public IRecursoControlador{

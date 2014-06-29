@@ -15,11 +15,12 @@ class DataRecurso{
 		DateTime fechaUltimoAcceso;
 		DateTime fechaCreacion;
 		string ubicacion;
+		string path;
 		
 	public:
 		//Constructores
 		DataRecurso();
-		DataRecurso(string, DataUsuario, string, DateTime, DateTime, string);
+		DataRecurso(string, DataUsuario, string, DateTime, DateTime, string, string);
 		DataRecurso(const DataRecurso&);
 
 		//Destructor		
@@ -32,6 +33,7 @@ class DataRecurso{
 		DateTime getFechaUltimoAcceso() const ;
 		DateTime getFechaCreacion() const ;
 		string getUbicacion() const ;
+		string getPath() const ;
 
 		//Modificadores
 		void setNombre(string) ;
@@ -40,6 +42,7 @@ class DataRecurso{
 		void setFechaUltimoAcceso(DateTime) ;
 		void setFechaCreacion(DateTime) ;
 		void setUbicacion(string) ;
+		void setPath(string) ;
 		
 		DataRecurso& operator = (const DataRecurso& );
 };

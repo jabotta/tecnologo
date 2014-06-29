@@ -8,6 +8,7 @@
 #include "DataArchivo.h"
 //#include "DataComentario.h"
 #include "DataRecurso.h"
+#include "Carpeta.h"
 
 class IRecursoControlador{
 	public:
@@ -27,5 +28,6 @@ class IRecursoControlador{
 		virtual void agregarComentario(string comentario) = 0 ;
 		virtual void responderComentario(string c,int id ) = 0 ;
 		virtual int getId() = 0;
+		virtual Carpeta* getCarpetaElegida()const = 0;
 };
 #endif

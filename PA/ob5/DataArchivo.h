@@ -10,7 +10,7 @@ class DataArchivo: public DataRecurso{
 	public:
 		//Constructores
 		DataArchivo();
-		DataArchivo(string, DataUsuario, string, DateTime, DateTime,string);
+		DataArchivo(string, DataUsuario, string, DateTime, DateTime,string,string);
 		DataArchivo(const DataArchivo&);
 
 		//Destructor

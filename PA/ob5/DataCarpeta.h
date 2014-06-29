@@ -14,7 +14,7 @@ class DataCarpeta: public DataRecurso{
 	public:
 		//Constructores
 		DataCarpeta();
-		DataCarpeta(string, DataUsuario, string, DateTime, DateTime, string);
+		DataCarpeta(string, DataUsuario, string, DateTime, DateTime, string, string);
 		DataCarpeta(const DataCarpeta&);
 
 		//Destructor

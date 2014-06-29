@@ -29,7 +29,7 @@ list<DataCarpeta> RecursoControlador::listarCarpetasPorUsuario(){
 		if(u != NULL && u->getNickname() == usuarioElegido->getNickname()){
 			DataUsuario dUsario;
 			dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
-			DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion());
+			DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion(), c->getPath());
 			ret.push_back(dc);
 		}
 	}
@@ -37,7 +37,8 @@ list<DataCarpeta> RecursoControlador::listarCarpetasPorUsuario(){
 }
 
 void RecursoControlador::agregarColaborador(){
-
+	Colaborador* c = new Colaborador(DateTime(),carpetaElegida,usuarioElegido);
+	ManejadorColaborador::getInstance()->agregarALista(c);
 }
 
 void RecursoControlador::ingresarRecurso(DataRecurso recurso, string tipo){
@@ -116,7 +117,7 @@ list<DataCarpeta> RecursoControlador::listarCarpetas(){
 		if(u!=NULL){
 			dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
 		}
-		DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion());
+		DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion(), c->getPath());
 		dataCarpetas.push_back(dc);
 	}
 
@@ -143,7 +144,7 @@ list<DataArchivo> RecursoControlador::listarArchivos(){
 		if(u != NULL){
 			dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
 		}
-		DataArchivo dc = DataArchivo(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion());
+		DataArchivo dc = DataArchivo(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion(), c->getPath());
 		dataArchivos.push_back(dc);
 	}
 

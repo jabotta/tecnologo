@@ -4,6 +4,7 @@
 #include <string>
 #include "DataUsuario.h"
 #include "DataInformacionUsuario.h"
+#include "Usuario.h"
 
 using namespace std;
 
@@ -16,5 +17,7 @@ class IUsuarioControlador{
 		virtual list<DataUsuario> listarUsuarios() = 0;
 		virtual void elegirUsuario(string) = 0;
 		virtual int getId() = 0;
+		virtual Usuario* getUsuarioElegido() = 0;
+
 };
 #endif

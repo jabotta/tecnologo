@@ -4,13 +4,14 @@ DataRecurso::DataRecurso(){
 
 }
 
-DataRecurso::DataRecurso(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc){
+DataRecurso::DataRecurso(string nm, DataUsuario uc, string dc, DateTime fua, DateTime fc, string lc, string pt){
 	setNombre(nm);
 	setUsuarioCreo(uc);
 	setDescripcion(dc);
 	setFechaUltimoAcceso(fua);
 	setFechaCreacion(fc);
 	setUbicacion(lc);
+	setPath(pt);
 }
 
 DataRecurso::DataRecurso(const DataRecurso& r){
@@ -19,7 +20,8 @@ DataRecurso::DataRecurso(const DataRecurso& r){
 	setDescripcion(r.getDescripcion());
 	setUsuarioCreo(r.getUsuarioCreo());
 	setFechaUltimoAcceso(r.getFechaUltimoAcceso());
-	setFechaCreacion(r.getFechaCreacion());
+	setUbicacion(r.getUbicacion());
+	setPath(r.getPath());
 }
 
 DataRecurso::~DataRecurso(){
@@ -51,6 +53,10 @@ string DataRecurso::getUbicacion() const {
 	return ubicacion;
 }
 
+string DataRecurso::getPath() const {
+	return path;
+}
+
 //Modificadores
 void DataRecurso::setNombre(string n) {
 	nombre = n;
@@ -76,6 +82,10 @@ void DataRecurso::setUbicacion(string u){
 	ubicacion = u;
 }
 
+void DataRecurso::setPath(string p){
+	path = p;
+}
+
 DataRecurso& DataRecurso::operator = (const DataRecurso& r){
 	(*this).setNombre(r.getNombre());
 	(*this).setUbicacion(r.getUbicacion());
@@ -83,6 +93,8 @@ DataRecurso& DataRecurso::operator = (const DataRecurso& r){
 	(*this).setUsuarioCreo(r.getUsuarioCreo());
 	(*this).setFechaUltimoAcceso(r.getFechaUltimoAcceso());
 	(*this).setFechaCreacion(r.getFechaCreacion());
+	(*this).setUbicacion(r.getUbicacion());
+	(*this).setPath(r.getPath());
 	return (*this);
 }
 
