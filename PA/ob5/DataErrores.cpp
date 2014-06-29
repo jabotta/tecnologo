@@ -4,7 +4,7 @@
 DataErrores::DataErrores(){
     setCodigo(-1);
 	setMensaje("");
-};
+}
 
 DataErrores::DataErrores(int cd, string msj){
 	setCodigo(cd);

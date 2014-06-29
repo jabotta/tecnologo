@@ -4,7 +4,7 @@
 DataColaborador::DataColaborador(){
     setCarpeta(DataCarpeta());
 	setFecha(DateTime());
-};
+}
 
 DataColaborador::DataColaborador(DataUsuario du, DataCarpeta dc, DateTime fc){
 	setUsuario(du);

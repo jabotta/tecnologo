@@ -44,4 +44,4 @@ void Colaborador::setCarpeta(Carpeta* car){
 
 void Colaborador::setUsuario(Usuario* usu){
 	usuario = usu;
-};
+}

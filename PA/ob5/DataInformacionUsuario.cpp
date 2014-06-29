@@ -6,7 +6,7 @@ DataInformacionUsuario::DataInformacionUsuario(){
 	setRecursos(list<DataRecurso>());
 	setColaboradores(list<DataColaborador>());
 	setAcciones(list<DataAccion>());
-};
+}
 
 DataInformacionUsuario::DataInformacionUsuario(DataUsuario us,list<DataRecurso> ldr,list<DataColaborador> ldc,list<DataAccion> la){
 	setUsuario(us);

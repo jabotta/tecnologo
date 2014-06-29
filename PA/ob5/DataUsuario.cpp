@@ -7,7 +7,7 @@ DataUsuario::DataUsuario(){
     setSexo("");
 	setEdad(0);
 	setFechaNac(DateTime());
-};
+}
 
 DataUsuario::DataUsuario(string nck, string nm, string sx, int edad, DateTime fn){
 	setNickname(nck);

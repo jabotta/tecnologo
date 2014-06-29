@@ -50,8 +50,8 @@ void Accion::setTipo(TipoAccion tp){
 
 void Accion::setArchivo(Archivo* arc){
 	archivo = arc;
-};
+}
 
 void Accion::setUsuario(Usuario* usu){
 	usuario = usu;
-};
+}

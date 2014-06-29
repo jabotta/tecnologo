@@ -23,4 +23,4 @@ void ManejadorColaborador::agregarALista(Colaborador* c){
 
 list<Colaborador*> ManejadorColaborador::listarColaboradores(){
 	return colaboradores;
-};
+}

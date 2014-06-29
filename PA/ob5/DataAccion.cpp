@@ -8,7 +8,7 @@ DataAccion::DataAccion(){
 	setTipo(TipoAccion());
 	setUsuario(DataUsuario());
 	setArchivo(DataArchivo());
-};
+}
 
 DataAccion::DataAccion(DateTime fec, TipoAccion ta, DataUsuario du, DataArchivo arc){
 	setFecha(fec);
