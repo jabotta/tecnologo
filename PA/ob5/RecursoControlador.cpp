@@ -88,13 +88,13 @@ void RecursoControlador::guardarRecurso(){
 	}
 
 	if(carpetaElegida != NULL){
-		r->setUbicacion(carpetaElegida->getUbicacion() + r->getNombre() + "/");
+		r->setUbicacion(carpetaElegida->getUbicacion()  + "/" + r->getNombre());
 	}
 
 	r->setUsuarioCreo(usuarioElegido);
 
 	if(r->getUsuarioCreo() != NULL){
-		cout<<"ALERTAAA "<<r->getUsuarioCreo()->getNombre();
+		cout << "ALERTAAA " << r->getUsuarioCreo()->getNombre();
 	}
 
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
