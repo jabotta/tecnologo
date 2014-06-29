@@ -10,6 +10,7 @@
 #include "ManejadorUsuario.h"
 #include "ManejadorRecursos.h"
 #include "ManejadorColaborador.h"
+#include "DataAccion.h"
 
 using namespace std;
 
