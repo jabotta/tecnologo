@@ -13,6 +13,7 @@
 #include "ManejadorRecursos.h"
 #include "ManejadorUsuario.h"
 #include "ManejadorColaborador.h"
+#include "ManejadorComentario.h"
 //#include "DataComentario.h"
 
 class  RecursoControlador: public IRecursoControlador{
@@ -54,6 +55,7 @@ class  RecursoControlador: public IRecursoControlador{
 		list<DataArchivo> listarArchivos();
 		void elegirArchivo(string path);
 		list<DataComentario> listarComentariosPorArchivo();
+		void guardarComentario(DataComentario, string);
 		void accionSobreComentario(string acc);
 		void agregarComentario(string comentario);
 		void responderComentario(string c,int id );

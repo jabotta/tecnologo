@@ -1,5 +1,5 @@
-main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataComentario.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o
-	g++ -Wall -Wextra -pedantic -ansi Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataComentario.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o -o main
+main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataComentario.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o ManejadorComentario.o main.o
+	g++ -Wall -Wextra -pedantic -ansi Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataComentario.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o ManejadorComentario.o main.o -o main
 
 Fabrica.o: Fabrica.cpp Fabrica.h
 	g++ -Wall -Wextra -pedantic -ansi -c Fabrica.cpp -I.
@@ -75,6 +75,9 @@ ManejadorRecursoControlador.o: ManejadorRecursoControlador.cpp ManejadorRecursoC
 
 ManejadorColaborador.o: ManejadorColaborador.cpp ManejadorColaborador.h
 	g++ -Wall -Wextra -pedantic -ansi -c ManejadorColaborador.cpp -I.
+
+ManejadorComentario.o: ManejadorComentario.cpp ManejadorComentario.h
+	g++ -Wall -Wextra -pedantic -ansi -c ManejadorComentario.cpp -I.
 
 Accion.o: Accion.cpp Accion.h
 	g++ -Wall -Wextra -pedantic -ansi -c Accion.cpp -I.

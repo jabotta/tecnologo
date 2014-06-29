@@ -262,8 +262,48 @@ void listarComentariosPorArchivo(){
 	cout << "************* Comentarios *************" << endl;
 	cout << "Id - Nickname - Contenido"<<endl;
 	for(it = drl.begin(); it!= drl.end(); ++it){
-		cout << it->getId() << " - " << it->getNombre() <<endl;
+		cout << it->getCodigo() << " - " << it->getUsuario()->getNombre() " - " << it->getContenido() << endl;
 	}
+}
+
+void accionSobreComentario(){
+	int tipo;
+	bool salir;
+	
+	do{
+		cout << "1 - Agregar Comentario" << endl;
+		cout << "2 - Responder Comentario" << endl;
+		cout << "Ingrese la accion a realizar: ";
+		tipo = ingresarNumerico();
+		salir = false;
+		switch(tipo){
+			case 1:{
+				DataComentario cm;
+				string contenido;
+				cout << "Comentario: ";
+				cin >> contenido;
+				cm.setContenido(contenido);
+				elegirUsuario();
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(cm, '');
+				salir = true;
+				break;
+			}
+			case 2:{
+				DataComentario cm;
+				string contenido;
+				string parent;
+				cout << "Id comentario a responder: ";
+				cin >> contenido;
+				cout << "Comentario: ";
+				cin >> contenido;
+				cm.setContenido(contenido);
+				elegirUsuario();
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(cm, parent);
+				salir = true;
+				break;
+			}
+		}
+	}while(salir != true);
 }
 
 void crearRecurso(){

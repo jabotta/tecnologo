@@ -10,13 +10,7 @@ Comentario::Comentario(const Comentario& cm){
 	setContenido(cm.getContenido());
 	setUsuario(cm.getUsuario());
 	setArchivo(cm.getArchivo());
-}
-
-Comentario::Comentario(const DataComentario& cm){
-	setCodigo(cm.getCodigo());
-	setContenido(cm.getContenido());
-	setUsuario(cm.getUsuario());
-	setArchivo(cm.getArchivo());
+	setParent(cm.getParent());
 }
 
 //Destructor
@@ -42,6 +36,10 @@ Archivo* Comentario::getArchivo() const{
 	return archivo;
 }
 
+Comentario* Comentario::getParent() const{
+	return parent;
+}
+
 //Modificadores
 void Comentario::setCodigo(int cd){
 	codigo = cd;
@@ -57,4 +55,8 @@ void Comentario::setUsuario(Usuario* usu){
 
 void Comentario::setArchivo(Archivo* arc){
 	archivo = arc;
+}
+
+void Comentario::setParent(Comentario* par){
+	parent = par;
 }

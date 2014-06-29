@@ -161,22 +161,32 @@ void RecursoControlador::elegirArchivo(string path){
 
 list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 	list<DataComentario> ret;
-	list<Archivo*> carpetas = ManejadorRecursos::getInstance()->listarArchivos();
-	// list<Archivo*>::iterator it; 
-	// for(it = carpetas.begin() ; it != carpetas.end();++it){
-	// 	Comentario* c = *it;
-	// 	Usuario* u =c->getUsuarioCreo();
-	// 	if(u != NULL && u->getNickname() == usuarioElegido->getNickname()){
-	// 		DataUsuario dUsario;
-	// 		dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
-	// 		DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion(), c->getPath());
-	// 		ret.push_back(dc);
-	// 	}
-	// }
-	// return ret;
+	list<Comentario> comentarios = ManejadorComentario::getInstance()->listarComentarios();
+	list<Comentario>::iterator it; 
+
+	for(it = comentarios.begin() ; it != comentarios.end();++it){
+		Comentario* cm = *it;		
+		Archivo* a = cm->getArchivo();
+		if(a != NULL && a->getPath() == archivoElegido->getPath()){
+			Usuario* u = cm->getUsuario();
+			Usuario* uc = a->getUsuarioCreo();
+			DataUsuario dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
+			DataUsuario dUsarioCreo = DataUsuario(uc->getNickname(),uc->getNombre(),uc->getSexo(),uc->getEdad(),uc->getFechaNac());
+			dArchivo = DataArchivo(a->getNombre(), dUsarioCreo, a->getDescripcion(), a->getFechaUltimoAcceso(),a->getFechaCreacion(), a->getUbicacion(), a->getPath());
+			DataComentario dcm = DataComentario(cm->getCodigo(), cm->getContenido(), dUsario, dArchivo);
+			ret.push_back(ret);
+		}
+	}
+	return ret;
 }
 
-//list<DataComentario> listarComentario(){}
+void RecursoControlador::guardarComentario(DataComentario comentario, string parent){
+	Comentario* cm;
+	cm->setUsuario(usuarioElegido);
+	cm->setArchivo(archivoElegido);
+
+	ManejadorComentario::getInstance()->guardarComentario(cm);
+}
 
 void RecursoControlador::accionSobreComentario(string acc){
 	setAccionTipo(acc);
