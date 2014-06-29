@@ -94,11 +94,15 @@ void RecursoControlador::guardarRecurso(){
 
 	r->setUsuarioCreo(usuarioElegido);
 
-	if(r->getUsuarioCreo() != NULL){
-		cout << "ALERTAAA " << r->getUsuarioCreo()->getNombre();
-	}
 
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
+
+	if(tiporec == "archivo"){
+		Accion* accionCreacion = new Accion(TipoAccion(0), dynamic_cast<Archivo*>(r), usuarioElegido);
+		list<Accion*> acciones = usuarioElegido->getAcciones();
+		acciones.push_back(accionCreacion);
+		usuarioElegido->setAcciones(acciones);
+	}
 }
 
 list<DataErrores> RecursoControlador::imprimirErroresGenerados(){

@@ -75,22 +75,22 @@ void agregarDatosDePrueba(){
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta3 << endl;
 
-	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario2,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol","/Deporte/Futbol");
+	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario1,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol","/Deporte/Futbol");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta4,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta4 << endl;
 
-	DataCarpeta Carpeta5 = DataCarpeta("CopaAm",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm","/Deporte/Futbol/CopaAm");
+	DataCarpeta Carpeta5 = DataCarpeta("CopaAm",Usuario1,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm","/Deporte/Futbol/CopaAm");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta5,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta5 << endl;
 
-	DataCarpeta Carpeta6 = DataCarpeta("Mundial",Usuario2,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial","/Deporte/Futbol/Mundial");
+	DataCarpeta Carpeta6 = DataCarpeta("Mundial",Usuario3,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial","/Deporte/Futbol/Mundial");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta6,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta6 << endl;
 
-	DataCarpeta Carpeta7 = DataCarpeta("Salud",Usuario2,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud","/Deporte/Salud");
+	DataCarpeta Carpeta7 = DataCarpeta("Salud",Usuario3,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud","/Deporte/Salud");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta7,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta7 << endl;

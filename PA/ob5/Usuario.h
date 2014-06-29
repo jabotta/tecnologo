@@ -31,12 +31,14 @@ class Usuario {
 		void setNombre(string n);
 		void setSexo(string s);
 		void setFechaNac(DateTime t);
+		void setAcciones(list<Accion*>);
 
 		list<Accion*> obtenerAcciones();
 		string getNickname() const;
 		string getNombre() const;
 		string getSexo() const;
 		DateTime getFechaNac() const;
+		list<Accion*> getAcciones() const;
 		int getEdad() const;
 
 		Usuario &operator = (Usuario &);

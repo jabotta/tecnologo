@@ -8,6 +8,7 @@ Usuario::Usuario(){
 	setNombre("");
 	setSexo("");
 	setFechaNac(DateTime());
+	acciones = list<Accion*>();
 }
 
 Usuario::Usuario(DataUsuario d){
@@ -15,6 +16,7 @@ Usuario::Usuario(DataUsuario d){
 	setNombre(d.getNombre());
 	setSexo(d.getSexo());
 	setFechaNac(d.getFechaNac());
+	acciones = list<Accion*>();
 }
 
 Usuario::Usuario(string nickname, string nombre, string sexo, DateTime fc){
@@ -22,6 +24,7 @@ Usuario::Usuario(string nickname, string nombre, string sexo, DateTime fc){
 	setNombre(nombre);
 	setSexo(sexo);
 	setFechaNac(fc);
+	acciones = list<Accion*>();
 }
 
 //Destructor
@@ -47,6 +50,10 @@ void Usuario::setFechaNac(DateTime t){
 	fechaNac = t;
 }
 
+void Usuario::setAcciones(list<Accion*> acc){
+	acciones = acc;
+}
+
 //Getters
 list<Accion*> Usuario::obtenerAcciones(){
  	return acciones;
@@ -67,6 +74,10 @@ string Usuario::getSexo()const{
 DateTime Usuario::getFechaNac()const{
 	DateTime d = DateTime(fechaNac);
 	return (d);
+}
+
+list<Accion*> Usuario::getAcciones()const{
+	return acciones;
 }
 
 int Usuario::getEdad() const{
