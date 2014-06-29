@@ -1,5 +1,5 @@
-#ifndef DATAACCION_H
-#define DATAACCION_H
+#ifndef DATACOMENTARIO_H
+#define DATACOMENTARIO_H
 #include <iostream>
 #include <string>
 #include "DataUsuario.h"

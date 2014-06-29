@@ -18,11 +18,11 @@ ManejadorComentario::~ManejadorComentario(){
 }
 
 void ManejadorComentario::guardarComentario(Comentario c){
-	comentarios.push_back(c);
+	comentarios.insert(pair<int, Comentario*>(c->getCodigo(),c));
 }
 
-list<Comentario> ManejadorComentario::listarComentarios(){
-	list<Comentario> cm;
+list<Comentario*> ManejadorComentario::listarComentarios(){
+	list<Comentario*> cm;
 	for (map<string, Comentario>::iterator it = comentarios.begin(); it != comentarios.end(); ++it){
 		cm.push_back((*it).second);
 	}	

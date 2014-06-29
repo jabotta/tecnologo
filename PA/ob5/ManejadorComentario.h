@@ -1,5 +1,5 @@
-#ifndef MANEJADORCOLABORADOR_H
-#define MANEJADORCOLABORADOR_H
+#ifndef MANEJADORCOMENTARIO_H
+#define MANEJADORCOMENTARIO_H
 #include <map>
 #include <list>
 #include <string>

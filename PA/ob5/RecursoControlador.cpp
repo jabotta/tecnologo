@@ -164,7 +164,7 @@ list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 	list<Comentario> comentarios = ManejadorComentario::getInstance()->listarComentarios();
 	list<Comentario>::iterator it; 
 
-	for(it = comentarios.begin() ; it != comentarios.end();++it){
+	for(it = comentarios.begin() ; it != comentarios.end(); ++it){
 		Comentario* cm = *it;		
 		Archivo* a = cm->getArchivo();
 		if(a != NULL && a->getPath() == archivoElegido->getPath()){
