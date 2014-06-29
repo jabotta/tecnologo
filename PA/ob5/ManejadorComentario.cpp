@@ -17,13 +17,13 @@ ManejadorComentario::~ManejadorComentario(){
 	// delete lista de usuarios antes de borrar
 }
 
-void ManejadorComentario::guardarComentario(Comentario c){
+void ManejadorComentario::guardarComentario(Comentario* c){
 	comentarios.insert(pair<int, Comentario*>(c->getCodigo(),c));
 }
 
 list<Comentario*> ManejadorComentario::listarComentarios(){
 	list<Comentario*> cm;
-	for (map<string, Comentario>::iterator it = comentarios.begin(); it != comentarios.end(); ++it){
+	for (map<int, Comentario*>::iterator it = comentarios.begin(); it != comentarios.end(); ++it){
 		cm.push_back((*it).second);
 	}	
 	return cm;

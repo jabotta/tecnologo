@@ -256,13 +256,13 @@ void elegirArchivo(){
 }
 
 void listarComentariosPorArchivo(){
-	list<DataArchivo> ldca = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarComentariosPorArchivo();
-	list<DataArchivo>::iterator it;	
+	list<DataComentario> ldcma = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarComentariosPorArchivo();
+	list<DataComentario>::iterator it;	
 	
 	cout << "************* Comentarios *************" << endl;
 	cout << "Id - Nickname - Contenido"<<endl;
-	for(it = drl.begin(); it!= drl.end(); ++it){
-		cout << it->getCodigo() << " - " << it->getUsuario()->getNombre() " - " << it->getContenido() << endl;
+	for(it = ldcma.begin(); it!= ldcma.end(); ++it){
+		cout << it->getCodigo() << " - " << it->getUsuario() << " - " << it->getContenido() << endl;
 	}
 }
 
@@ -282,13 +282,13 @@ void accionSobreComentario(){
 				cout << "Comentario: ";
 				cin >> contenido;
 				elegirUsuario();
-				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(contenido, '');
+				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(contenido, 0);
 				salir = true;
 				break;
 			}
 			case 2:{
 				string contenido;
-				string parent;
+				int parent;
 				cout << "Id comentario a responder: ";
 				cin >> parent;
 				cout << "Comentario: ";
@@ -330,6 +330,7 @@ void agregarColaborador(){
 void ingresarComentario(){
 	elegirArchivo();
 	listarComentariosPorArchivo();
+	accionSobreComentario();
 }
 
 void verInformacionUsuario(){

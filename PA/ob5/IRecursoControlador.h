@@ -24,9 +24,7 @@ class IRecursoControlador{
 		virtual void elegirArchivo(string path) = 0 ;
 		virtual void elegirUsuario(string nickname) = 0 ;
 		virtual list<DataComentario> listarComentariosPorArchivo() = 0 ;
-		virtual void accionSobreComentario(string acc) = 0 ;
-		virtual void agregarComentario(string comentario) = 0 ;
-		virtual void responderComentario(string c,int id ) = 0 ;
+		virtual void guardarComentario(string contenido, int parent) = 0 ;
 		virtual int getId() = 0;
 		virtual Carpeta* getCarpetaElegida()const = 0;
 };

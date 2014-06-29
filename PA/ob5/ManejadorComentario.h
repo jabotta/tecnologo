@@ -10,7 +10,7 @@ using namespace std;
 class ManejadorComentario {	
 	private:
 		static ManejadorComentario * instance;
-		map<string, Comentario*> comentarios;
+		map<int, Comentario*> comentarios;
 		ManejadorComentario();
 		
 	public:

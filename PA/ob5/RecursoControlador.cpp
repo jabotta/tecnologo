@@ -180,25 +180,13 @@ list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 	return ret;
 }
 
-void RecursoControlador::guardarComentario(string contenido, string parent){
+void RecursoControlador::guardarComentario(string contenido, int parent){
 	Comentario* cm;
-	cm->setContenio(contenido);
+	cm->setContenido(contenido);
 	cm->setArchivo(archivoElegido);
 	cm->setUsuario(usuarioElegido);	
 
 	ManejadorComentario::getInstance()->guardarComentario(cm);
-}
-
-void RecursoControlador::accionSobreComentario(string acc){
-	setAccionTipo(acc);
-}
-
-void RecursoControlador::agregarComentario(string comentario){
-
-}
-
-void RecursoControlador::responderComentario(string c,int id ){
-
 }
 
 string RecursoControlador::getAccionTipo()const{
