@@ -1,5 +1,5 @@
-main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o
-	g++ -Wall -Wextra -pedantic -ansi  Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o -o main
+main:	 Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataComentario.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o
+	g++ -Wall -Wextra -pedantic -ansi Fabrica.o DateTime.o Comparable.o DataUsuario.o DataRecurso.o DataCarpeta.o DataArchivo.o DataColaborador.o DataErrores.o DataAccion.o DataComentario.o DataInformacionUsuario.o Usuario.o Recurso.o Carpeta.o Archivo.o Accion.o Comentario.o Colaborador.o UsuarioControlador.o RecursoControlador.o ManejadorUsuario.o ManejadorRecursos.o ManejadorUsuarioControlador.o ManejadorRecursoControlador.o ManejadorColaborador.o main.o -o main
 
 Fabrica.o: Fabrica.cpp Fabrica.h
 	g++ -Wall -Wextra -pedantic -ansi -c Fabrica.cpp -I.
@@ -30,6 +30,9 @@ DataErrores.o:	DataErrores.cpp	DataErrores.h
 
 DataAccion.o:	DataAccion.cpp	DataAccion.h
 	g++ -Wall -Wextra -pedantic -ansi -c DataAccion.cpp -I.
+
+DataComentario.o:	DataComentario.cpp	DataComentario.h
+	g++ -Wall -Wextra -pedantic -ansi -c DataComentario.cpp -I.
 
 DataInformacionUsuario.o: DataInformacionUsuario.cpp DataInformacionUsuario.h
 	g++ -Wall -Wextra -pedantic -ansi -c DataInformacionUsuario.cpp -I.

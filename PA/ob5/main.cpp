@@ -216,7 +216,7 @@ void elegirCarpeta(){
 	list<DataCarpeta>::iterator it;
 	
 	cout << "********** Seleccionar Carpeta **********" << endl;
-	cout << "Ubicacion - Descripcion" << endl;
+	cout << "Ubicacion - Nombre" << endl;
 	for(it = drl.begin(); it!= drl.end(); ++it){
 		cout << it->getUbicacion() << " - " << it->getNombre() <<endl;
 	}	
@@ -231,13 +231,39 @@ void elegirCarpetaPorUsuario(){
 	list<DataCarpeta>::iterator it;	
 	
 	cout << "********** Seleccionar Carpeta **********" << endl;
-	cout << "Ubicacion - Descripcion"<<endl;
+	cout << "Ubicacion - Nombre"<<endl;
 	for(it = drl.begin(); it!= drl.end(); ++it){
-		cout << (*it) << endl;
+		cout << it->getUbicacion() << " - " << it->getNombre() << endl;
 	}	
 	cout << "Ingrese la ubicacion de la carpeta: ";
 	cin >> carp;
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(carp);
+}
+
+void elegirArchivo(){
+	string archivo;
+	list<DataArchivo> drl = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarArchivos();
+	list<DataArchivo>::iterator it;
+	
+	cout << "********** Seleccionar Archivo **********" << endl;
+	cout << "Ubicacion - Nombre" << endl;
+	for(it = drl.begin(); it!= drl.end(); ++it){
+		cout << it->getUbicacion() << " - " << it->getNombre() <<endl;
+	}	
+	cout << "Ingrese la ubicacion del archivo: ";
+	cin >> archivo;
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirArchivo(archivo);
+}
+
+void listarComentariosPorArchivo(){
+	list<DataArchivo> ldca = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarComentariosPorArchivo();
+	list<DataArchivo>::iterator it;	
+	
+	cout << "************* Comentarios *************" << endl;
+	cout << "Id - Nickname - Contenido"<<endl;
+	for(it = drl.begin(); it!= drl.end(); ++it){
+		cout << it->getId() << " - " << it->getNombre() <<endl;
+	}
 }
 
 void crearRecurso(){
@@ -263,6 +289,11 @@ void agregarColaborador(){
 	elegirCarpetaPorUsuario();
 	elegirUsuario();
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->agregarColaborador();
+}
+
+void ingresarComentario(){
+	elegirArchivo();
+	listarComentariosPorArchivo();
 }
 
 void verInformacionUsuario(){
@@ -349,7 +380,7 @@ int main(){
 			/******************************* Ingresar Comentario ****************************/
 			case 5:{
 				try{
-					elegirCarpeta();
+					ingresarComentario();
 				}catch(const invalid_argument& ia){
 					cerr << ia.what() << endl;
 				}

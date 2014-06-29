@@ -3,13 +3,13 @@
 #include <iostream>
 #include <string>
 #include "IRecursoControlador.h"
-#include "Comentario.h"
 #include "Recurso.h"
 #include "Carpeta.h"
 #include "Archivo.h"
 #include "Colaborador.h"	
 #include "Usuario.h"
-#include "DataRecurso.h"
+#include "Comentario.h"
+// #include "DataRecurso.h"
 #include "ManejadorRecursos.h"
 #include "ManejadorUsuario.h"
 #include "ManejadorColaborador.h"
@@ -53,7 +53,7 @@ class  RecursoControlador: public IRecursoControlador{
 		void elegirCarpeta(string path);
 		list<DataArchivo> listarArchivos();
 		void elegirArchivo(string path);
-		//list<DataComentario> listarComentario();
+		list<DataComentario> listarComentariosPorArchivo();
 		void accionSobreComentario(string acc);
 		void agregarComentario(string comentario);
 		void responderComentario(string c,int id );

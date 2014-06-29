@@ -15,7 +15,7 @@ class Archivo :public Recurso{
 		// Constructores
 		Archivo();
 		Archivo(const Archivo &);
-		Archivo(const DataArchivo );
+		Archivo(const DataArchivo);
 
 		// Destructor
 		~Archivo();

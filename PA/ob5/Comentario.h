@@ -4,6 +4,7 @@
 #include <string>
 #include "Usuario.h"
 #include "Archivo.h"
+#include "DataComentario.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ class Comentario {
 		//Constructores
 		Comentario();
 		Comentario(const Comentario&);
-		Comentario(int, string, Usuario*, Archivo*);
+		Comentario(const DataComentario);
 
 		//Destructor
 		~Comentario();

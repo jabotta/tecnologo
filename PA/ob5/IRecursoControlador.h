@@ -6,7 +6,7 @@
 #include "DataCarpeta.h"
 #include "DataErrores.h"
 #include "DataArchivo.h"
-//#include "DataComentario.h"
+#include "DataComentario.h"
 #include "DataRecurso.h"
 #include "Carpeta.h"
 
@@ -23,7 +23,7 @@ class IRecursoControlador{
 		virtual void elegirCarpeta(string path) = 0 ;
 		virtual void elegirArchivo(string path) = 0 ;
 		virtual void elegirUsuario(string nickname) = 0 ;
-		//virtual list<DataComentario> listarComentario() = 0 ;
+		virtual list<DataComentario> listarComentariosPorArchivo() = 0 ;
 		virtual void accionSobreComentario(string acc) = 0 ;
 		virtual void agregarComentario(string comentario) = 0 ;
 		virtual void responderComentario(string c,int id ) = 0 ;

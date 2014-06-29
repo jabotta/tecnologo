@@ -4,7 +4,7 @@
 #include "Usuario.h"
 #include "Recurso.h"
 #include "Accion.h"
-#include "DataUsuario.h"
+// #include "DataUsuario.h"
 #include "Colaborador.h"
 #include "DataInformacionUsuario.h"
 #include "ManejadorUsuario.h"

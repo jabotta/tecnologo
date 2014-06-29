@@ -12,11 +12,11 @@ Comentario::Comentario(const Comentario& cm){
 	setArchivo(cm.getArchivo());
 }
 
-Comentario::Comentario(int cd, string con, Usuario* usr, Archivo* arc){
-	setCodigo(cd);
-	setContenido(con);
-	setUsuario(usr);
-	setArchivo(arc);
+Comentario::Comentario(const DataComentario& cm){
+	setCodigo(cm.getCodigo());
+	setContenido(cm.getContenido());
+	setUsuario(cm.getUsuario());
+	setArchivo(cm.getArchivo());
 }
 
 //Destructor

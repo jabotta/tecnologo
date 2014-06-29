@@ -134,10 +134,10 @@ void RecursoControlador::elegirCarpeta(string path){
 
 list<DataArchivo> RecursoControlador::listarArchivos(){
 	list<DataArchivo> dataArchivos;	
-	list<Archivo*> carpetas = ManejadorRecursos::getInstance()->listarArchivos();
+	list<Archivo*> archivos = ManejadorRecursos::getInstance()->listarArchivos();
 	list<Archivo*>::iterator it; 
 
-	for(it = carpetas.begin() ; it != carpetas.end();++it){
+	for(it = archivos.begin() ; it != archivos.end();++it){
 		Archivo* c = *it;
 		Usuario* u =c->getUsuarioCreo();
 		DataUsuario dUsario;
@@ -153,6 +153,23 @@ list<DataArchivo> RecursoControlador::listarArchivos(){
 
 void RecursoControlador::elegirArchivo(string path){
 	archivoElegido = ManejadorRecursos::getInstance()->elegirArchivo(path);
+}
+
+list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
+	list<DataComentario> ret;
+	list<Archivo*> carpetas = ManejadorRecursos::getInstance()->listarArchivos();
+	// list<Archivo*>::iterator it; 
+	// for(it = carpetas.begin() ; it != carpetas.end();++it){
+	// 	Comentario* c = *it;
+	// 	Usuario* u =c->getUsuarioCreo();
+	// 	if(u != NULL && u->getNickname() == usuarioElegido->getNickname()){
+	// 		DataUsuario dUsario;
+	// 		dUsario = DataUsuario(u->getNickname(),u->getNombre(),u->getSexo(),u->getEdad(),u->getFechaNac());
+	// 		DataCarpeta dc = DataCarpeta(c->getNombre(), dUsario, c->getDescripcion(), c->getFechaUltimoAcceso(),c->getFechaCreacion(), c->getUbicacion(), c->getPath());
+	// 		ret.push_back(dc);
+	// 	}
+	// }
+	// return ret;
 }
 
 //list<DataComentario> listarComentario(){}
