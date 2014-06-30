@@ -184,8 +184,7 @@ void RecursoControlador::guardarComentario(string contenido, int parent){
 	Comentario* cm;
 	cm->setContenido(contenido);
 	cm->setArchivo(archivoElegido);
-	cm->setUsuario(usuarioElegido);	
-
+	cm->setUsuario(usuarioElegido);
 	ManejadorComentario::getInstance()->guardarComentario(cm);
 }
 
