@@ -55,7 +55,10 @@ void agregarDatosDePrueba(){
 	cout << Usuario3 << endl;
 
 	cout << "********** Carpetas **********" << endl;
-	DataCarpeta Carpeta = DataCarpeta("/",Usuario3,"Carpeta raiz",DateTime(),DateTime(),"/","/");
+	DataCarpeta Carpeta;
+	Carpeta.setNombre("/");
+	Carpeta.setDescripcion("Carpeta Raiz");
+	Carpeta.setUbicacion("/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta << endl;
@@ -261,8 +264,9 @@ void listarComentariosPorArchivo(){
 	
 	cout << "************* Comentarios *************" << endl;
 	cout << "Id - Nickname - Contenido"<<endl;
-	for(it = ldcma.begin(); it!= ldcma.end(); ++it){
-		cout << it->getCodigo() << " - " << it->getUsuario() << " - " << it->getContenido() << endl;
+	for(it = ldcma.begin(); it != ldcma.end(); ++it){
+		DataUsuario u = DataUsuario(it->getUsuario());
+		cout << it->getCodigo() << " - " << it->getContenido() << endl;
 	}
 }
 
