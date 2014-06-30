@@ -29,8 +29,12 @@ Usuario::Usuario(string nickname, string nombre, string sexo, DateTime fc){
 
 //Destructor
 Usuario::~Usuario(){
-	// delete all the asociated object before to destroy the user 
-	// actions associatedto the user must be deleted
+	for(list<Accion*>::iterator it = acciones.begin();it != acciones.end(); ++it){
+		delete *it;
+	}
+	acciones.clear();
+
+
 }
 
 // Setters

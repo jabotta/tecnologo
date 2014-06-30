@@ -23,7 +23,6 @@ Accion::Accion(TipoAccion tp, Archivo* arc, Usuario* usu){
 
 //Destructor
 Accion::~Accion(){
-
 }
 
 //Selectores

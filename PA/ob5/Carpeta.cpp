@@ -23,6 +23,8 @@ Carpeta::Carpeta(const DataCarpeta dc){
 //Destructor
 Carpeta::~Carpeta(){
 
+	recursos.clear();
+
 }
 
 void Carpeta::setRecursos(map<string, Recurso*> r){

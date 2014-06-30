@@ -17,6 +17,7 @@ ManejadorRecursos::~ManejadorRecursos(){
 	for(map<string, Recurso*>::iterator it = recursos.begin();it!=recursos.end();++it){
 		delete it->second;
 	}
+	recursos.clear();
 }
 
 void ManejadorRecursos::ingresarRecurso(Recurso* r){

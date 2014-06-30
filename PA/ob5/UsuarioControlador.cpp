@@ -10,19 +10,12 @@ UsuarioControlador::UsuarioControlador(int iduc){
 }
 
 UsuarioControlador::~UsuarioControlador(){
-	delete usuarioElegido;
-	for(list<Recurso*>::iterator it = recCreados.begin();it!=recCreados.end();++it){
-		delete *it;
-	}
-	for(list<Colaborador*>::iterator it = colaboracionList.begin();it!=colaboracionList.end();++it){
-		delete *it;
-	}
-	for(list<Accion*>::iterator it = accList.begin();it!=accList.end();++it){
-		delete *it;
-	}
-	delete ManejadorUsuario::getInstance();
-	delete ManejadorRecursos::getInstance();
-	delete ManejadorColaborador::getInstance();
+	usuarioElegido = NULL;
+	recCreados.clear();
+	accList.clear();
+	colaboracionList.clear();
+
+	
 }
 
 UsuarioControlador::UsuarioControlador(const UsuarioControlador& i){

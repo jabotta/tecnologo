@@ -14,9 +14,10 @@ ManejadorUsuario * ManejadorUsuario::getInstance(){
 }
 
 ManejadorUsuario::~ManejadorUsuario(){
-		for(map<string, Usuario*>::iterator it = usuarios.begin();it!=usuarios.end();++it){
+	for(map<string, Usuario*>::iterator it = usuarios.begin();it!=usuarios.end();++it){
 		delete it->second;
-	}
+	} 
+	usuarios.clear();
 }
 
 bool ManejadorUsuario::checkeoNickname(string nickname){

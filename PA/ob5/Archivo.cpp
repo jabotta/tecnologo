@@ -23,7 +23,7 @@ Archivo::Archivo(const DataArchivo da){
 }
 
 Archivo::~Archivo(){
-
+	listaColaboradores.clear();
 }
 
 list<DataErrores> Archivo::controlarNombreRecurso(){

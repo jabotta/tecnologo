@@ -542,8 +542,12 @@ int main(){
 			}
 			/************************************************************************************/
 			case 7:{
-				//delete Fabrica::getInstance();
 				cout << "Saliendo..." << endl;
+				delete Fabrica::getInstance();
+				delete ManejadorUsuario::getInstance();
+				delete ManejadorColaborador::getInstance();
+				delete ManejadorRecursos::getInstance();
+				delete ManejadorComentario::getInstance();
 				break;
 			}
 			default: cout << "Opción Invalida, vuelva a intentarlo!" << endl;

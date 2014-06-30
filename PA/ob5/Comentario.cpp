@@ -15,8 +15,7 @@ Comentario::Comentario(const Comentario& cm){
 
 //Destructor
 Comentario::~Comentario(){
-	delete usuario;
-	delete archivo;
+
 }
 
 //Selectores

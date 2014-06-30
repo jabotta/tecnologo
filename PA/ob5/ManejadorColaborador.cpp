@@ -14,9 +14,14 @@ ManejadorColaborador * ManejadorColaborador::getInstance(){
 }
 
 ManejadorColaborador::~ManejadorColaborador(){
-	for(list<Colaborador*>::iterator it = colaboradores.begin();it!=colaboradores.end();++it){
-		delete *it;
+	list<Colaborador*>::iterator it = colaboradores.begin();
+	for(it;it!=colaboradores.end();++it){
+		 
+			delete *it;
+		 
+		
 	}
+	colaboradores.clear();
 }
 
 void ManejadorColaborador::agregarALista(Colaborador* c){

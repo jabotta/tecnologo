@@ -9,23 +9,21 @@ RecursoControlador::RecursoControlador(int iduc){
 }
 
 RecursoControlador::~RecursoControlador(){
-	delete carpetaElegida;
-	delete archivoElegido;
-	delete usuarioElegido;
-	delete usuarioColaborador;
-	delete nuevoComentario;
-	delete padreComentario;
-	delete colaboradorCreado;
-	for(list<Recurso*>::iterator it = recursosLista.begin();it!=recursosLista.end();++it){
-		delete *it;
-	}
-	delete usuarioColaborador;
-	delete ManejadorRecursos::getInstance();
-	delete ManejadorColaborador::getInstance();
-	delete ManejadorUsuario::getInstance();
-	delete ManejadorComentario::getInstance();
+	
+	 carpetaElegida= NULL ;
+	 archivoElegido= NULL ;
+	
+	 usuarioElegido= NULL ;
+	 usuarioColaborador= NULL ;
+	 padreComentario= NULL ;
+	 nuevoComentario= NULL ;
+	 colaboradorCreado= NULL ;
+	 usuarioColaborador= NULL ;
+	recursosLista.clear();
+  
 }
 RecursoControlador::RecursoControlador(const RecursoControlador& i){
+
 }
 
 int RecursoControlador::RecursoControlador::getId(){

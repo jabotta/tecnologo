@@ -17,6 +17,7 @@ ManejadorComentario::~ManejadorComentario(){
 	for(map<int, Comentario*>::iterator it = comentarios.begin();it!=comentarios.end();++it){
 		delete it->second;
 	}
+	comentarios.clear();
 }
 
 void ManejadorComentario::guardarComentario(Comentario* c){
