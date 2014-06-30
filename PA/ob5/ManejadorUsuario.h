@@ -11,7 +11,7 @@ using namespace std;
 class ManejadorUsuario {
 	private:
 		static ManejadorUsuario * instance;
-		map<string, Usuario> usuarios;
+		map<string, Usuario*> usuarios;
 		ManejadorUsuario();
 		
 	public:
@@ -19,8 +19,8 @@ class ManejadorUsuario {
 		~ManejadorUsuario();
 
 		bool checkeoNickname(string);
-		void guardarUsuario(Usuario);
-		list<Usuario> listarUsuarios();
+		void guardarUsuario(Usuario*);
+		list<Usuario*> listarUsuarios();
 		Usuario* elegirUsuario(string);
 };
 #endif

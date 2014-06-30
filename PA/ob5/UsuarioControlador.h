@@ -16,9 +16,9 @@ using namespace std;
 
 class UsuarioControlador : public IUsuarioControlador{
 	private:
-		list<Recurso> recCreados;
-		list<Colaborador> colaboracionList;
-		list<Accion> accList;
+		list<Recurso*> recCreados;
+		list<Colaborador*> colaboracionList;
+		list<Accion*> accList;
 		Usuario * usuarioElegido;
 		bool existe;
 		DataUsuario dataUsuarioIngresar;
@@ -35,17 +35,17 @@ class UsuarioControlador : public IUsuarioControlador{
 		~UsuarioControlador();
 
 		//Setters
-		void setRecCreados(list<Recurso>);
-		void setcolaboracionList(list<Colaborador>);
-		void setAccList(list<Accion>);
+		void setRecCreados(list<Recurso*>);
+		void setcolaboracionList(list<Colaborador*>);
+		void setAccList(list<Accion*>);
 		void setUsuarioElegido(Usuario *);
 		void setDataUsuarioIngresar(DataUsuario);
 		void setNickname(string);
 
 		//Getters
-		list<Recurso> getRecCreados();
-		list<Colaborador> getcolaboracionList();
-		list<Accion>getAccList();
+		list<Recurso*> getRecCreados();
+		list<Colaborador*> getcolaboracionList();
+		list<Accion*>getAccList();
 		Usuario* getUsuarioElegido();
 		DataUsuario& getDataUsuarioIngresar();
 		string getNickname();

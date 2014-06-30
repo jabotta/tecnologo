@@ -10,23 +10,35 @@ UsuarioControlador::UsuarioControlador(int iduc){
 }
 
 UsuarioControlador::~UsuarioControlador(){
-	//debemos liberar la memoria de todos los pseudoatributos 
+	delete usuarioElegido;
+	for(list<Recurso*>::iterator it = recCreados.begin();it!=recCreados.end();++it){
+		delete *it;
+	}
+	for(list<Colaborador*>::iterator it = colaboracionList.begin();it!=colaboracionList.end();++it){
+		delete *it;
+	}
+	for(list<Accion*>::iterator it = accList.begin();it!=accList.end();++it){
+		delete *it;
+	}
+	delete ManejadorUsuario::getInstance();
+	delete ManejadorRecursos::getInstance();
+	delete ManejadorColaborador::getInstance();
 }
 
 UsuarioControlador::UsuarioControlador(const UsuarioControlador& i){
-	//debemos liberar la memoria de todos los pseudoatributos 
+
 }
 
 //Setters
-void UsuarioControlador::setRecCreados(list<Recurso> r){
+void UsuarioControlador::setRecCreados(list<Recurso*> r){
 	recCreados = r;
 }
 
-void UsuarioControlador::setcolaboracionList(list<Colaborador> c){
+void UsuarioControlador::setcolaboracionList(list<Colaborador*> c){
 	colaboracionList = c ;
 }
 
-void UsuarioControlador::setAccList(list<Accion> a){
+void UsuarioControlador::setAccList(list<Accion*> a){
 	accList = a;
 }
 
@@ -43,15 +55,15 @@ void UsuarioControlador::setNickname(string n){
 }
 
 //Getters
-list<Recurso> UsuarioControlador::getRecCreados(){
+list<Recurso*> UsuarioControlador::getRecCreados(){
 	return recCreados;
 }
 
-list<Colaborador> UsuarioControlador::getcolaboracionList(){
+list<Colaborador*> UsuarioControlador::getcolaboracionList(){
 	return colaboracionList;
 }
 
-list<Accion>UsuarioControlador::getAccList(){
+list<Accion*>UsuarioControlador::getAccList(){
 	return accList;
 }
 
@@ -76,7 +88,7 @@ void UsuarioControlador::ingresarDatosUsuario(DataUsuario d){
 }
 
 void UsuarioControlador::guardarUsuario(){
-	Usuario us = Usuario(dataUsuarioIngresar);
+	Usuario* us = new Usuario(dataUsuarioIngresar);
 	ManejadorUsuario::getInstance()->guardarUsuario(us);
 }
 
@@ -165,10 +177,10 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 
 list<DataUsuario> UsuarioControlador::listarUsuarios(){
 	list<DataUsuario> du;
-	list<Usuario> uList = ManejadorUsuario::getInstance()->listarUsuarios();
+	list<Usuario*> uList = ManejadorUsuario::getInstance()->listarUsuarios();
 
-	for (list<Usuario>::iterator it = uList.begin(); it != uList.end(); ++it){
-		DataUsuario tmp_du = DataUsuario((*it).getNickname(), (*it).getNombre(), (*it).getSexo(), (*it).getEdad(), (*it).getFechaNac());
+	for (list<Usuario*>::iterator it = uList.begin(); it != uList.end(); ++it){
+		DataUsuario tmp_du = DataUsuario((*it)->getNickname(), (*it)->getNombre(), (*it)->getSexo(), (*it)->getEdad(), (*it)->getFechaNac());
 		du.push_back(tmp_du);
 	}
 

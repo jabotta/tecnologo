@@ -15,7 +15,8 @@ Fabrica * Fabrica::getInstance(){
 }
 
 Fabrica::~Fabrica(){
-	
+	delete mucontroller;
+	delete mrcontroller;
 }
 
 IUsuarioControlador * Fabrica::getUControlador(int id){

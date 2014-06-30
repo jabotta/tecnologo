@@ -14,7 +14,9 @@ ManejadorRecursoControlador::ManejadorRecursoControlador(){
 }
 
 ManejadorRecursoControlador::~ManejadorRecursoControlador(){
-	// delete lista de controllers antes de borrar
+	for(map<int, RecursoControlador*>::iterator it = recursoControladores.begin();it!=recursoControladores.end();++it){
+		delete it->second;
+	}
 }
 
 RecursoControlador* ManejadorRecursoControlador::obtenerControlerPorId(int id){

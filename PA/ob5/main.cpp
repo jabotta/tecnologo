@@ -495,6 +495,7 @@ int main(){
 			}
 			/************************************************************************************/
 			case 7:{
+				//delete Fabrica::getInstance();
 				cout << "Saliendo..." << endl;
 				break;
 			}

@@ -14,7 +14,9 @@ ManejadorComentario * ManejadorComentario::getInstance(){
 }
 
 ManejadorComentario::~ManejadorComentario(){
-	// delete lista de usuarios antes de borrar
+	for(map<int, Comentario*>::iterator it = comentarios.begin();it!=comentarios.end();++it){
+		delete it->second;
+	}
 }
 
 void ManejadorComentario::guardarComentario(Comentario* c){

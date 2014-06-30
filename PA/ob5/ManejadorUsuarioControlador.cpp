@@ -13,7 +13,9 @@ ManejadorUsuarioControlador::ManejadorUsuarioControlador(){
 
 }
 ManejadorUsuarioControlador::~ManejadorUsuarioControlador(){
-	// delete lista de controllers antes de borrar
+	for(map<int, UsuarioControlador*>::iterator it = usuarioControladores.begin();it!=usuarioControladores.end();++it){
+		delete it->second;
+	}
 }
 
 UsuarioControlador* ManejadorUsuarioControlador::obtenerControlerPorId(int id){

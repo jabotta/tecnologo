@@ -9,10 +9,23 @@ RecursoControlador::RecursoControlador(int iduc){
 }
 
 RecursoControlador::~RecursoControlador(){
-	//debemos liberar la memoria de todos los pseudoatributos 
+	delete carpetaElegida;
+	delete archivoElegido;
+	delete usuarioElegido;
+	delete usuarioColaborador;
+	delete nuevoComentario;
+	delete padreComentario;
+	delete colaboradorCreado;
+	for(list<Recurso*>::iterator it = recursosLista.begin();it!=recursosLista.end();++it){
+		delete *it;
+	}
+	delete usuarioColaborador;
+	delete ManejadorRecursos::getInstance();
+	delete ManejadorColaborador::getInstance();
+	delete ManejadorUsuario::getInstance();
+	delete ManejadorComentario::getInstance();
 }
 RecursoControlador::RecursoControlador(const RecursoControlador& i){
-	//debemos liberar la memoria de todos los pseudoatributos 
 }
 
 int RecursoControlador::RecursoControlador::getId(){
@@ -218,11 +231,11 @@ string RecursoControlador::getAccionTipo()const{
 	return accionTipo;
 }
 
-Comentario RecursoControlador::getNuevoComentario() const{
+Comentario* RecursoControlador::getNuevoComentario() const{
 	return nuevoComentario;
 }
 
-Comentario RecursoControlador::getPadreComentario()const{
+Comentario* RecursoControlador::getPadreComentario()const{
 	return padreComentario;
 }
 
@@ -234,7 +247,7 @@ Archivo* RecursoControlador::getArchivoElegido()const{
 	return archivoElegido;
 }
 
-Colaborador RecursoControlador::getColaboradorCreado()const{
+Colaborador* RecursoControlador::getColaboradorCreado()const{
 	return colaboradorCreado;
 }
 
@@ -243,7 +256,7 @@ list<DataErrores> RecursoControlador::getErrores()const{
 	return errores;
 }
 
-list<Recurso> RecursoControlador::getRecursosLista()const{
+list<Recurso*> RecursoControlador::getRecursosLista()const{
 	return recursosLista;
 }
 
@@ -263,11 +276,11 @@ void RecursoControlador::setAccionTipo (string at){
 	accionTipo = at;
 }
 
-void RecursoControlador::setNuevoComentario (Comentario c){
+void RecursoControlador::setNuevoComentario (Comentario* c){
 	nuevoComentario = c;
 }
 
-void RecursoControlador::setPadreComentario (Comentario pc){
+void RecursoControlador::setPadreComentario (Comentario* pc){
 	padreComentario = pc;
 }
 
@@ -279,7 +292,7 @@ void RecursoControlador::setArchivoElegido (Archivo* a){
 	archivoElegido = a;
 }
 
-void RecursoControlador::setColaboradorCreado(Colaborador cc){
+void RecursoControlador::setColaboradorCreado(Colaborador* cc){
 	colaboradorCreado = cc;
 }
 
@@ -287,7 +300,7 @@ void RecursoControlador::setErrores(list<DataErrores> del){
 	errores = del;
 }
 
-void RecursoControlador::setRecursosLista(list<Recurso> rl){
+void RecursoControlador::setRecursosLista(list<Recurso*> rl){
 	recursosLista = rl;
 }
 

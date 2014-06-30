@@ -20,13 +20,13 @@ class  RecursoControlador: public IRecursoControlador{
 	private:
 		DataRecurso recursoNuevo;
 		string accionTipo;
-		Comentario nuevoComentario;
-		Comentario padreComentario;
+		Comentario* nuevoComentario;
+		Comentario* padreComentario;
 		Carpeta* carpetaElegida;
 		Archivo* archivoElegido;
-		Colaborador colaboradorCreado;
+		Colaborador* colaboradorCreado;
 		list<DataErrores> errores;
-		list<Recurso> recursosLista;
+		list<Recurso*> recursosLista;
 		Usuario* usuarioElegido;
 		Usuario* usuarioColaborador;
 		string tiporec;
@@ -59,26 +59,26 @@ class  RecursoControlador: public IRecursoControlador{
 		void elegirUsuario(string);
 		
 		string getAccionTipo()const;
-		Comentario getNuevoComentario()const;
-		Comentario getPadreComentario()const;
+		Comentario* getNuevoComentario()const;
+		Comentario* getPadreComentario()const;
 		Carpeta* getCarpetaElegida()const;
 		Archivo* getArchivoElegido()const;
-		Colaborador getColaboradorCreado()const;
+		Colaborador* getColaboradorCreado()const;
 		list<DataErrores> getErrores()const;
-		list<Recurso> getRecursosLista()const;
+		list<Recurso*> getRecursosLista()const;
 		DataRecurso getRecursoNuevo()const;
 		Usuario* getUsuarioElegido()const;
 		Usuario* getUsuarioColaborador()const;
 
 		void setAccionTipo (string);
-		void setNuevoComentario (Comentario);
-		void setPadreComentario (Comentario);
+		void setNuevoComentario (Comentario*);
+		void setPadreComentario (Comentario*);
 		void setCarpetaElegida (Carpeta*);
 		void setArchivoElegido (Archivo*);
-		void setColaboradorCreado(Colaborador);
+		void setColaboradorCreado(Colaborador*);
 		void setErrores(list<DataErrores> );
 		void setRecursoNuevo(DataRecurso);
-		void setRecursosLista(list<Recurso>);
+		void setRecursosLista(list<Recurso*>);
 		void setUsuarioElegido(Usuario *);
 		void setUsuarioColaborador(Usuario*);
 		void setExisten(bool);

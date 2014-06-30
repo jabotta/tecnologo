@@ -14,7 +14,9 @@ ManejadorRecursos * ManejadorRecursos::getInstance(){
 }
 
 ManejadorRecursos::~ManejadorRecursos(){
-	// delete lista de usuarios antes de borrar
+	for(map<string, Recurso*>::iterator it = recursos.begin();it!=recursos.end();++it){
+		delete it->second;
+	}
 }
 
 void ManejadorRecursos::ingresarRecurso(Recurso* r){

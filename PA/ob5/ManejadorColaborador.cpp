@@ -14,7 +14,9 @@ ManejadorColaborador * ManejadorColaborador::getInstance(){
 }
 
 ManejadorColaborador::~ManejadorColaborador(){
-	// delete lista de usuarios antes de borrar
+	for(list<Colaborador*>::iterator it = colaboradores.begin();it!=colaboradores.end();++it){
+		delete *it;
+	}
 }
 
 void ManejadorColaborador::agregarALista(Colaborador* c){
