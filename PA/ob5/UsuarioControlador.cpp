@@ -94,7 +94,12 @@ DataRecurso generarDataRecurso(Recurso* rec){
 }
 
 DataCarpeta generarDataCarpeta(Carpeta* car){
-	DataUsuario usuarioCreo = generarDataUsuario(car->getUsuarioCreo());
+	DataUsuario usuarioCreo;
+	if(car->getUsuarioCreo() == NULL){
+		usuarioCreo = DataUsuario();
+	}else{
+		usuarioCreo = generarDataUsuario(car->getUsuarioCreo());
+	}
 	return DataCarpeta(car->getNombre(), usuarioCreo, car->getDescripcion(), car->getFechaUltimoAcceso(), car->getFechaCreacion(), car->getUbicacion(), car->getPath());
 }
 
@@ -122,10 +127,13 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 	for (list<Recurso*>::iterator it = recList.begin(); it != recList.end(); ++it){
 		Recurso* r = *it;
 		Usuario* usuario = r->getUsuarioCreo();
-		
-		if(usuarioElegido->getNickname() == usuario->getNickname()){
-			DataRecurso dr = generarDataRecurso(r);
-			recCreados.push_back(dr);
+		if(usuario != NULL){
+			if(usuarioElegido->getNickname() == usuario->getNickname()){
+				list<DataRecurso> recCreados = list<DataRecurso>();
+	cout << "HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << r->getNombre() << endl;
+				DataRecurso dr = generarDataRecurso(r);
+				recCreados.push_back(dr);
+			}
 		}
 	}
 	
