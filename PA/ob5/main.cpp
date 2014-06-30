@@ -58,36 +58,44 @@ void agregarDatosDePrueba(){
 
 	DataCarpeta Carpeta1 = DataCarpeta("Deporte",Usuario3,"Almacena información de deportes.",DateTime(),DateTime(),"/Deporte","/Deporte");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta1,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataCarpeta Carpeta2 = DataCarpeta("Juegos",Usuario3,"Almacena información de los últimos juegos para PC.",DateTime(),DateTime(),"/Juegos","/Juegos");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta2,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataCarpeta Carpeta3 = DataCarpeta("Proyecto",Usuario3,"Almacena recursos relacionados con proyectos de software.",DateTime(),DateTime(),"/Proyecto","/Proyecto");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta3,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 	cout << Carpeta3 << endl;
 
 	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario1,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol","/Deporte/Futbol");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta4,"carpeta");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	//Archivos
 	DataArchivo Archivo1 = DataArchivo("CopaAm",Usuario1,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm","/Deporte/Futbol/CopaAm");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo1,"archivo");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataArchivo Archivo2 = DataArchivo("Mundial",Usuario3,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial","/Deporte/Futbol/Mundial");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo2,"archivo");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataArchivo Archivo3 = DataArchivo("Salud",Usuario3,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud","/Deporte/Salud");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo3,"archivo");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataArchivo Archivo4 = DataArchivo("Tesis",Usuario2,"Informe final de la tésis",DateTime(),DateTime(),"/Proyecto/Tesis","/Proyecto/Tesis");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo4,"archivo");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario2.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	//Colaboradores
@@ -336,11 +344,11 @@ void verInformacionUsuario(){
 	cout << "Edad: " << info.getUsuario().getEdad() << endl;
 	cout << "Fecha de nacimiento: " << info.getUsuario().getFechaNac() << endl;
 
-	/*cout << "************** Recursos creados **************" << endl;
+	cout << "************** Recursos creados **************" << endl;
 	for(list<DataRecurso>::iterator it = info.getRecursos().begin() ; it != info.getRecursos().end();++it){
 		cout << "Recurso: " << it->getNombre() << endl;
 	}
-
+/*
 	cout << "***** Carpetas en las que es colaborador *****" << endl;
 	for(list<DataColaborador>::iterator it = info.getColaboradores().begin() ; it != info.getColaboradores().end();++it){
 		cout << "Colaborando en carpeta: " << it->getCarpeta().getNombre() << " desde: " << it->getFecha() << endl;

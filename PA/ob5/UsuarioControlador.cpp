@@ -130,7 +130,6 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 		if(usuario != NULL){
 			if(usuarioElegido->getNickname() == usuario->getNickname()){
 				list<DataRecurso> recCreados = list<DataRecurso>();
-	cout << "HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << r->getNombre() << endl;
 				DataRecurso dr = generarDataRecurso(r);
 				recCreados.push_back(dr);
 			}
