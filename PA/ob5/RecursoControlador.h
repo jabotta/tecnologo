@@ -55,7 +55,7 @@ class  RecursoControlador: public IRecursoControlador{
 		list<DataArchivo> listarArchivos();
 		void elegirArchivo(string path);
 		list<DataComentario> listarComentariosPorArchivo();
-		void guardarComentario(string, int);
+		void guardarComentario(string, int, int);
 		void elegirUsuario(string);
 		
 		string getAccionTipo()const;

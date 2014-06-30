@@ -13,7 +13,6 @@ class DataComentario {
 		string contenido;
 		DataUsuario usuario;
 		DataArchivo archivo;
-		// DataComentario parent;
 
 	public:
 		//Constructores
@@ -29,13 +28,11 @@ class DataComentario {
 		string getContenido() const;
 		DataUsuario getUsuario() const;
 		DataArchivo getArchivo() const;
-		// DataComentario getParent() const;
 
 		//Modificadores
 		void setCodigo(int);
 		void setContenido(string);
 		void setUsuario(DataUsuario);
 		void setArchivo(DataArchivo);
-		// void setParent(DataComentario);
 };
 #endif

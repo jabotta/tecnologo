@@ -89,19 +89,23 @@ void RecursoControlador::guardarRecurso(){
 	}
 
 	if(carpetaElegida != NULL){
-		r->setUbicacion(carpetaElegida->getUbicacion()  + "/" + r->getNombre());
+		if(carpetaElegida->getUbicacion() == "/"){
+			r->setUbicacion(carpetaElegida->getUbicacion() + r->getNombre());
+		}else{
+			r->setUbicacion(carpetaElegida->getUbicacion() + "/" + r->getNombre());
+		}
 	}
 
 	r->setUsuarioCreo(usuarioElegido);
 
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 
-	// if(tiporec == "archivo"){
-	// 	Accion* accionCreacion = new Accion(TipoAccion(0), dynamic_cast<Archivo*>(r), usuarioElegido);
-	// 	list<Accion*> acciones = usuarioElegido->getAcciones();
-	// 	acciones.push_back(accionCreacion);
-	// 	usuarioElegido->setAcciones(acciones);
-	// }
+	if(tiporec == "archivo"){
+		Accion* accionCreacion = new Accion(TipoAccion(0), dynamic_cast<Archivo*>(r), usuarioElegido);
+		list<Accion*> acciones = usuarioElegido->getAcciones();
+		acciones.push_back(accionCreacion);
+		usuarioElegido->setAcciones(acciones);
+	}
 }
 
 list<DataErrores> RecursoControlador::imprimirErroresGenerados(){
@@ -179,12 +183,16 @@ list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 	return ret;
 }
 
-void RecursoControlador::guardarComentario(string contenido, int parent){
+void RecursoControlador::guardarComentario(string contenido, int parent, int comentarioId){
 	Comentario* cm = new Comentario();
-	cm->setCodigo(1);
+	cm->setCodigo(comentarioId);
 	cm->setContenido(contenido);
 	cm->setArchivo(archivoElegido);
 	cm->setUsuario(usuarioElegido);
+	if(parent > 0){
+		Comentario* comentarioParent = ManejadorComentario::getInstance()->buscarPadre(parent);
+		cm->setParent(comentarioParent);
+	}
 	ManejadorComentario::getInstance()->guardarComentario(cm);
 }
 

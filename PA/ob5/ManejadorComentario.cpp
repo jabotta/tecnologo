@@ -28,3 +28,11 @@ list<Comentario*> ManejadorComentario::listarComentarios(){
 	}	
 	return cm;
 }
+
+Comentario* ManejadorComentario::buscarPadre(int parent){
+	if(comentarios.count(parent) > 0){
+		map<int, Comentario*>::iterator it = comentarios.find(parent);
+		return it->second;		
+	}
+	return NULL;
+}

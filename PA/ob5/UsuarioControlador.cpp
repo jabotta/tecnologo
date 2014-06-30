@@ -129,8 +129,6 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 		Usuario* usuario = r->getUsuarioCreo();
 		if(usuario != NULL){
 			if(usuarioElegido->getNickname() == usuario->getNickname()){
-				list<DataRecurso> recCreados = list<DataRecurso>();
-	cout << "HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << r->getNombre() << endl;
 				DataRecurso dr = generarDataRecurso(r);
 				recCreados.push_back(dr);
 			}
@@ -162,7 +160,7 @@ DataInformacionUsuario UsuarioControlador::obtenerInformacionUsuario(){
 	// crear DataUsuario
 	DataUsuario dataUsuarioElegido = generarDataUsuario(usuarioElegido);
 
-	return DataInformacionUsuario(dataUsuarioElegido,recCreados,colaboracionList,accionesList);
+	return DataInformacionUsuario(dataUsuarioElegido, recCreados, colaboracionList, accionesList);
 }
 
 list<DataUsuario> UsuarioControlador::listarUsuarios(){

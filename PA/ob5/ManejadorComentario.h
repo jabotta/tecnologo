@@ -19,5 +19,6 @@ class ManejadorComentario {
 
 		void guardarComentario(Comentario*);
 		list<Comentario*> listarComentarios();
+		Comentario* buscarPadre(int);
 };
 #endif

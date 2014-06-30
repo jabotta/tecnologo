@@ -10,7 +10,6 @@ DataComentario::DataComentario(const DataComentario& cm){
 	setContenido(cm.getContenido());
 	setUsuario(cm.getUsuario());
 	setArchivo(cm.getArchivo());
-	// setParent(cm.getParent());
 }
 
 DataComentario::DataComentario(int cd, string con, DataUsuario usr, DataArchivo arc){
@@ -42,10 +41,6 @@ DataArchivo DataComentario::getArchivo() const{
 	return archivo;
 }
 
-// DataComentario DataComentario::getParent() const{
-// 	return parent;
-// }
-
 //Modificadores
 void DataComentario::setCodigo(int cd){
 	codigo = cd;
@@ -62,7 +57,3 @@ void DataComentario::setUsuario(DataUsuario usu){
 void DataComentario::setArchivo(DataArchivo arc){
 	archivo = arc;
 }
-
-// void DataComentario::setParent(DataComentario par){
-// 	parent = par;
-// }
