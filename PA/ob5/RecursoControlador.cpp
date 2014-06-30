@@ -36,9 +36,21 @@ list<DataCarpeta> RecursoControlador::listarCarpetasPorUsuario(){
 	return ret;
 }
 
-void RecursoControlador::agregarColaborador(){
-	Colaborador* c = new Colaborador(DateTime(),carpetaElegida,usuarioElegido);
-	ManejadorColaborador::getInstance()->agregarALista(c);
+void RecursoControlador::agregarColaborador(Carpeta* car){
+	Colaborador* c = new Colaborador(DateTime(),car,usuarioElegido);
+	map<string, Recurso*> recMap = car->getRecursos();
+	map<string, Recurso*>::iterator it; 
+
+	for(it = recMap.begin();it!=recMap.end();++it){
+		Recurso* tmp = (it->second);
+		Carpeta* carp = dynamic_cast<Carpeta*>(tmp);
+		if(carp != 0){
+			agregarColaborador(carp);
+		}
+	}
+	if(usuarioElegido->getNickname()!=car->getUsuarioCreo()->getNickname()){
+		ManejadorColaborador::getInstance()->agregarALista(c);
+	}
 }
 
 void RecursoControlador::ingresarRecurso(DataRecurso recurso, string tipo){
@@ -68,7 +80,7 @@ void RecursoControlador::controlDeErrores(){
 	bool existe = false;	
 	for(it = recMap.begin();it!=recMap.end();++it){
 		Recurso* tmp = (it->second);
-		if(tmp->existeNombre(r->getNombre())){
+		if(tmp->existeNombre(carpetaElegida->getUbicacion() + "/" + r->getNombre())){
 			existe = true;
 		}
 	}
@@ -105,6 +117,12 @@ void RecursoControlador::guardarRecurso(){
 		list<Accion*> acciones = usuarioElegido->getAcciones();
 		acciones.push_back(accionCreacion);
 		usuarioElegido->setAcciones(acciones);
+	}
+	if(r->getNombre()!="/"){
+		Carpeta* carpetaPadre = ManejadorRecursos::getInstance()->elegirCarpeta(carpetaElegida->getUbicacion());
+		map<string, Recurso*> recursos; recursos = carpetaPadre->getRecursos();
+		recursos.insert(pair<string, Recurso*>(r->getPath(),r));
+		carpetaPadre->setRecursos(recursos);
 	}
 }
 

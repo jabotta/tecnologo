@@ -93,5 +93,5 @@ list<DataErrores> Recurso::controlarNombreRecurso(){
 }
 
 bool Recurso::existeNombre(string s){
-	return getNombre() == s;
+	return getPath() == s;
 }

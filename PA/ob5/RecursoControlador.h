@@ -45,7 +45,7 @@ class  RecursoControlador: public IRecursoControlador{
 		~RecursoControlador();
 
 		list<DataCarpeta> listarCarpetasPorUsuario();
-		void agregarColaborador();
+		void agregarColaborador(Carpeta*);
 		void ingresarRecurso(DataRecurso recurso,string tipo );
 		void controlDeErrores();
 		void guardarRecurso();

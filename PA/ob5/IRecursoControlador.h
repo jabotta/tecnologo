@@ -13,7 +13,7 @@
 class IRecursoControlador{
 	public:
 		virtual list<DataCarpeta> listarCarpetasPorUsuario() = 0 ;
-		virtual void agregarColaborador() = 0 ;
+		virtual void agregarColaborador(Carpeta*) = 0 ;
 		virtual void ingresarRecurso(DataRecurso recurso,string tipo ) = 0 ;
 		virtual void controlDeErrores() = 0 ;
 	 	virtual void guardarRecurso() = 0 ;
@@ -27,6 +27,6 @@ class IRecursoControlador{
 		virtual void guardarComentario(string contenido, int parent, int comentarioId) = 0 ;
 		virtual int getId() = 0;
 		virtual Carpeta* getCarpetaElegida()const = 0;
-		virtual Usuario* getUsuarioElegido() = 0;
+		virtual Usuario* getUsuarioElegido()const = 0;
 };
 #endif

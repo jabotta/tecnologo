@@ -58,27 +58,32 @@ void agregarDatosDePrueba(){
 	DataCarpeta CarpetaRaiz = DataCarpeta(temp->getNombre(), usuarioRaiz, temp->getDescripcion(), temp->getFechaUltimoAcceso(), temp->getFechaCreacion(), temp->getUbicacion(), temp->getPath());
 
 	DataCarpeta Carpeta1 = DataCarpeta("Deporte",Usuario3,"Almacena información de deportes.",DateTime(),DateTime(),"/Deporte","/Deporte");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(CarpetaRaiz.getPath());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta1,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataCarpeta Carpeta2 = DataCarpeta("Juegos",Usuario3,"Almacena información de los últimos juegos para PC.",DateTime(),DateTime(),"/Juegos","/Juegos");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(CarpetaRaiz.getPath());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta2,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataCarpeta Carpeta3 = DataCarpeta("Proyecto",Usuario3,"Almacena recursos relacionados con proyectos de software.",DateTime(),DateTime(),"/Proyecto","/Proyecto");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(CarpetaRaiz.getPath());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta3,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario1,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol","/Deporte/Futbol");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta("/Deporte");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta4,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	//Archivos
 	DataArchivo Archivo1 = DataArchivo("CopaAm",Usuario1,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm","/Deporte/Futbol/CopaAm");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta("/Deporte/Futbol");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo1,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
@@ -89,40 +94,42 @@ void agregarDatosDePrueba(){
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataArchivo Archivo3 = DataArchivo("Salud",Usuario3,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud","/Deporte/Salud");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta("/Deporte");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo3,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	DataArchivo Archivo4 = DataArchivo("Tesis",Usuario2,"Informe final de la tésis",DateTime(),DateTime(),"/Proyecto/Tesis","/Proyecto/Tesis");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta("/Proyecto");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo4,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario2.getNickname());
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
 
 	//Colaboradores
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(CarpetaRaiz.getPath());
-	// Colaborador* Colaborador1 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
-	// ManejadorColaborador::getInstance()->agregarALista(Colaborador1);
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(CarpetaRaiz.getPath());
+	Colaborador* Colaborador1 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
+	ManejadorColaborador::getInstance()->agregarALista(Colaborador1);
 
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta1.getPath());
-	// Colaborador* Colaborador2 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
-	// ManejadorColaborador::getInstance()->agregarALista(Colaborador2);
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta1.getPath());
+	Colaborador* Colaborador2 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
+	ManejadorColaborador::getInstance()->agregarALista(Colaborador2);
 
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta2.getPath());
-	// Colaborador* Colaborador3 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
-	// ManejadorColaborador::getInstance()->agregarALista(Colaborador3);
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario1.getNickname());
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta2.getPath());
+	Colaborador* Colaborador3 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
+	ManejadorColaborador::getInstance()->agregarALista(Colaborador3);
 
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario2.getNickname());
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta2.getPath());
-	// Colaborador* Colaborador4 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
-	// ManejadorColaborador::getInstance()->agregarALista(Colaborador4);
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario2.getNickname());
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta2.getPath());
+	Colaborador* Colaborador4 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
+	ManejadorColaborador::getInstance()->agregarALista(Colaborador4);
 
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario2.getNickname());
-	// Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta3.getPath());
-	// Colaborador* Colaborador5 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
-	// ManejadorColaborador::getInstance()->agregarALista(Colaborador5);
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario2.getNickname());
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirCarpeta(Carpeta3.getPath());
+	Colaborador* Colaborador5 = new Colaborador(DateTime(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida(), Fabrica::getInstance()->getRControlador(idRecursoControlador)->getUsuarioElegido());
+	ManejadorColaborador::getInstance()->agregarALista(Colaborador5);
 
 	//Comentarios
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->elegirUsuario(Usuario3.getNickname());
@@ -374,7 +381,7 @@ void agregarColaborador(){
 	elegirUsuario("Recurso");
 	elegirCarpetaPorUsuario();
 	elegirUsuario("Recurso");
-	Fabrica::getInstance()->getRControlador(idRecursoControlador)->agregarColaborador();
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->agregarColaborador(Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida());
 }
 
 void ingresarComentario(){
@@ -392,17 +399,20 @@ void verInformacionUsuario(){
 	cout << "Fecha de nacimiento: " << info.getUsuario().getFechaNac() << endl;
 
 	cout << "************** Recursos creados **************" << endl;
-	for(list<DataRecurso>::iterator it = info.getRecursos().begin(); it != info.getRecursos().end();++it){
-		cout << "Recurso: " << it->getNombre() << endl;
+	list<DataRecurso> iterdDrList = info.getRecursos();
+	for(list<DataRecurso>::iterator it = iterdDrList.begin(); it != iterdDrList.end();++it){
+		cout << "Recurso: " << it->getNombre() << " - Path: " << it->getPath() << endl;
 	}
-/*
+
 	cout << "***** Carpetas en las que es colaborador *****" << endl;
-	for(list<DataColaborador>::iterator it = info.getColaboradores().begin() ; it != info.getColaboradores().end();++it){
-		cout << "Colaborando en carpeta: " << it->getCarpeta().getNombre() << " desde: " << it->getFecha() << endl;
+	list<DataColaborador> iterdDcList = info.getColaboradores();
+	for(list<DataColaborador>::iterator it = iterdDcList.begin() ; it != iterdDcList.end();++it){
+		cout << "Colaborando en carpeta: " << it->getCarpeta().getPath() << " desde: " << it->getFecha() << endl;
 	}
 
 	cout << "************* Acciones realizadas ************" << endl;
-	for(list<DataAccion>::iterator it = info.getAcciones().begin() ; it != info.getAcciones().end();++it){
+	list<DataAccion> iterdDaList = info.getAcciones();
+	for(list<DataAccion>::iterator it = iterdDaList.begin() ; it != iterdDaList.end();++it){
 		cout << "Accion: " << it->getTipo() << " en: " << it->getFecha() << " sobre: " << it->getArchivo().getNombre() << endl;
 	}
 }
