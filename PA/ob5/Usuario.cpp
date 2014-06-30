@@ -81,6 +81,10 @@ list<Accion*> Usuario::getAcciones()const{
 }
 
 int Usuario::getEdad() const{
+	int anio = fechaNac.getAnio();
+	DateTime ahora = DateTime();
+	int anioAhora = ahora.getAnio();
+	int edad = anioAhora - anio;
 	return edad;
 }
 
