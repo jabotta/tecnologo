@@ -94,7 +94,6 @@ void RecursoControlador::guardarRecurso(){
 
 	r->setUsuarioCreo(usuarioElegido);
 
-
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 
 	if(tiporec == "archivo"){
@@ -181,7 +180,8 @@ list<DataComentario> RecursoControlador::listarComentariosPorArchivo(){
 }
 
 void RecursoControlador::guardarComentario(string contenido, int parent){
-	Comentario* cm;
+	Comentario* cm = new Comentario();
+	cm->setCodigo(1);
 	cm->setContenido(contenido);
 	cm->setArchivo(archivoElegido);
 	cm->setUsuario(usuarioElegido);
