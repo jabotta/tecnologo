@@ -254,8 +254,9 @@ void listarComentariosPorArchivo(){
 	cout << "************* Comentarios *************" << endl;
 	cout << "Id - Nickname - Contenido" << endl;
 	for(it = ldcma.begin(); it != ldcma.end(); ++it){
-		DataUsuario u = DataUsuario(it->getUsuario());
-		cout << it->getCodigo() << " - " << u.getNickname() << " - " << it->getContenido() << endl;
+		// DataUsuario u = DataUsuario(it->getUsuario());
+		// cout << it->getCodigo() << " - " << u.getNickname() << " - " << it->getContenido() << endl;
+		cout << it->getCodigo() << " - " << it->getContenido() << endl;
 	}
 }
 
