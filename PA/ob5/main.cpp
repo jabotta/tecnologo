@@ -312,8 +312,6 @@ void elegirArchivo(){
 void listarComentariosPorArchivo(){
 	list<DataComentario> ldcma = Fabrica::getInstance()->getRControlador(idRecursoControlador)->listarComentariosPorArchivo();
 	list<DataComentario>::iterator it;	
-	
-	cout << "************* Comentarios *************" << endl;
 	cout << "Id - Nickname - Contenido" << endl;
 	for(it = ldcma.begin(); it != ldcma.end(); ++it){
 		cout << it->getCodigo() << " - " << it->getUsuario().getNickname() << " - " << it->getContenido() << endl;
@@ -334,8 +332,15 @@ void accionSobreComentario(){
 		switch(tipo){
 			case 1:{
 				string contenido;
-				cout << "Comentario: ";
+				cout<< "##################################"<<endl;
+				cout<< "Ingresar contenido del Comentario:"<<endl;
+				cout<< "###################################"<<endl<<endl;
+				cout<<"-->";
 				cin >> contenido;
+				cout<<endl;
+				cout<< "##########################################"<<endl;
+				cout<< "Elegir Usuario que realiza el comentario :"<<endl;
+				cout<< "##########################################"<<endl<<endl;
 				elegirUsuario("Recurso");
 				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(contenido, 0, comentarioId);
 				comentarioId ++;
@@ -345,10 +350,19 @@ void accionSobreComentario(){
 			case 2:{
 				string contenido;
 				int parent;
-				cout << "Id comentario a responder: ";
+				cout<< "########################################"<<endl;
+				cout<< "Ingresar id del comentario a responder:"<<endl;
+				cout<< "########################################"<<endl<<endl;
+				cout<<"-->";
 				cin >> parent;
-				cout << "Comentario: ";
+				cout<< "##################################"<<endl;
+				cout<< "Ingresar contenido del Comentario:"<<endl;
+				cout<< "###################################"<<endl<<endl;
+				cout<<"-->";
 				cin >> contenido;
+				cout<< "##########################################"<<endl;
+				cout<< "Elegir Usuario que realiza el comentario :"<<endl;
+				cout<< "##########################################"<<endl<<endl;
 				elegirUsuario("Recurso");
 				Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarComentario(contenido, parent, comentarioId);
 				comentarioId ++;
@@ -378,21 +392,54 @@ void crearRecurso(){
 }
 
 void agregarColaborador(){
+	cout<<endl;
+	cout<< "#####################################"<<endl;
+	cout<< "Elegir Usuario para listar Carpetas :"<<endl;
 	elegirUsuario("Recurso");
+	cout<<endl;
+	cout<< "###########################################"<<endl;
+	cout<< "Elegir Carpeta para agregarle colaborador : "<<endl;
+	cout<< "###########################################"<<endl<<endl;
 	elegirCarpetaPorUsuario();
+	cout<<endl;
+	cout<< "##############################################"<<endl;
+	cout<< "Elegir Usuario para agregar como colaborador: "<<endl;
+	cout<< "##############################################"<<endl<<endl;
 	elegirUsuario("Recurso");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->agregarColaborador(Fabrica::getInstance()->getRControlador(idRecursoControlador)->getCarpetaElegida());
 }
 
 void ingresarComentario(){
+	cout<<endl;
+	cout<< "########################################"<<endl;
+	cout<< "Elegir Archivo para agregar comentario :"<<endl;
+	cout<< "########################################"<<endl<<endl;
 	elegirArchivo();
+	cout<<endl;
+	cout<< "########################"<<endl;
+	cout<< "Comentarios existentes:"<<endl;
+	cout<< "########################"<<endl<<endl;
 	listarComentariosPorArchivo();
+	cout<<endl;
+	cout<< "##########################"<<endl;
+	cout<< "Elegir Accion a realizar :"<<endl;
+	cout<< "##########################"<<endl<<endl;
 	accionSobreComentario();
 }
 
 void verInformacionUsuario(){
+	
+	cout<<endl;
+	cout<< "#####################################"<<endl;
+	cout<< "Elegir Usuario para ver informacion :"<<endl;
+	cout<< "#####################################"<<endl<<endl;
 	elegirUsuario("Usuario");
 	DataInformacionUsuario info = Fabrica::getInstance()->getUControlador(idUsuarioControlador)->obtenerInformacionUsuario();
+	cout<<endl;
+	cout<< "################################"<<endl;
+	cout<< "INFROMACION DEL USUARIO ELEGIDO:"<<endl;
+	cout<< "################################"<<endl<<endl;
+
 	cout << "Nickname: " << info.getUsuario().getNickname() << endl;
 	cout << "Sexo: " << info.getUsuario().getSexo() << endl;
 	cout << "Edad: " << info.getUsuario().getEdad() << endl;
