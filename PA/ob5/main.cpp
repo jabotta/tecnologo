@@ -35,73 +35,62 @@ bool checkSiCancelo(string s){
 }
 
 void agregarDatosDePrueba(){
-	cout << "********** Usuarios **********" << endl;
+	//Usuarios
 	DateTime fec = DateTime(1988, 12, 28, 0,0);
 	DataUsuario Usuario1 = DataUsuario("James",  "James", "Masculino", 24, fec);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(Usuario1);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
-	cout << Usuario1 << endl;
 
 	DateTime fec2 = DateTime(1990, 1, 1, 0,0);
 	DataUsuario Usuario2 = DataUsuario("Jennifer",  "Jeniffer", "Femenino", 23, fec2);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(Usuario2);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
-	cout << Usuario2 << endl;
 
 	DateTime fec3 = DateTime(1980, 3, 3, 0,0);
 	DataUsuario Usuario3 = DataUsuario("Jhon",  "Jhon", "Masculino", 33, fec3);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->ingresarDatosUsuario(Usuario3);
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->guardarUsuario();
-	cout << Usuario3 << endl;
 
-	cout << "********** Carpetas **********" << endl;
+	//Carpetas
 	DataCarpeta Carpeta;
 	Carpeta.setNombre("/");
 	Carpeta.setDescripcion("Carpeta Raiz");
 	Carpeta.setUbicacion("/");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta << endl;
 
 	DataCarpeta Carpeta1 = DataCarpeta("Deporte",Usuario3,"Almacena información de deportes.",DateTime(),DateTime(),"/Deporte","/Deporte");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta1,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta1 << endl;
 
 	DataCarpeta Carpeta2 = DataCarpeta("Juegos",Usuario3,"Almacena información de los últimos juegos para PC.",DateTime(),DateTime(),"/Juegos","/Juegos");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta2,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta2 << endl;
 
 	DataCarpeta Carpeta3 = DataCarpeta("Proyecto",Usuario3,"Almacena recursos relacionados con proyectos de software.",DateTime(),DateTime(),"/Proyecto","/Proyecto");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta3,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta3 << endl;
 
 	DataCarpeta Carpeta4 = DataCarpeta("Futbol",Usuario1,"Almacena recursos relacionados con el fútbol",DateTime(),DateTime(),"/Deporte/Futbol","/Deporte/Futbol");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta4,"carpeta");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta4 << endl;
 
-	DataCarpeta Carpeta5 = DataCarpeta("CopaAm",Usuario1,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm","/Deporte/Futbol/CopaAm");
-	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta5,"carpeta");
+	//Archivos
+	DataArchivo Archivo1 = DataArchivo("CopaAm",Usuario1,"Archivo de texto que contiene las últimas noticias de la Copa América.",DateTime(),DateTime(),"/Deporte/Futbol/CopaAm","/Deporte/Futbol/CopaAm");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo1,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta5 << endl;
 
-	DataCarpeta Carpeta6 = DataCarpeta("Mundial",Usuario3,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial","/Deporte/Futbol/Mundial");
-	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta6,"carpeta");
+	DataArchivo Archivo2 = DataArchivo("Mundial",Usuario3,"Archivo de texto que contiene las últimas noticias de la Copa del Mundo.",DateTime(),DateTime(),"/Deporte/Futbol/Mundial","/Deporte/Futbol/Mundial");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo2,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta6 << endl;
 
-	DataCarpeta Carpeta7 = DataCarpeta("Salud",Usuario3,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud","/Deporte/Salud");
-	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta7,"carpeta");
+	DataArchivo Archivo3 = DataArchivo("Salud",Usuario3,"Archivo que contiene información de la salud en los deportes.",DateTime(),DateTime(),"/Deporte/Salud","/Deporte/Salud");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo3,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta7 << endl;
 
-	DataCarpeta Carpeta8 = DataCarpeta("Tesis",Usuario2,"Informe final de la tésis",DateTime(),DateTime(),"/Proyecto/Tesis","/Proyecto/Tesis");
-	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Carpeta8,"carpeta");
+	DataArchivo Archivo4 = DataArchivo("Tesis",Usuario2,"Informe final de la tésis",DateTime(),DateTime(),"/Proyecto/Tesis","/Proyecto/Tesis");
+	Fabrica::getInstance()->getRControlador(idRecursoControlador)->ingresarRecurso(Archivo4,"archivo");
 	Fabrica::getInstance()->getRControlador(idRecursoControlador)->guardarRecurso();
-	cout << Carpeta8 << endl;
 
 	//Colaboradores
 	Fabrica::getInstance()->getUControlador(idUsuarioControlador)->elegirUsuario(Usuario3.getNickname());
@@ -263,10 +252,10 @@ void listarComentariosPorArchivo(){
 	list<DataComentario>::iterator it;	
 	
 	cout << "************* Comentarios *************" << endl;
-	cout << "Id - Nickname - Contenido"<<endl;
+	cout << "Id - Nickname - Contenido" << endl;
 	for(it = ldcma.begin(); it != ldcma.end(); ++it){
 		DataUsuario u = DataUsuario(it->getUsuario());
-		cout << it->getCodigo() << " - " << it->getContenido() << endl;
+		cout << it->getCodigo() << " - " << u.getNickname() << " - " << it->getContenido() << endl;
 	}
 }
 

@@ -60,7 +60,7 @@ void RecursoControlador::controlDeErrores(){
  
  	errores = r->controlarNombreRecurso();  
 	//controla que no exista  
-	cout<<carpetaElegida->getNombre()<<endl;
+	cout << carpetaElegida->getNombre() << endl;
 	map<string, Recurso*> recMap = carpetaElegida->getRecursos();
 	map<string, Recurso*>::iterator it; 
 	
@@ -96,12 +96,12 @@ void RecursoControlador::guardarRecurso(){
 
 	ManejadorRecursos::getInstance()->ingresarRecurso(r);
 
-	if(tiporec == "archivo"){
-		Accion* accionCreacion = new Accion(TipoAccion(0), dynamic_cast<Archivo*>(r), usuarioElegido);
-		list<Accion*> acciones = usuarioElegido->getAcciones();
-		acciones.push_back(accionCreacion);
-		usuarioElegido->setAcciones(acciones);
-	}
+	// if(tiporec == "archivo"){
+	// 	Accion* accionCreacion = new Accion(TipoAccion(0), dynamic_cast<Archivo*>(r), usuarioElegido);
+	// 	list<Accion*> acciones = usuarioElegido->getAcciones();
+	// 	acciones.push_back(accionCreacion);
+	// 	usuarioElegido->setAcciones(acciones);
+	// }
 }
 
 list<DataErrores> RecursoControlador::imprimirErroresGenerados(){
